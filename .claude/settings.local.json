@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install -r requirements.txt)",
+      "Bash(pip3 install -r /Users/corentinesteve/Downloads/DealSpotter/requirements.txt)",
+      "Bash(python3 -m venv .venv)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(source /Users/corentinesteve/Downloads/DealSpotter/.venv/bin/activate)",
+      "Bash(python3 -c \"import anthropic, telegram, dotenv, httpx, bs4, schedule; print\\(''All imports OK''\\)\")",
+      "Bash(pip install playwright)",
+      "Bash(playwright install chromium)",
+      "Bash(python3 -c \"from playwright.sync_api import sync_playwright; pw = sync_playwright\\(\\).start\\(\\); b = pw.chromium.launch\\(headless=True\\); print\\(f''Chromium launched OK — version {b.version}''\\); b.close\\(\\); pw.stop\\(\\)\")",
+      "Bash(python3 -c \":*)",
+      "Bash(pip install playwright-stealth)",
+      "Bash(python3 -c \"import playwright_stealth; print\\(dir\\(playwright_stealth\\)\\)\")",
+      "Bash(python3 -c \"from playwright_stealth import Stealth; help\\(Stealth\\)\")"
+    ]
+  }
+}

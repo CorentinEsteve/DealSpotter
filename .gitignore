@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+*.db
+bikeflip.log
+sample_alert.html
+sample_listing.html
+.browser_profile/
+lbc_cookies.json
+.venv/
+venv/
