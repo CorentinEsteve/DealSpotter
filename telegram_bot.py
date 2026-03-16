@@ -3,12 +3,23 @@ import asyncio
 from datetime import datetime
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
-from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, QUIET_HOURS_START, QUIET_HOURS_END
+from config import (
+    TELEGRAM_BOTS, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID,
+    ACTIVE_CATEGORIES, CATEGORIES,
+)
 
-log = logging.getLogger("bikeflip.telegram")
+log = logging.getLogger("dealspotter.telegram")
 
-# Queue for alerts generated during quiet hours
-_alert_queue = []
+def _get_bot_credentials(category: str = None) -> tuple:
+    """Get (token, chat_id) for a category. Falls back to bikes bot."""
+    if category and category in TELEGRAM_BOTS:
+        bot_cfg = TELEGRAM_BOTS[category]
+        token = bot_cfg.get("token")
+        chat_id = bot_cfg.get("chat_id")
+        if token and chat_id:
+            return token, chat_id
+    # Fallback to bikes / default bot
+    return TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
 
 def escape_md(text: str) -> str:
@@ -23,19 +34,13 @@ def escape_md(text: str) -> str:
     return escaped
 
 
-def is_quiet_hours() -> bool:
-    """Check if current time is within quiet hours."""
-    hour = datetime.now().hour
-    if QUIET_HOURS_START > QUIET_HOURS_END:
-        # Wraps midnight: e.g. 23:00 to 07:00
-        return hour >= QUIET_HOURS_START or hour < QUIET_HOURS_END
-    else:
-        return QUIET_HOURS_START <= hour < QUIET_HOURS_END
-
-
 def format_alert_message(listing: dict, evaluation: dict, margin: dict) -> str:
     """Format a rich alert message in MarkdownV2 for Telegram."""
-    item_name = escape_md(evaluation.get("ai_item_name", listing.get("title", "Vélo")))
+    # Category-aware header
+    category_label = evaluation.get("category_label", "🚲 Vélo")
+    header_emoji = category_label.split(" ")[0] if category_label else "🔔"
+
+    item_name = escape_md(evaluation.get("ai_item_name", listing.get("title", "Article")))
     location = escape_md(listing.get("location", "Inconnu"))
     buy_price = listing.get("price", 0)
     resale_min = margin.get("resale_min", 0)
@@ -47,7 +52,7 @@ def format_alert_message(listing: dict, evaluation: dict, margin: dict) -> str:
     url = listing.get("url", "")
 
     msg = (
-        f"🚲 *OPPORTUNITÉ FLIP*\n\n"
+        f"{header_emoji} *OPPORTUNITÉ FLIP*\n\n"
         f"*{item_name}*\n"
         f"📍 {location}\n\n"
         f"💰 Achat: {escape_md(str(int(buy_price)))}€\n"
@@ -80,21 +85,23 @@ def build_inline_keyboard(lbc_id: str) -> InlineKeyboardMarkup:
 
 async def _send_alert_async(listing: dict, evaluation: dict, margin: dict):
     """Send a single alert message via Telegram (async)."""
-    bot = Bot(token=TELEGRAM_BOT_TOKEN)
+    category = evaluation.get("category", "bikes")
+    token, chat_id = _get_bot_credentials(category)
+    bot = Bot(token=token)
     message = format_alert_message(listing, evaluation, margin)
     keyboard = build_inline_keyboard(listing["lbc_id"])
 
     try:
         await bot.send_message(
-            chat_id=TELEGRAM_CHAT_ID,
+            chat_id=chat_id,
             text=message,
             parse_mode="MarkdownV2",
             reply_markup=keyboard,
             disable_web_page_preview=False,
         )
-        log.info(f"[telegram] {listing['lbc_id']} — Alert sent")
+        log.info(f"[telegram:{category}] {listing['lbc_id']} — Alert sent")
     except Exception as e:
-        log.error(f"[telegram] {listing['lbc_id']} — Failed to send alert: {e}")
+        log.error(f"[telegram:{category}] {listing['lbc_id']} — Failed to send alert: {e}")
         raise
 
 
@@ -103,37 +110,20 @@ def send_telegram_alert(listing: dict, evaluation: dict, margin: dict):
     asyncio.run(_send_alert_async(listing, evaluation, margin))
 
 
-def queue_alert(listing: dict, evaluation: dict, margin: dict):
-    """Queue an alert for later sending (during quiet hours)."""
-    _alert_queue.append((listing, evaluation, margin))
-    log.info(f"[telegram] {listing['lbc_id']} — Queued (quiet hours)")
 
-
-def send_queued_alerts():
-    """Send all queued alerts. Called when quiet hours end."""
-    if not _alert_queue:
-        return
-    log.info(f"[telegram] Sending {len(_alert_queue)} queued alerts")
-    for listing, evaluation, margin in _alert_queue:
-        try:
-            send_telegram_alert(listing, evaluation, margin)
-        except Exception as e:
-            log.error(f"[telegram] Failed to send queued alert: {e}")
-    _alert_queue.clear()
-
-
-async def _send_text_async(text: str):
+async def _send_text_async(text: str, category: str = None):
     """Send a plain text message via Telegram."""
-    bot = Bot(token=TELEGRAM_BOT_TOKEN)
-    await bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=text)
+    token, chat_id = _get_bot_credentials(category)
+    bot = Bot(token=token)
+    await bot.send_message(chat_id=chat_id, text=text)
 
 
-def send_telegram_text(text: str):
+def send_telegram_text(text: str, category: str = None):
     """Send a plain text message (sync wrapper)."""
-    asyncio.run(_send_text_async(text))
+    asyncio.run(_send_text_async(text, category))
 
 
-# --- Callback handlers (for T12) ---
+# --- Callback handlers ---
 
 async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle inline keyboard button presses."""
@@ -168,14 +158,13 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             listing = db.get_listing(lbc_id)
             if listing:
                 from evaluator import evaluate_with_vision
-                result = evaluate_with_vision(listing)
+                category = listing.get("category", "bikes")
+                result = evaluate_with_vision(listing, category)
                 if result:
                     response = (
                         f"📸 Résultat analyse photos:\n\n"
-                        f"Identifié: {result.get('ai_item_name', 'N/A')}\n"
+                        f"Identifié: {result.get('item_name', 'N/A')}\n"
                         f"Marque: {result.get('brand', 'N/A')}\n"
-                        f"Matériau: {result.get('frame_material', 'N/A')}\n"
-                        f"Groupe: {result.get('component_group', 'N/A')}\n"
                         f"Condition: {result.get('condition', 'N/A')}\n"
                         f"Confiance: {result.get('confidence', 'N/A')}\n"
                         f"Revente: {result.get('estimated_resale_min', '?')}–{result.get('estimated_resale_max', '?')}€"
@@ -203,106 +192,183 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             pass
 
 
-async def status_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle /status command."""
-    import db
-    from datetime import date
+def _make_status_handler(bot_categories: list):
+    """Create a /status handler scoped to specific categories."""
+    async def status_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+        import db
 
-    pending = len(db.get_pending_listings())
-    alerts_today = db.get_alerts_today_count()
-    stats = db.get_stats()
+        if len(bot_categories) == 1:
+            cat = bot_categories[0]
+            cat_config = CATEGORIES.get(cat, {})
+            label = cat_config.get("label", cat)
+            stats = db.get_stats(cat)
+            detailed = db.get_detailed_stats(cat)
 
-    text = (
-        f"📊 Status\n\n"
-        f"En attente: {pending}\n"
-        f"Alertes aujourd'hui: {alerts_today}/{10}\n"
-        f"Total traité: {stats['total']}\n"
-        f"Skippé: {stats['skipped']}\n"
-        f"Alerté: {stats['alerted']}\n"
-        f"Intéressé: {stats['interested']}"
-    )
-    await update.message.reply_text(text)
+            total = stats["total"]
+            evaluated = stats["evaluated"]
+            eval_pct = f"{evaluated / total * 100:.0f}%" if total > 0 else "—"
+            new_today = detailed.get("new_today", 0)
+            alerts_today = db.get_alerts_today_count(cat)
 
+            text = (
+                f"{label} DealSpotter\n"
+                f"━━━━━━━━━━━━━━━━━━━━\n\n"
+                f"📬 Alertes aujourd'hui: {alerts_today}\n"
+                f"📊 Nouvelles annonces: {new_today}\n\n"
+                f"🔍 Total scanné: {total}\n"
+                f"🤖 Évalué par IA: {evaluated} ({eval_pct})\n"
+                f"✅ Total alertes: {stats['alerted']}\n"
+                f"⭐ Intéressé: {stats['interested']}\n\n"
+                f"📎 /stats pour le détail complet"
+            )
+        else:
+            # Multi-category bot (both)
+            alerts_today = db.get_alerts_today_count()
+            stats = db.get_stats()
+            detailed = db.get_detailed_stats()
+            total = stats["total"]
+            evaluated = stats["evaluated"]
+            eval_pct = f"{evaluated / total * 100:.0f}%" if total > 0 else "—"
+            new_today = detailed.get("new_today", 0)
 
-async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle /stats command with detailed breakdown."""
-    import db
+            text = (
+                f"🔎 DealSpotter\n"
+                f"━━━━━━━━━━━━━━━━━━━━\n\n"
+                f"📬 Alertes aujourd'hui: {alerts_today}\n"
+                f"📊 Nouvelles annonces: {new_today}\n\n"
+                f"🔍 Total scanné: {total}\n"
+                f"🤖 Évalué par IA: {evaluated} ({eval_pct})\n"
+                f"✅ Total alertes: {stats['alerted']}\n"
+                f"⭐ Intéressé: {stats['interested']}\n"
+            )
+            text += "\n"
+            for cat in bot_categories:
+                cat_config = CATEGORIES.get(cat, {})
+                cat_label = cat_config.get("label", cat)
+                cat_stats = db.get_stats(cat)
+                cat_alerts = db.get_alerts_today_count(cat)
+                text += f"{cat_label}: {cat_stats['total']} scannées, {cat_alerts} alertes aujourd'hui\n"
+            text += f"\n📎 /stats pour le détail complet"
 
-    stats = db.get_detailed_stats()
-
-    # Skip reasons summary (top 5)
-    skip_lines = ""
-    if stats.get("skip_reasons"):
-        top = sorted(stats["skip_reasons"].items(), key=lambda x: -x[1])[:5]
-        skip_lines = "\n".join(f"  • {reason}: {count}" for reason, count in top)
-        skip_lines = f"\n\n🚫 Top raisons de skip:\n{skip_lines}"
-
-    # Margin info
-    margin_lines = ""
-    if stats.get("margin_avg"):
-        margin_lines = (
-            f"\n\n💰 Marges (annonces évaluées):\n"
-            f"  Moyenne: {stats['margin_avg']}€\n"
-            f"  Meilleure: {stats['margin_best']}€\n"
-            f"  Pire: {stats['margin_worst']}€\n"
-            f"  Positives: {stats['margin_positive']} | Négatives: {stats['margin_negative']}"
-        )
-
-    # Price range
-    price_lines = ""
-    if stats.get("price_avg"):
-        price_lines = (
-            f"\n\n🏷️ Prix évalués: {stats['price_min']}–{stats['price_max']}€ "
-            f"(moy. {stats['price_avg']}€)"
-        )
-
-    text = (
-        f"📈 Statistiques DealSpotter\n\n"
-        f"📊 Pipeline:\n"
-        f"  Total annonces: {stats['total']}\n"
-        f"  Nouvelles aujourd'hui: {stats['new_today']}\n"
-        f"  Évaluées: {stats['evaluated']}\n"
-        f"  Alertées: {stats['alerted']}\n"
-        f"  Skippées: {stats['skipped']}\n"
-        f"  Intéressé: {stats['interested']}"
-        f"{skip_lines}{margin_lines}{price_lines}\n\n"
-        f"👍👎 Feedback:\n"
-        f"  Bon deal: {stats['good_feedback']} | Mauvais: {stats['bad_feedback']}"
-    )
-    await update.message.reply_text(text)
+        await update.message.reply_text(text)
+    return status_command
 
 
-def start_telegram_bot_async():
-    """Start the Telegram bot in a background thread for callback handling.
+def _make_stats_handler(bot_categories: list):
+    """Create a /stats handler scoped to specific categories."""
+    async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+        import db
 
-    Uses asyncio directly instead of run_polling() to avoid signal handler
-    issues (signal handlers can only be set in the main thread).
+        text = f"📈 DealSpotter — Stats détaillées\n"
+        text += f"━━━━━━━━━━━━━━━━━━\n"
+
+        for cat in bot_categories:
+            cat_config = CATEGORIES.get(cat, {})
+            label = cat_config.get("label", cat)
+            stats = db.get_detailed_stats(cat)
+            total = stats["total"]
+            evaluated = stats["evaluated"]
+            alerted = stats["alerted"]
+
+            if total == 0:
+                text += f"\n{label}: aucune annonce encore\n"
+                continue
+
+            eval_pct = f"{evaluated / total * 100:.0f}%" if total > 0 else "—"
+            alert_pct = f"{alerted / evaluated * 100:.1f}%" if evaluated > 0 else "—"
+
+            text += f"\n{label}\n"
+            text += (
+                f"  🔄 {total} scannées → {evaluated} évaluées ({eval_pct}) → {alerted} alertées ({alert_pct})\n"
+                f"  Nouvelles aujourd'hui: {stats.get('new_today', 0)}\n"
+                f"  Intéressé: {stats.get('interested', 0)}\n"
+            )
+
+            if stats.get("margin_avg") and stats["margin_avg"] != 0:
+                pos = stats["margin_positive"]
+                neg = stats["margin_negative"]
+                pos_pct = f"{pos / (pos + neg) * 100:.0f}%" if (pos + neg) > 0 else "—"
+                text += (
+                    f"  💰 Marge moy: {stats['margin_avg']}€ | "
+                    f"Best: +{stats['margin_best']}€ | "
+                    f"Rentables: {pos}/{pos + neg} ({pos_pct})\n"
+                )
+
+        # Skip reasons + feedback (across all shown categories)
+        text += f"\n━━━━━━━━━━━━━━━━━━\n"
+        if len(bot_categories) == 1:
+            global_stats = db.get_detailed_stats(bot_categories[0])
+        else:
+            global_stats = db.get_detailed_stats()
+
+        if global_stats.get("skip_reasons"):
+            top = sorted(global_stats["skip_reasons"].items(), key=lambda x: -x[1])[:5]
+            lines = "\n".join(f"  {reason}: {count}" for reason, count in top)
+            text += f"🚫 Top filtres:\n{lines}\n"
+
+        good = global_stats.get("good_feedback", 0)
+        bad = global_stats.get("bad_feedback", 0)
+        fb_total = good + bad
+        if fb_total > 0:
+            text += f"\n👍 {good}  👎 {bad}  ({fb_total} labels)\n"
+        else:
+            text += f"\n⚠️ 0 feedback — utilise 👍/👎 sur les alertes!\n"
+
+        await update.message.reply_text(text)
+    return stats_command
+
+
+def start_telegram_bots(categories: list = None):
+    """Start Telegram bot(s) in background thread(s) for callback handling.
+
+    Each unique bot token gets its own polling thread.
+    If both categories share the same token, only one bot is started.
     """
-    import asyncio
     import threading
 
-    async def run_bot():
-        app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
-        app.add_handler(CallbackQueryHandler(button_callback))
-        app.add_handler(CommandHandler("status", status_command))
-        app.add_handler(CommandHandler("stats", stats_command))
+    if categories is None:
+        categories = list(ACTIVE_CATEGORIES)
 
-        await app.initialize()
-        await app.start()
-        await app.updater.start_polling(drop_pending_updates=True)
-        log.info("[telegram] Bot started, listening for callbacks")
+    # Group categories by bot token (avoid starting same bot twice)
+    token_groups = {}  # token -> list of categories
+    for cat in categories:
+        token, chat_id = _get_bot_credentials(cat)
+        if not token or not chat_id:
+            log.warning(f"[telegram] No bot configured for '{cat}' — skipping")
+            continue
+        token_groups.setdefault(token, []).append(cat)
 
-        # Keep running until the thread is killed (daemon thread)
-        stop_event = asyncio.Event()
-        await stop_event.wait()
+    for token, cats in token_groups.items():
+        cat_labels = ", ".join(cats)
 
-    def thread_target():
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        try:
-            loop.run_until_complete(run_bot())
-        except Exception as e:
-            log.error(f"[telegram] Bot thread error: {e}")
+        async def run_bot(bot_token=token, bot_categories=cats):
+            app = Application.builder().token(bot_token).build()
+            app.add_handler(CallbackQueryHandler(button_callback))
+            app.add_handler(CommandHandler("status", _make_status_handler(bot_categories)))
+            app.add_handler(CommandHandler("stats", _make_stats_handler(bot_categories)))
 
-    thread = threading.Thread(target=thread_target, daemon=True)
-    thread.start()
+            await app.initialize()
+            await app.start()
+            await app.updater.start_polling(drop_pending_updates=True)
+            log.info(f"[telegram] Bot started for [{', '.join(bot_categories)}]")
+
+            stop_event = asyncio.Event()
+            await stop_event.wait()
+
+        def thread_target(coro=run_bot):
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                loop.run_until_complete(coro())
+            except Exception as e:
+                log.error(f"[telegram] Bot thread error: {e}")
+
+        thread = threading.Thread(target=thread_target, daemon=True)
+        thread.start()
+        log.info(f"[telegram] Starting bot thread for [{cat_labels}]")
+
+
+# Backward compat alias
+def start_telegram_bot_async():
+    """Start all configured Telegram bots."""
+    start_telegram_bots()

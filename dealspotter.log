@@ -1,0 +1,1284 @@
+2026-03-16 00:48:23 INFO  [pipeline] [furniture] Cycle queries (9): chaise design, lampe design, table basse design, miroir vintage, vitra eames, cassina, flos arco, artemide, charlotte perriand
+2026-03-16 00:48:23 INFO  [pipeline] [bikes] Cycle queries (8): velo course, velo route, velo gravel, trek velo, specialized velo, giant velo, canyon velo, velo peugeot course
+2026-03-16 00:48:29 INFO  [pipeline] [furniture] Cycle queries (9): chaise design, lampe design, table basse design, miroir vintage, vitra eames, cassina, flos arco, artemide, charlotte perriand
+2026-03-16 00:48:29 INFO  [pipeline] [furniture] Cycle queries (9): chaise design, lampe design, table basse design, miroir vintage, knoll, herman miller, fritz hansen, hay design, noguchi
+2026-03-16 00:48:29 INFO  [pipeline] [furniture] Cycle queries (9): chaise design, lampe design, table basse design, miroir vintage, murano, ligne roset, vitra eames, cassina, le corbusier mobilier
+2026-03-16 00:52:39 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois
+2026-03-16 00:52:39 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, fauteuil vintage, luminaire ancien
+2026-03-16 00:52:39 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois
+2026-03-16 00:53:24 INFO  DealSpotter starting...
+2026-03-16 00:53:24 INFO  Migrated bikeflip.db → dealspotter.db
+2026-03-16 00:53:24 INFO  Migration: added 'category' column to listings table
+2026-03-16 00:53:24 INFO  Database initialized
+2026-03-16 00:53:24 INFO  🚲 Vélo — 19 search queries (Tier A: 3, Tier B: 12, Tier C: 4)
+2026-03-16 00:53:24 INFO  🪑 Mobilier design — 8 search queries (Tier A: 4, Tier B: 4)
+2026-03-16 00:53:25 INFO  [telegram] Bot started, listening for callbacks
+2026-03-16 00:53:25 INFO  [pipeline] Telegram bot listener started
+2026-03-16 00:53:25 INFO  [pipeline] ── 🚲 Vélo ──────────────────────────────────
+2026-03-16 00:53:25 INFO  [pipeline] [bikes] Cycle queries (8): velo course, velo route, velo gravel, trek velo, specialized velo, giant velo, canyon velo, velo peugeot course
+2026-03-16 00:53:26 INFO  [scraper] 'velo course' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 00:53:30 INFO  [scraper] 'velo course' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 00:53:34 INFO  [scraper] 'velo course' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 00:53:34 INFO  [scraper] 'velo course' returned 105 total listings
+2026-03-16 00:53:34 INFO  [pipeline] [bikes] 'velo course': 105 listings
+2026-03-16 00:53:37 INFO  [scraper] 'velo route' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 00:53:41 INFO  [scraper] 'velo route' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 00:53:45 INFO  [scraper] 'velo route' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 00:53:45 INFO  [scraper] 'velo route' returned 105 total listings
+2026-03-16 00:53:45 INFO  [pipeline] [bikes] 'velo route': 105 listings
+2026-03-16 00:53:50 INFO  [scraper] 'velo gravel' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 00:53:54 INFO  [scraper] 'velo gravel' page 2/2: 34 listings (total available: 2 pages)
+2026-03-16 00:53:54 INFO  [scraper] 'velo gravel' returned 69 total listings
+2026-03-16 00:53:54 INFO  [pipeline] [bikes] 'velo gravel': 69 listings
+2026-03-16 00:53:58 INFO  [scraper] 'trek velo' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 00:54:02 INFO  [scraper] 'trek velo' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 00:54:05 INFO  [scraper] 'trek velo' page 3/3: 7 listings (total available: 3 pages)
+2026-03-16 00:54:05 INFO  [scraper] 'trek velo' returned 77 total listings
+2026-03-16 00:54:05 INFO  [pipeline] [bikes] 'trek velo': 77 listings
+2026-03-16 00:54:10 INFO  [scraper] 'specialized velo' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 00:54:14 INFO  [scraper] 'specialized velo' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 00:54:17 INFO  [scraper] 'specialized velo' page 3/3: 14 listings (total available: 3 pages)
+2026-03-16 00:54:17 INFO  [scraper] 'specialized velo' returned 84 total listings
+2026-03-16 00:54:17 INFO  [pipeline] [bikes] 'specialized velo': 84 listings
+2026-03-16 00:54:20 INFO  [scraper] 'giant velo' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 00:54:24 INFO  [scraper] 'giant velo' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 00:54:28 INFO  [scraper] 'giant velo' page 3/3: 33 listings (total available: 3 pages)
+2026-03-16 00:54:28 INFO  [scraper] 'giant velo' returned 103 total listings
+2026-03-16 00:54:28 INFO  [pipeline] [bikes] 'giant velo': 103 listings
+2026-03-16 01:05:09 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 01:05:09 INFO  Database initialized
+2026-03-16 01:05:09 INFO  🪑 Mobilier design — 8 search queries (Tier A: 4, Tier B: 4)
+2026-03-16 01:05:09 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 01:05:10 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 01:05:10 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois
+2026-03-16 01:05:11 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:05:13 INFO  [telegram] Bot started for [furniture]
+2026-03-16 01:05:15 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:05:18 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:05:18 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 01:05:18 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 01:05:22 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 01:05:26 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 01:05:30 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 01:05:30 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 01:05:30 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 01:05:35 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:05:39 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:05:41 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:05:41 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 01:05:41 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 01:05:46 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 01:05:50 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 01:05:53 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 01:05:53 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 01:05:53 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 01:05:58 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 01:06:00 INFO  [scraper] 'lampadaire vintage' page 2/2: 4 listings (total available: 2 pages)
+2026-03-16 01:06:00 INFO  [scraper] 'lampadaire vintage' returned 39 total listings
+2026-03-16 01:06:00 INFO  [pipeline] [furniture] 'lampadaire vintage': 39 listings
+2026-03-16 01:06:03 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 01:06:06 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 01:06:10 INFO  [scraper] 'tabouret vintage bois' page 3/3: 35 listings (total available: 3 pages)
+2026-03-16 01:06:10 INFO  [scraper] 'tabouret vintage bois' returned 105 total listings
+2026-03-16 01:06:10 INFO  [pipeline] [furniture] 'tabouret vintage bois': 105 listings
+2026-03-16 01:06:13 INFO  [pipeline] [furniture] 528 unique listings from 6 queries
+2026-03-16 01:06:13 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/ad/ameublement/3161648291 (status=403)
+2026-03-16 01:06:13 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 01:06:13 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 01:06:13 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/ad/ameublement/3161648291 (status=403)
+2026-03-16 01:06:13 WARNING [pipeline] [furniture] 3161648291 — scrape failed
+2026-03-16 01:06:13 INFO  [pipeline] [furniture] 3161563330 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:14 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/ad/ameublement/3161209429 (status=403)
+2026-03-16 01:06:14 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 01:06:14 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 01:06:14 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/ad/ameublement/3161209429 (status=403)
+2026-03-16 01:06:14 WARNING [pipeline] [furniture] 3161209429 — scrape failed
+2026-03-16 01:06:14 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/ad/ameublement/3160777837 (status=403)
+2026-03-16 01:06:14 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 01:06:14 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 01:06:15 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/ad/ameublement/3160777837 (status=403)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160777837 — scrape failed
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3160722378 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160312108 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3160008512 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159947016 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159692235 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159551746 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3159343533 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159172888 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158805983 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158797417 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3155301123 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158332125 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157517673 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157509680 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157501516 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3156806792 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3156799456 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3154346363 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153539154 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153072143 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3152567135 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3152467215 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3151804591 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3150956859 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3148154776 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3147007313 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146804046 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3146657347 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146436355 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146253033 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146189978 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3145694585 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3138539862 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3143743540 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3140970406 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3139703746 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3139611063 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3137873979 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3137490200 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3137220889 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3137121344 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3136574033 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3134540784 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3133969518 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3133572298 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3131588671 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3131578721 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3130709816 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3130504997 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3130230644 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3129725189 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3128053415 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3127625874 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3126928151 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3126477758 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3125413808 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3123857328 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3123362477 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3123079683 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3122369141 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3122013560 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3121927322 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3120676163 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3118316809 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3116958238 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3116039755 — pre-filtered: mot_clé_bloqué (but)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3110933439 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3109796556 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3108680486 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3108378474 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3106457395 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3106264479 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3105414937 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3104323877 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3103866654 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3103624041 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3103375846 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3100735818 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3098388549 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3096315568 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3096293073 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3095869410 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3095862598 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3094407087 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3092069818 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3091384757 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3084908748 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3084297938 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3083061276 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3082272671 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3079790355 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3079701530 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3079530810 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3063278401 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3060764081 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3058985881 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3058109135 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3056769217 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3052684059 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3050951946 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3048531081 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162578573 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162520262 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3015291902 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161586110 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161230018 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161130208 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160976716 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160973924 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160412111 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3147409019 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160010230 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159984074 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159874844 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159817044 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159306213 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159250080 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3158776948 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158545889 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157940574 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3156275995 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3155415626 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3154940745 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3152973435 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3138009800 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3149522110 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3148403380 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3147903557 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3147824526 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3145736965 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3145666706 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3145578680 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3145163483 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3144556403 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3142648351 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3140520542 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3139481642 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3137770329 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3137237911 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3136878346 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3136334057 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3135994261 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3134356748 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3134282069 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3134279794 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3134021997 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3132665579 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3132209915 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3131644583 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3131488799 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3131391592 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3129605492 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3127303093 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3125306736 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3124841319 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3123925776 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3123123827 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3122178685 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3122170258 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3122106478 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3122105749 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3121251766 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3121074564 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3120556372 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3120515662 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3120507341 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3120440702 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3118655536 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3117175367 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3116603622 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3115260868 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3115129532 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3114488760 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3113395210 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3113393220 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3112909223 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3111726550 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3110199335 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3110036056 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3106372553 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3105253428 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3104016634 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3102222993 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3096289052 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3093122393 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3092788764 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3091940389 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3091679018 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3090535860 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3088598161 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3086889869 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3085203736 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3084152299 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3083541336 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3080682732 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3079871654 — pre-filtered: mot_clé_bloqué (but)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3077044580 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3074368045 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3130608150 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162230389 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162050900 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161694067 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161692502 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161690045 — pre-filtered: mot_clé_bloqué (lit)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161686386 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161684022 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161678060 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161675044 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161670801 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161280618 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160999002 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3160943665 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3160308266 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3160267980 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3160210072 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158958149 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3109038221 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158578922 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3158142131 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158062279 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3156124796 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3155181971 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3154038640 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3153983313 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153376322 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153247393 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3153190439 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153038441 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3152791481 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3151092047 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3149154882 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3148931024 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3148113556 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3148085987 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3148054136 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3147945601 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3145805968 — pre-filtered: mot_clé_bloqué (lit)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3145750345 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3144304508 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3143203298 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3143186820 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3142430913 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3142342691 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3141023877 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3138776628 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3135864473 — pre-filtered: mot_clé_bloqué (salle de bain)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3135853076 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3135772432 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3135476548 — pre-filtered: mot_clé_bloqué (salle de bain)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3135091873 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3134904844 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3134577546 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3133704988 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3131197876 — pre-filtered: mot_clé_bloqué (salle de bain)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3128877778 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3128580394 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3095132498 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3124554326 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3123950772 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3120491944 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3118640175 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3115998528 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3112708662 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3108144184 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3107850214 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3105021544 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3102196346 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3100221061 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3098662592 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3097513875 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3096284051 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3095538239 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3094923523 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3091730718 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3086876119 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3086836819 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3079692625 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3079383492 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3074752606 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3069030708 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3044329431 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3066284310 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3065147736 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3061996992 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3059427787 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3051208304 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3049930207 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3049802321 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3049631788 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3049324933 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3049172918 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3046198129 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3034574865 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3033842923 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3032425318 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3019849093 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3019407722 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3017146771 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3016813557 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162521335 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162506804 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162492895 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162385632 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3162328413 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162320431 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162317950 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153273620 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162281728 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162249806 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3162070722 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161368692 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161959674 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161600223 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3154558477 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157521293 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3161463961 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161406477 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161366833 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161275675 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3153648605 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3161041506 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160966585 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160948079 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160945470 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160901305 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160869704 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160819944 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3160749167 — pre-filtered: mot_clé_bloqué (cuisine)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160727201 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3153227181 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3160374019 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159848352 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159751844 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3143377363 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159566690 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159525158 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159496308 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159450524 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159237571 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159192687 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159100124 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3159038606 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3159035027 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158942071 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158723046 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158555962 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158535599 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158495826 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158377079 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157614446 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157437707 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157437596 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3157351811 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3156826779 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3156227390 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3156150559 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3155887060 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3155549315 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3155404655 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3155355258 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3154560953 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3154550968 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3154418740 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3154020601 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3153938270 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3153647742 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153361805 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153340127 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3153316461 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3153080286 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3151150639 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3151053954 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3150177087 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3150033474 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3149727189 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3149110940 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3132976551 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3148830694 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3148170421 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3147950654 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3147923648 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146943112 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146768034 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146446231 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3146333373 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3146241623 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3145178527 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 INFO  [pipeline] [furniture] 3144517576 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3144514483 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3143869374 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3143539159 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3142946278 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3158572747 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3147613261 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3105739707 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3105207353 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3097313609 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3092256003 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3091175991 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3065888370 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3065863757 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3060467319 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:15 WARNING [pipeline] [furniture] 3043144936 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3039475932 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3030818776 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3030364656 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3027000869 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3026438019 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2996626711 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2996207768 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2956695190 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2946194151 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2944662647 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2936390825 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 INFO  [pipeline] [furniture] 2917801334 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2891498118 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2798362357 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2538021993 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2294773271 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2217112115 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2165663067 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2151345884 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 1938705905 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 1921997496 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 869448101 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3162588615 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3162487770 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3162435032 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3162428155 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3162089356 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3160896629 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3159766441 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3157827918 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3157423397 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3156728792 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3154382684 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3152432748 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3151671180 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3151185695 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3148550407 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3148448898 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3147391671 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3146510785 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3146243567 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3145753072 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 INFO  [pipeline] [furniture] 3145736357 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3145468030 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3142183933 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3137335037 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3137256723 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3134620507 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3133445574 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3133012803 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3130668044 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3129605189 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3122907310 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3122899752 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3121417423 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3121254356 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3119195538 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3118649325 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3116957439 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3116954886 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3116055436 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3112993194 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3108675523 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3107723656 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3107550124 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3088785237 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3085770154 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3085486282 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3083527797 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3082790338 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3076870787 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3074646298 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3074430083 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3072224984 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3066058133 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3064803175 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3063857075 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3059728890 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3055463849 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3040893059 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3024730351 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 3020718256 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2988970456 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2988191785 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2977391147 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2975622797 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2961189542 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2959174840 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 INFO  [pipeline] [furniture] 2938975365 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2928765107 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2910737071 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2909676777 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2904799172 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2885186079 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2878324829 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2878323718 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2878322619 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2870718633 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2860095471 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2856925030 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2848869255 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2835030607 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2632564322 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2484878523 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 INFO  [pipeline] [furniture] 2459740077 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2421952896 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2420734953 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2400499469 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2381685140 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2381168552 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2319617808 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2285800390 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2302405561 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2266372223 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2234232529 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2160957782 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2076722961 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2059960610 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2011879264 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 1994416290 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 WARNING [pipeline] [furniture] 2004488885 — scraping paused (3+ failures), skipping
+2026-03-16 01:06:16 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 528 | Already seen: 0 | New: 528
+  Pre-filtered: 85 | Scrape failed: 443
+  AI evaluated: 0 | Eval failed: 0 | Alerted: 0 | top skip: mot_clé_bloqué (armoire) (23), mot_clé_bloqué (lot de) (16), annonce_épave (cassé) (12), mot_clé_bloqué (ikea) (12), mot_clé_bloqué (canapé) (8)
+  ──────────────────────────────────────────────────────────
+2026-03-16 01:06:16 INFO  [pipeline] [furniture] DB totals: 528 total | 0 evaluated | 88 skipped | 0 alerted | 0 interested
+2026-03-16 01:06:16 INFO  Scheduler running — polling every 300s
+2026-03-16 01:11:16 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 01:11:16 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, fauteuil vintage, luminaire ancien
+2026-03-16 01:11:16 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:11:20 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:11:23 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:11:23 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 01:11:23 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 01:11:26 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 01:11:29 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 01:11:32 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 01:11:32 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 01:11:32 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 01:11:37 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:11:41 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:11:43 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:11:43 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 01:11:43 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 01:11:46 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 01:11:50 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 01:11:55 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 01:11:55 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 01:11:55 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 01:12:00 INFO  [scraper] 'fauteuil vintage' page 1/3: 35 listings (total available: 22 pages)
+2026-03-16 01:12:03 INFO  [scraper] 'fauteuil vintage' page 2/3: 35 listings (total available: 22 pages)
+2026-03-16 01:12:05 INFO  [scraper] 'fauteuil vintage' page 3/3: 35 listings (total available: 22 pages)
+2026-03-16 01:12:05 INFO  [scraper] 'fauteuil vintage' returned 105 total listings
+2026-03-16 01:12:05 INFO  [pipeline] [furniture] 'fauteuil vintage': 105 listings
+2026-03-16 01:12:09 INFO  [scraper] 'luminaire ancien' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:12:12 INFO  [scraper] 'luminaire ancien' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:12:15 INFO  [scraper] 'luminaire ancien' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:12:15 INFO  [scraper] 'luminaire ancien' returned 105 total listings
+2026-03-16 01:12:15 INFO  [pipeline] [furniture] 'luminaire ancien': 105 listings
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 575 unique listings from 6 queries
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3162593184 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3162399071 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3162323022 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3162314286 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161973747 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161918381 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161832446 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161767585 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161655983 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161587715 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161578453 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161447901 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161352210 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3161271896 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3154596606 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3145952899 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3158206381 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3160758329 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3160712296 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3160417043 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3160268426 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3160179773 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3159976155 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3159906734 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3159767750 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3142197299 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3159134521 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3158865449 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3158726171 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3158697481 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3071647879 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3158596520 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3158368658 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3158352495 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3144101133 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3158225914 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3158122307 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3158025110 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3157487310 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3157336443 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3157241805 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3157183017 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3156932645 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3156755589 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3156208517 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3155890661 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3155320168 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3155277834 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3154976769 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3052372166 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3154566769 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3154427101 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3154328923 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3154148485 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153966707 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153945027 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153876544 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153747909 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153576356 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3153540492 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153483491 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153465216 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3153432422 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3152978651 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3152955990 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3152882161 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3152337082 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3151827456 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3151633673 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3133660418 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3151579287 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3151568378 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3149784711 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3149564952 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3149439442 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3149391656 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3149375619 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3149288163 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3148413533 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3148345276 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3147959684 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3147677321 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3147280649 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3147093069 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3160538752 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3149909147 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3146822038 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3145582542 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3145164273 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3145021444 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3061877943 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3139899567 — pre-filtered: annonce_épave (cassé)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3137580420 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3135557125 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3130768870 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3130602951 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3129575923 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3122449164 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3120798185 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3119717728 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3116030967 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3112737539 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3110169630 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3109447889 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3107956026 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3100791472 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3096246678 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3094053144 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3091778088 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3091758226 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3089838137 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 3082614364 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3080900384 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3078524050 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3075190135 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3075188153 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3071398312 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3070881778 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3067163816 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3064313903 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3056641492 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3054154813 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3053924199 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3049813897 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3048709231 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3048384991 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3048366494 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3047256085 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3046645787 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3044839724 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3044827284 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3032117185 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3008622655 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3002560480 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3025268637 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3016923886 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3014795480 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 3012792915 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2999355958 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2993661757 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2958124367 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2980557970 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2973959284 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2973839562 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2971712318 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2961669637 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2959886162 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2953296006 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2949611832 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2946339447 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2945611553 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2941019566 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2927779938 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2927778199 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 2920095229 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2918667839 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2912800499 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2910347855 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2903872613 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2896769365 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2858369625 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2849754738 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2834551268 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2831363118 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2819032145 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2805111209 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 2799176160 — pre-filtered: mot_clé_bloqué (conforama)
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 2797709696 — pre-filtered: mot_clé_bloqué (ikea)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2749728426 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] 2728362575 — pre-filtered: mot_clé_bloqué (lot de)
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2719473076 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2712801530 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2704591454 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2698850546 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2649984064 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2636358806 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2088788693 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2608271124 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 WARNING [pipeline] [furniture] 2599983818 — scraping paused (3+ failures), skipping
+2026-03-16 01:12:18 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 575 | Already seen: 396 | New: 179
+  Pre-filtered: 18 | Scrape failed: 161
+  AI evaluated: 0 | Eval failed: 0 | Alerted: 0 | top skip: mot_clé_bloqué (ikea) (7), mot_clé_bloqué (enfant) (4), mot_clé_bloqué (lot de) (3), mot_clé_bloqué (canapé) (2), annonce_épave (cassé) (1)
+  ──────────────────────────────────────────────────────────
+2026-03-16 01:12:18 INFO  [pipeline] [furniture] DB totals: 707 total | 0 evaluated | 106 skipped | 0 alerted | 0 interested
+2026-03-16 01:13:04 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 01:13:04 INFO  Database initialized
+2026-03-16 01:13:04 INFO  🪑 Mobilier design — 8 search queries (Tier A: 4, Tier B: 4)
+2026-03-16 01:13:04 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 01:13:05 INFO  [telegram] Bot started for [furniture]
+2026-03-16 01:13:05 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 01:13:05 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois
+2026-03-16 01:13:06 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:13:09 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:13:13 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:13:13 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 01:13:13 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 01:13:17 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 01:13:22 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 01:13:26 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 01:13:26 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 01:13:26 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 01:13:29 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:13:33 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:13:36 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:13:36 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 01:13:36 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 01:13:40 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 01:13:44 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 01:13:47 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 01:13:47 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 01:13:47 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 01:13:51 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 01:13:55 INFO  [scraper] 'lampadaire vintage' page 2/2: 4 listings (total available: 2 pages)
+2026-03-16 01:13:55 INFO  [scraper] 'lampadaire vintage' returned 39 total listings
+2026-03-16 01:13:55 INFO  [pipeline] [furniture] 'lampadaire vintage': 39 listings
+2026-03-16 01:13:59 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 01:14:03 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 01:14:07 INFO  [scraper] 'tabouret vintage bois' page 3/3: 35 listings (total available: 3 pages)
+2026-03-16 01:14:07 INFO  [scraper] 'tabouret vintage bois' returned 105 total listings
+2026-03-16 01:14:07 INFO  [pipeline] [furniture] 'tabouret vintage bois': 105 listings
+2026-03-16 01:14:11 INFO  [pipeline] [furniture] 528 unique listings from 6 queries
+2026-03-16 01:14:11 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 528 | Already seen: 528 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 0 | Alerted: 0
+  ──────────────────────────────────────────────────────────
+2026-03-16 01:14:11 INFO  [pipeline] [furniture] DB totals: 707 total | 0 evaluated | 106 skipped | 0 alerted | 0 interested
+2026-03-16 01:14:11 INFO  Scheduler running — polling every 300s
+2026-03-16 01:19:11 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 01:19:11 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, fauteuil vintage, luminaire ancien
+2026-03-16 01:19:12 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:19:15 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:19:19 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:19:19 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 01:19:19 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 01:19:24 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 01:19:28 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 01:19:30 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 01:19:30 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 01:19:30 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 01:19:35 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:19:39 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:19:42 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:19:42 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 01:19:42 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 01:19:44 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 01:19:48 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 01:19:50 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 01:19:50 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 01:19:50 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 01:19:56 INFO  [scraper] 'fauteuil vintage' page 1/3: 35 listings (total available: 22 pages)
+2026-03-16 01:20:00 INFO  [scraper] 'fauteuil vintage' page 2/3: 35 listings (total available: 22 pages)
+2026-03-16 01:20:04 INFO  [scraper] 'fauteuil vintage' page 3/3: 35 listings (total available: 22 pages)
+2026-03-16 01:20:04 INFO  [scraper] 'fauteuil vintage' returned 105 total listings
+2026-03-16 01:20:04 INFO  [pipeline] [furniture] 'fauteuil vintage': 105 listings
+2026-03-16 01:20:09 INFO  [scraper] 'luminaire ancien' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:20:13 INFO  [scraper] 'luminaire ancien' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:20:16 INFO  [scraper] 'luminaire ancien' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:20:16 INFO  [scraper] 'luminaire ancien' returned 105 total listings
+2026-03-16 01:20:16 INFO  [pipeline] [furniture] 'luminaire ancien': 105 listings
+2026-03-16 01:20:21 INFO  [pipeline] [furniture] 575 unique listings from 6 queries
+2026-03-16 01:20:21 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 575 | Already seen: 575 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 0 | Alerted: 0
+  ──────────────────────────────────────────────────────────
+2026-03-16 01:20:22 INFO  [pipeline] [furniture] DB totals: 707 total | 0 evaluated | 106 skipped | 0 alerted | 0 interested
+2026-03-16 01:24:45 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 01:24:45 INFO  Database initialized
+2026-03-16 01:24:45 INFO  🪑 Mobilier design — 8 search queries (Tier A: 4, Tier B: 4)
+2026-03-16 01:24:45 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 01:24:45 INFO  [telegram] Bot started for [furniture]
+2026-03-16 01:24:46 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 01:24:46 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois
+2026-03-16 01:24:47 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:24:51 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:24:54 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:24:54 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 01:24:54 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 01:24:58 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 01:25:01 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 01:25:05 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 01:25:05 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 01:25:05 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 01:25:10 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:25:13 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:25:17 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:25:17 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 01:25:17 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 01:25:20 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 01:25:24 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 01:25:29 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 01:25:29 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 01:25:29 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 01:25:32 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 01:25:34 INFO  [scraper] 'lampadaire vintage' page 2/2: 4 listings (total available: 2 pages)
+2026-03-16 01:25:34 INFO  [scraper] 'lampadaire vintage' returned 39 total listings
+2026-03-16 01:25:34 INFO  [pipeline] [furniture] 'lampadaire vintage': 39 listings
+2026-03-16 01:25:37 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 01:25:40 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 01:25:43 INFO  [scraper] 'tabouret vintage bois' page 3/3: 35 listings (total available: 3 pages)
+2026-03-16 01:25:43 INFO  [scraper] 'tabouret vintage bois' returned 105 total listings
+2026-03-16 01:25:43 INFO  [pipeline] [furniture] 'tabouret vintage bois': 105 listings
+2026-03-16 01:25:47 INFO  [pipeline] [furniture] 528 unique listings from 6 queries
+2026-03-16 01:25:47 INFO  [pipeline] [furniture] 601 pending listings in DB, evaluating up to 30
+2026-03-16 01:26:10 INFO  [evaluator] 3160312108 — Tier 2 vision — confidence 0.65
+2026-03-16 01:26:10 INFO  [pipeline] [furniture] 3160312108 (pending) — margin 32.6€ (ROI 40.7%) — ALERT
+2026-03-16 01:26:10 INFO  [telegram] 3160312108 — Queued (quiet hours)
+2026-03-16 01:26:37 INFO  [evaluator] 3159947016 — Tier 2 vision — confidence 0.78
+2026-03-16 01:26:37 INFO  [pipeline] [furniture] 3159947016 (pending) — margin 292.8€ (ROI 496.3%) — ALERT
+2026-03-16 01:26:37 INFO  [telegram] 3159947016 — Queued (quiet hours)
+2026-03-16 01:27:05 INFO  [evaluator] 3159692235 — Tier 2 vision — confidence 0.62
+2026-03-16 01:27:05 INFO  [pipeline] [furniture] 3159692235 (pending) — margin 874.0€ (ROI 437.0%) — ALERT
+2026-03-16 01:27:05 INFO  [telegram] 3159692235 — Queued (quiet hours)
+2026-03-16 01:27:24 INFO  [evaluator] 3159551746 — Tier 2 vision — confidence 0.62
+2026-03-16 01:27:25 INFO  [pipeline] [furniture] 3159551746 (pending) — margin 77.6€ (ROI 51.7%) — ALERT
+2026-03-16 01:27:25 INFO  [telegram] 3159551746 — Queued (quiet hours)
+2026-03-16 01:27:49 INFO  [evaluator] 3159172888 — Tier 2 vision — confidence 0.72
+2026-03-16 01:27:50 INFO  [pipeline] [furniture] 3159172888 (pending) — margin 143.2€ (ROI 57.3%) — ALERT
+2026-03-16 01:27:50 INFO  [telegram] 3159172888 — Queued (quiet hours)
+2026-03-16 01:28:12 INFO  [evaluator] 3158805983 — Tier 2 vision — confidence 0.62
+2026-03-16 01:28:13 INFO  [pipeline] [furniture] 3158805983 (pending) — margin -1.8€ (ROI -3.6%) — no alert
+2026-03-16 01:28:35 INFO  [evaluator] 3158797417 — Tier 2 vision — confidence 0.62
+2026-03-16 01:28:35 INFO  [pipeline] [furniture] 3158797417 (pending) — margin 159.8€ (ROI 159.8%) — ALERT
+2026-03-16 01:28:35 INFO  [telegram] 3158797417 — Queued (quiet hours)
+2026-03-16 01:28:59 INFO  [evaluator] 3155301123 — Tier 2 vision — confidence 0.55
+2026-03-16 01:28:59 INFO  [pipeline] [furniture] 3155301123 (pending) — margin 122.8€ (ROI 272.9%) — ALERT
+2026-03-16 01:28:59 INFO  [telegram] 3155301123 — Queued (quiet hours)
+2026-03-16 01:29:21 INFO  [evaluator] 3158332125 — Tier 2 vision — confidence 0.72
+2026-03-16 01:29:21 INFO  [pipeline] [furniture] 3158332125 (pending) — margin 69.6€ (ROI 27.8%) — ALERT
+2026-03-16 01:29:21 INFO  [telegram] 3158332125 — Queued (quiet hours)
+2026-03-16 01:29:43 INFO  [evaluator] 3157517673 — Tier 2 vision — confidence 0.62
+2026-03-16 01:29:44 INFO  [pipeline] [furniture] 3157517673 (pending) — margin 55.4€ (ROI 221.6%) — ALERT
+2026-03-16 01:29:44 INFO  [telegram] 3157517673 — Queued (quiet hours)
+2026-03-16 01:30:07 INFO  [evaluator] 3157509680 — Tier 2 vision — confidence 0.72
+2026-03-16 01:30:07 INFO  [pipeline] [furniture] 3157509680 (pending) — margin 26.0€ (ROI 11.8%) — no alert
+2026-03-16 01:30:30 INFO  [evaluator] 3157501516 — Tier 2 vision — confidence 0.65
+2026-03-16 01:30:30 INFO  [pipeline] [furniture] 3157501516 (pending) — margin -28.8€ (ROI -28.8%) — no alert
+2026-03-16 01:30:51 INFO  [evaluator] 3156806792 — Tier 2 vision — confidence 0.65
+2026-03-16 01:30:51 INFO  [pipeline] [furniture] 3156806792 (pending) — margin -13.3€ (ROI -26.6%) — no alert
+2026-03-16 01:31:17 INFO  [evaluator] 3156799456 — Tier 2 vision — confidence 0.72
+2026-03-16 01:31:17 INFO  [pipeline] [furniture] 3156799456 (pending) — margin 20.6€ (ROI 17.9%) — no alert
+2026-03-16 01:31:37 INFO  [evaluator] 3154346363 — Tier 2 vision — confidence 0.62
+2026-03-16 01:31:37 INFO  [pipeline] [furniture] 3154346363 (pending) — margin -4.5€ (ROI -8.2%) — no alert
+2026-03-16 01:31:59 INFO  [evaluator] 3153539154 — Tier 2 vision — confidence 0.52
+2026-03-16 01:31:59 INFO  [pipeline] [furniture] 3153539154 (pending) — margin -71.8€ (ROI -59.8%) — no alert
+2026-03-16 01:32:13 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 01:32:13 INFO  Database initialized
+2026-03-16 01:32:13 INFO  🪑 Mobilier design — 7 search queries (Tier A: 4, Tier B: 3)
+2026-03-16 01:32:13 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 01:32:14 INFO  [telegram] Bot started for [furniture]
+2026-03-16 01:32:14 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 01:32:14 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois
+2026-03-16 01:32:15 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:32:18 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:32:21 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:32:21 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 01:32:21 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 01:32:25 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 01:32:28 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 01:32:32 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 01:32:32 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 01:32:32 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 01:32:34 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:32:38 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:32:42 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:32:42 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 01:32:42 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 01:32:46 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 01:32:51 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 01:32:55 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 01:32:55 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 01:32:55 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 01:32:59 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 01:33:02 INFO  [scraper] 'lampadaire vintage' page 2/2: 4 listings (total available: 2 pages)
+2026-03-16 01:33:02 INFO  [scraper] 'lampadaire vintage' returned 39 total listings
+2026-03-16 01:33:02 INFO  [pipeline] [furniture] 'lampadaire vintage': 39 listings
+2026-03-16 01:33:06 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 01:33:09 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 01:33:12 INFO  [scraper] 'tabouret vintage bois' page 3/3: 35 listings (total available: 3 pages)
+2026-03-16 01:33:12 INFO  [scraper] 'tabouret vintage bois' returned 105 total listings
+2026-03-16 01:33:12 INFO  [pipeline] [furniture] 'tabouret vintage bois': 105 listings
+2026-03-16 01:33:15 INFO  [pipeline] [furniture] 528 unique listings from 6 queries
+2026-03-16 01:33:15 INFO  [pipeline] [furniture] 585 pending listings in DB, evaluating up to 30
+2026-03-16 01:33:36 INFO  [evaluator] 3153072143 — Tier 2 vision — confidence 0.72
+2026-03-16 01:33:37 INFO  [pipeline] [furniture] 3153072143 (pending) — margin -188.6€ (ROI -94.3%) — no alert
+2026-03-16 01:33:58 INFO  [evaluator] 3152567135 — Tier 2 vision — confidence 0.52
+2026-03-16 01:33:59 INFO  [pipeline] [furniture] 3152567135 (pending) — margin 6.6€ (ROI 11.0%) — no alert
+2026-03-16 01:34:20 INFO  [evaluator] 3152467215 — Tier 2 vision — confidence 0.95
+2026-03-16 01:34:20 INFO  [pipeline] [furniture] 3152467215 (pending) — margin 62.0€ (ROI 27.0%) — ALERT
+2026-03-16 01:34:20 INFO  [telegram:furniture] 3152467215 — Alert sent
+2026-03-16 01:34:42 INFO  [evaluator] 3151804591 — Tier 2 vision — confidence 0.62
+2026-03-16 01:34:43 INFO  [pipeline] [furniture] 3151804591 (pending) — margin 157.6€ (ROI 225.1%) — ALERT
+2026-03-16 01:34:43 INFO  [telegram:furniture] 3151804591 — Alert sent
+2026-03-16 01:35:01 INFO  [evaluator] 3150956859 — Tier 2 vision — confidence 0.97
+2026-03-16 01:35:02 INFO  [pipeline] [furniture] 3150956859 (pending) — margin 257.0€ (ROI 171.3%) — ALERT
+2026-03-16 01:35:02 INFO  [telegram:furniture] 3150956859 — Alert sent
+2026-03-16 01:35:21 INFO  [evaluator] 3148154776 — Tier 2 vision — confidence 0.72
+2026-03-16 01:35:21 INFO  [pipeline] [furniture] 3148154776 (pending) — margin 7.8€ (ROI 17.3%) — no alert
+2026-03-16 01:35:43 INFO  [evaluator] 3147007313 — Tier 2 vision — confidence 0.72
+2026-03-16 01:35:43 INFO  [pipeline] [furniture] 3147007313 (pending) — margin -26.2€ (ROI -10.9%) — no alert
+2026-03-16 01:36:08 INFO  [evaluator] 3146804046 — Tier 2 vision — confidence 0.72
+2026-03-16 01:36:09 INFO  [pipeline] [furniture] 3146804046 (pending) — margin -34.0€ (ROI -68.0%) — no alert
+2026-03-16 01:36:37 INFO  [evaluator] 3146436355 — Tier 2 vision — confidence 0.72
+2026-03-16 01:36:38 INFO  [pipeline] [furniture] 3146436355 (pending) — margin 824.0€ (ROI 329.6%) — ALERT
+2026-03-16 01:36:38 INFO  [telegram:furniture] 3146436355 — Alert sent
+2026-03-16 01:37:01 INFO  [evaluator] 3146253033 — Tier 2 vision — confidence 0.82
+2026-03-16 01:37:01 INFO  [pipeline] [furniture] 3146253033 (pending) — margin 99.6€ (ROI 45.3%) — ALERT
+2026-03-16 01:37:02 INFO  [telegram:furniture] 3146253033 — Alert sent
+2026-03-16 01:37:25 INFO  [evaluator] 3146189978 — Tier 2 vision — confidence 0.78
+2026-03-16 01:37:25 INFO  [pipeline] [furniture] 3146189978 (pending) — margin 76.4€ (ROI 152.8%) — ALERT
+2026-03-16 01:37:26 INFO  [telegram:furniture] 3146189978 — Alert sent
+2026-03-16 01:37:49 INFO  [evaluator] 3140970406 — Tier 2 vision — confidence 0.62
+2026-03-16 01:37:49 INFO  [pipeline] [furniture] 3140970406 (pending) — margin 214.8€ (ROI 134.2%) — ALERT
+2026-03-16 01:37:50 INFO  [telegram:furniture] 3140970406 — Alert sent
+2026-03-16 01:38:16 INFO  [evaluator] 3137873979 — Tier 2 vision — confidence 0.62
+2026-03-16 01:38:17 INFO  [pipeline] [furniture] 3137873979 (pending) — margin 72.4€ (ROI 72.4%) — ALERT
+2026-03-16 01:38:17 INFO  [telegram:furniture] 3137873979 — Alert sent
+2026-03-16 01:38:38 INFO  [evaluator] 3137490200 — Tier 2 vision — confidence 0.82
+2026-03-16 01:38:39 INFO  [pipeline] [furniture] 3137490200 (pending) — margin 169.6€ (ROI 113.1%) — ALERT
+2026-03-16 01:38:39 INFO  [telegram:furniture] 3137490200 — Alert sent
+2026-03-16 01:39:08 INFO  [evaluator] 3137121344 — Tier 2 vision — confidence 0.82
+2026-03-16 01:39:08 INFO  [pipeline] [furniture] 3137121344 (pending) — margin 171.8€ (ROI 95.4%) — ALERT
+2026-03-16 01:39:09 INFO  [telegram:furniture] 3137121344 — Alert sent
+2026-03-16 01:39:32 INFO  [evaluator] 3136574033 — Tier 2 vision — confidence 0.62
+2026-03-16 01:39:33 INFO  [pipeline] [furniture] 3136574033 (pending) — margin 40.0€ (ROI 25.0%) — ALERT
+2026-03-16 01:39:33 INFO  [telegram:furniture] 3136574033 — Alert sent
+2026-03-16 01:39:52 INFO  [evaluator] 3134540784 — Tier 2 vision — confidence 0.45
+2026-03-16 01:39:52 INFO  [pipeline] [furniture] 3134540784 (pending) — margin 82.6€ (ROI 275.3%) — ALERT
+2026-03-16 01:39:53 INFO  [telegram:furniture] 3134540784 — Alert sent
+2026-03-16 01:40:12 INFO  [evaluator] 3133969518 — Tier 2 vision — confidence 0.88
+2026-03-16 01:40:12 INFO  [pipeline] [furniture] 3133969518 (pending) — margin -28.4€ (ROI -13.5%) — no alert
+2026-03-16 01:40:34 INFO  [evaluator] 3131588671 — Tier 2 vision — confidence 0.88
+2026-03-16 01:40:34 INFO  [pipeline] [furniture] 3131588671 (pending) — margin 22.4€ (ROI 14.9%) — no alert
+2026-03-16 01:40:58 INFO  [evaluator] 3131578721 — Tier 2 vision — confidence 0.62
+2026-03-16 01:40:58 INFO  [pipeline] [furniture] 3131578721 (pending) — margin 489.0€ (ROI 203.8%) — ALERT
+2026-03-16 01:40:59 INFO  [telegram:furniture] 3131578721 — Alert sent
+2026-03-16 01:41:21 INFO  [evaluator] 3130504997 — Tier 2 vision — confidence 0.72
+2026-03-16 01:41:21 INFO  [pipeline] [furniture] 3130504997 (pending) — margin 25.8€ (ROI 51.6%) — no alert
+2026-03-16 01:41:50 INFO  [evaluator] 3130230644 — Tier 2 vision — confidence 0.82
+2026-03-16 01:41:50 INFO  [pipeline] [furniture] 3130230644 (pending) — margin 545.8€ (ROI 925.1%) — ALERT
+2026-03-16 01:41:51 INFO  [telegram:furniture] 3130230644 — Alert sent
+2026-03-16 01:42:10 INFO  [evaluator] 3129725189 — Tier 2 vision — confidence 0.62
+2026-03-16 01:42:10 INFO  [pipeline] [furniture] 3129725189 (pending) — margin -124.8€ (ROI -83.2%) — no alert
+2026-03-16 01:42:34 INFO  [evaluator] 3128053415 — Tier 2 vision — confidence 0.62
+2026-03-16 01:42:34 INFO  [pipeline] [furniture] 3128053415 (pending) — margin -50.0€ (ROI -20.0%) — no alert
+2026-03-16 01:42:58 INFO  [evaluator] 3127625874 — Tier 2 vision — confidence 0.68
+2026-03-16 01:42:59 INFO  [pipeline] [furniture] 3127625874 (pending) — margin -21.6€ (ROI -14.6%) — no alert
+2026-03-16 01:43:16 INFO  [evaluator] 3126928151 — Tier 2 vision — confidence 0.75
+2026-03-16 01:43:17 INFO  [pipeline] [furniture] 3126928151 (pending) — margin -49.6€ (ROI -38.2%) — no alert
+2026-03-16 01:43:37 INFO  [evaluator] 3126477758 — Tier 2 vision — confidence 0.62
+2026-03-16 01:43:37 INFO  [pipeline] [furniture] 3126477758 (pending) — margin -43.3€ (ROI -54.1%) — no alert
+2026-03-16 01:43:58 INFO  [evaluator] 3125413808 — Tier 2 vision — confidence 0.65
+2026-03-16 01:43:58 INFO  [pipeline] [furniture] 3125413808 (pending) — margin 89.0€ (ROI 49.4%) — ALERT
+2026-03-16 01:43:59 INFO  [telegram:furniture] 3125413808 — Alert sent
+2026-03-16 01:44:20 INFO  [evaluator] 3123857328 — Tier 2 vision — confidence 0.45
+2026-03-16 01:44:20 INFO  [pipeline] [furniture] 3123857328 (pending) — margin -25.8€ (ROI -21.5%) — no alert
+2026-03-16 01:44:42 INFO  [evaluator] 3123362477 — Tier 2 vision — confidence 0.75
+2026-03-16 01:44:42 INFO  [pipeline] [furniture] 3123362477 (pending) — margin 80.0€ (ROI 66.7%) — ALERT
+2026-03-16 01:44:43 INFO  [telegram:furniture] 3123362477 — Alert sent
+2026-03-16 01:44:43 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 528 | Already seen: 528 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 30 | From DB pending: 30 | Eval failed: 0 | Alerted: 16 | margins: avg 97€, best 824€, worst -189€
+  ──────────────────────────────────────────────────────────
+2026-03-16 01:44:43 INFO  [pipeline] [furniture] DB totals: 707 total | 30 evaluated | 106 skipped | 16 alerted | 0 interested
+2026-03-16 01:44:43 INFO  Scheduler running — polling every 300s
+2026-03-16 01:46:51 INFO  [telegram] Button pressed: interested:3146189978
+2026-03-16 01:49:43 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 01:49:43 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, luminaire ancien, lampadaire vintage
+2026-03-16 01:49:43 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:49:46 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:49:49 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:49:49 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 01:49:49 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 01:49:54 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 01:49:57 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 01:50:01 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 01:50:01 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 01:50:01 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 01:50:04 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:50:07 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:50:10 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:50:10 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 01:50:10 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 01:50:14 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 01:50:17 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 01:50:21 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 01:50:21 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 01:50:21 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 01:50:26 INFO  [scraper] 'luminaire ancien' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 01:50:29 INFO  [scraper] 'luminaire ancien' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 01:50:32 INFO  [scraper] 'luminaire ancien' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 01:50:32 INFO  [scraper] 'luminaire ancien' returned 105 total listings
+2026-03-16 01:50:32 INFO  [pipeline] [furniture] 'luminaire ancien': 105 listings
+2026-03-16 01:50:36 INFO  [telegram] Button pressed: interested:3130230644
+2026-03-16 01:50:37 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 01:50:41 INFO  [scraper] 'lampadaire vintage' page 2/2: 4 listings (total available: 2 pages)
+2026-03-16 01:50:41 INFO  [scraper] 'lampadaire vintage' returned 39 total listings
+2026-03-16 01:50:41 INFO  [pipeline] [furniture] 'lampadaire vintage': 39 listings
+2026-03-16 01:50:44 INFO  [pipeline] [furniture] 524 unique listings from 6 queries
+2026-03-16 01:50:44 INFO  [pipeline] [furniture] 555 pending listings in DB, evaluating up to 30
+2026-03-16 01:51:02 INFO  [evaluator] 3123079683 — Tier 2 vision — confidence 0.88
+2026-03-16 01:51:03 INFO  [pipeline] [furniture] 3123079683 (pending) — margin 49.2€ (ROI 30.7%) — ALERT
+2026-03-16 01:51:03 INFO  [telegram:furniture] 3123079683 — Alert sent
+2026-03-16 01:51:26 INFO  [evaluator] 3122369141 — Tier 2 vision — confidence 0.62
+2026-03-16 01:51:26 INFO  [pipeline] [furniture] 3122369141 (pending) — margin 20.0€ (ROI 11.1%) — no alert
+2026-03-16 01:51:51 INFO  [evaluator] 3122013560 — Tier 2 vision — confidence 0.68
+2026-03-16 01:51:52 INFO  [pipeline] [furniture] 3122013560 (pending) — margin 56.4€ (ROI 80.6%) — ALERT
+2026-03-16 01:51:52 INFO  [telegram:furniture] 3122013560 — Alert sent
+2026-03-16 01:52:14 INFO  [evaluator] 3120676163 — Tier 2 vision — confidence 0.45
+2026-03-16 01:52:14 INFO  [pipeline] [furniture] 3120676163 (pending) — margin 48.0€ (ROI 80.0%) — ALERT
+2026-03-16 01:52:15 INFO  [telegram:furniture] 3120676163 — Alert sent
+2026-03-16 01:52:40 INFO  [evaluator] 3118316809 — Tier 2 vision — confidence 0.72
+2026-03-16 01:52:41 INFO  [pipeline] [furniture] 3118316809 (pending) — margin 80.0€ (ROI 66.7%) — ALERT
+2026-03-16 01:52:41 INFO  [telegram:furniture] 3118316809 — Alert sent
+2026-03-16 01:53:02 INFO  [evaluator] 3116958238 — Tier 2 vision — confidence 0.72
+2026-03-16 01:53:02 INFO  [pipeline] [furniture] 3116958238 (pending) — margin 66.0€ (ROI 36.7%) — ALERT
+2026-03-16 01:53:02 INFO  [telegram:furniture] 3116958238 — Alert sent
+2026-03-16 01:53:22 INFO  [evaluator] 3109796556 — Tier 2 vision — confidence 0.62
+2026-03-16 01:53:23 INFO  [pipeline] [furniture] 3109796556 (pending) — margin 48.6€ (ROI 44.2%) — ALERT
+2026-03-16 01:53:23 INFO  [telegram:furniture] 3109796556 — Alert sent
+2026-03-16 01:53:43 INFO  [evaluator] 3108680486 — Tier 2 vision — confidence 0.75
+2026-03-16 01:53:44 INFO  [pipeline] [furniture] 3108680486 (pending) — margin -18.6€ (ROI -62.0%) — no alert
+2026-03-16 01:54:10 INFO  [evaluator] 3108378474 — Tier 2 vision — confidence 0.72
+2026-03-16 01:54:11 INFO  [pipeline] [furniture] 3108378474 (pending) — margin 15.6€ (ROI 13.0%) — no alert
+2026-03-16 01:54:32 INFO  [evaluator] 3106457395 — Tier 2 vision — confidence 0.65
+2026-03-16 01:54:33 INFO  [pipeline] [furniture] 3106457395 (pending) — margin -22.4€ (ROI -9.0%) — no alert
+2026-03-16 01:54:56 INFO  [evaluator] 3106264479 — Tier 2 vision — confidence 0.52
+2026-03-16 01:54:57 INFO  [pipeline] [furniture] 3106264479 (pending) — margin 101.2€ (ROI 50.6%) — ALERT
+2026-03-16 01:54:57 INFO  [telegram:furniture] 3106264479 — Alert sent
+2026-03-16 01:55:17 INFO  [evaluator] 3105414937 — Tier 2 vision — confidence 0.78
+2026-03-16 01:55:17 INFO  [pipeline] [furniture] 3105414937 (pending) — margin -12.4€ (ROI -9.9%) — no alert
+2026-03-16 01:55:41 INFO  [evaluator] 3104323877 — Tier 2 vision — confidence 0.45
+2026-03-16 01:55:41 INFO  [pipeline] [furniture] 3104323877 (pending) — margin 9.2€ (ROI 4.6%) — no alert
+2026-03-16 01:56:03 INFO  [evaluator] 3103866654 — Tier 2 vision — confidence 0.88
+2026-03-16 01:56:03 INFO  [pipeline] [furniture] 3103866654 (pending) — margin 280.0€ (ROI 186.7%) — ALERT
+2026-03-16 01:56:04 INFO  [telegram:furniture] 3103866654 — Alert sent
+2026-03-16 01:56:28 INFO  [evaluator] 3103624041 — Tier 2 vision — confidence 0.62
+2026-03-16 01:56:29 INFO  [pipeline] [furniture] 3103624041 (pending) — margin 77.6€ (ROI 51.7%) — ALERT
+2026-03-16 01:56:29 INFO  [telegram:furniture] 3103624041 — Alert sent
+2026-03-16 01:56:49 INFO  [evaluator] 3103375846 — Tier 2 vision — confidence 0.72
+2026-03-16 01:56:50 INFO  [pipeline] [furniture] 3103375846 (pending) — margin -12.5€ (ROI -31.2%) — no alert
+2026-03-16 01:57:08 INFO  [evaluator] 3100735818 — Tier 2 vision — confidence 0.45
+2026-03-16 01:57:09 INFO  [pipeline] [furniture] 3100735818 (pending) — margin 36.6€ (ROI 122.0%) — ALERT
+2026-03-16 01:57:09 INFO  [telegram:furniture] 3100735818 — Alert sent
+2026-03-16 01:57:30 INFO  [evaluator] 3098388549 — Tier 2 vision — confidence 0.65
+2026-03-16 01:57:31 INFO  [pipeline] [furniture] 3098388549 (pending) — margin -190.9€ (ROI -95.5%) — no alert
+2026-03-16 01:57:52 INFO  [evaluator] 3096315568 — Tier 2 vision — confidence 0.55
+2026-03-16 01:57:53 INFO  [pipeline] [furniture] 3096315568 (pending) — margin -9.0€ (ROI -36.0%) — no alert
+2026-03-16 01:58:13 INFO  [evaluator] 3096293073 — Tier 2 vision — confidence 0.72
+2026-03-16 01:58:14 INFO  [pipeline] [furniture] 3096293073 (pending) — margin -37.2€ (ROI -41.3%) — no alert
+2026-03-16 01:58:37 INFO  [evaluator] 3095869410 — Tier 2 vision — confidence 0.78
+2026-03-16 01:58:37 INFO  [pipeline] [furniture] 3095869410 (pending) — margin 261.8€ (ROI 290.9%) — ALERT
+2026-03-16 01:58:38 INFO  [telegram:furniture] 3095869410 — Alert sent
+2026-03-16 01:58:56 INFO  [evaluator] 3095862598 — Tier 2 vision — confidence 0.82
+2026-03-16 01:58:57 INFO  [pipeline] [furniture] 3095862598 (pending) — margin 20.4€ (ROI 34.0%) — no alert
+2026-03-16 01:59:17 INFO  [evaluator] 3094407087 — Tier 2 vision — confidence 0.65
+2026-03-16 01:59:17 INFO  [pipeline] [furniture] 3094407087 (pending) — margin -39.6€ (ROI -33.0%) — no alert
+2026-03-16 01:59:39 INFO  [evaluator] 3092069818 — Tier 2 vision — confidence 0.62
+2026-03-16 01:59:40 INFO  [pipeline] [furniture] 3092069818 (pending) — margin -23.6€ (ROI -15.7%) — no alert
+2026-03-16 02:00:00 INFO  [evaluator] 3084908748 — Tier 2 vision — confidence 0.72
+2026-03-16 02:00:01 INFO  [pipeline] [furniture] 3084908748 (pending) — margin 2.8€ (ROI 5.6%) — no alert
+2026-03-16 02:00:22 INFO  [evaluator] 3084297938 — Tier 2 vision — confidence 0.65
+2026-03-16 02:00:23 INFO  [pipeline] [furniture] 3084297938 (pending) — margin 93.6€ (ROI 52.0%) — ALERT
+2026-03-16 02:00:23 INFO  [telegram:furniture] 3084297938 — Alert sent
+2026-03-16 02:00:44 INFO  [evaluator] 3083061276 — Tier 2 vision — confidence 0.82
+2026-03-16 02:00:44 INFO  [pipeline] [furniture] 3083061276 (pending) — margin 52.0€ (ROI 21.7%) — ALERT
+2026-03-16 02:00:45 INFO  [telegram:furniture] 3083061276 — Alert sent
+2026-03-16 02:01:10 INFO  [evaluator] 3082272671 — Tier 2 vision — confidence 0.62
+2026-03-16 02:01:11 INFO  [pipeline] [furniture] 3082272671 (pending) — margin 89.8€ (ROI 52.8%) — ALERT
+2026-03-16 02:01:11 INFO  [telegram:furniture] 3082272671 — Alert sent
+2026-03-16 02:01:32 INFO  [evaluator] 3079790355 — Tier 2 vision — confidence 0.93
+2026-03-16 02:01:33 INFO  [pipeline] [furniture] 3079790355 (pending) — margin 142.0€ (ROI 94.7%) — ALERT
+2026-03-16 02:01:33 INFO  [telegram:furniture] 3079790355 — Alert sent
+2026-03-16 02:01:57 INFO  [evaluator] 3079701530 — Tier 2 vision — confidence 0.45
+2026-03-16 02:01:57 INFO  [pipeline] [furniture] 3079701530 (pending) — margin 3.3€ (ROI 22.0%) — no alert
+2026-03-16 02:01:57 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 524 | Already seen: 524 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 30 | From DB pending: 30 | Eval failed: 0 | Alerted: 15 | margins: avg 40€, best 280€, worst -191€
+  ──────────────────────────────────────────────────────────
+2026-03-16 02:01:57 INFO  [pipeline] [furniture] DB totals: 707 total | 45 evaluated | 106 skipped | 29 alerted | 2 interested
+2026-03-16 02:05:45 INFO  [telegram] Button pressed: analyze:3118316809
+2026-03-16 02:06:06 INFO  [evaluator] 3118316809 — Tier 2 vision — confidence 0.72
+2026-03-16 02:06:57 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 02:06:57 INFO  [pipeline] [furniture] Cycle queries (6): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, tabouret vintage bois, luminaire ancien
+2026-03-16 02:06:58 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 02:07:01 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 02:07:04 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 02:07:04 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 02:07:04 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 02:07:07 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 02:07:11 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 02:07:15 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 02:07:15 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 02:07:15 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 02:07:20 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 02:07:23 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 02:07:27 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 02:07:27 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 02:07:27 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 02:07:31 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 02:07:35 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 02:07:39 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 02:07:39 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 02:07:39 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 02:07:45 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 02:07:47 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 02:07:51 INFO  [scraper] 'tabouret vintage bois' page 3/3: 35 listings (total available: 3 pages)
+2026-03-16 02:07:51 INFO  [scraper] 'tabouret vintage bois' returned 105 total listings
+2026-03-16 02:07:51 INFO  [pipeline] [furniture] 'tabouret vintage bois': 105 listings
+2026-03-16 02:07:56 INFO  [scraper] 'luminaire ancien' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 02:07:59 INFO  [scraper] 'luminaire ancien' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 02:08:03 INFO  [scraper] 'luminaire ancien' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 02:08:03 INFO  [scraper] 'luminaire ancien' returned 105 total listings
+2026-03-16 02:08:03 INFO  [pipeline] [furniture] 'luminaire ancien': 105 listings
+2026-03-16 02:08:08 INFO  [pipeline] [furniture] 590 unique listings from 6 queries
+2026-03-16 02:08:08 INFO  [pipeline] [furniture] 525 pending listings in DB, evaluating up to 30

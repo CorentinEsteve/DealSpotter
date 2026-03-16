@@ -288,7 +288,7 @@ def _extract_api_listing(ad: dict) -> dict:
     list_id = str(ad.get("list_id", ""))
     return {
         "lbc_id": list_id,
-        "url": ad.get("url") or f"https://www.leboncoin.fr/ad/velos/{list_id}",
+        "url": ad.get("url") or f"https://www.leboncoin.fr/ad/{list_id}",
         "title": ad.get("subject"),
         "price": price,
         "description": ad.get("body"),
@@ -514,7 +514,7 @@ def _extract_search_listing(ad: dict) -> dict:
 
     list_id = str(ad.get("list_id", ""))
     data["lbc_id"] = list_id
-    data["url"] = f"https://www.leboncoin.fr/ad/velos/{list_id}"
+    data["url"] = ad.get("url") or f"https://www.leboncoin.fr/ad/{list_id}"
     return data
 
 

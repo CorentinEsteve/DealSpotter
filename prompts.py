@@ -1,81 +1,146 @@
-TEXT_ONLY_PROMPT = """Tu es un expert du marché du vélo d'occasion en Île-de-France. Tu évalues des annonces leboncoin pour déterminer leur potentiel de revente (achat pour revendre avec profit).
+# ═══════════════════════════════════════════════════════════════════
+# BIKES PROMPTS
+# ═══════════════════════════════════════════════════════════════════
 
-IMPORTANT: Les annonces sont en français. Les titres, descriptions et termes de condition sont en français.
+TEXT_ONLY_PROMPT = """Tu es un expert du marché du vélo d'occasion en Île-de-France, spécialisé dans l'achat-revente. On te présente une annonce leboncoin. Détermine si c'est une bonne affaire pour un revendeur.
 
-Annonce:
-- Titre: {title}
-- Prix: {price}€
-- Description: {description}
-- Localisation: {location}
+Lis attentivement l'intégralité de l'annonce ci-dessous — titre, prix, description — pour comprendre exactement ce qui est vendu, dans quel état, et à quel prix réel.
 
-Analyse cette annonce et réponds UNIQUEMENT en JSON (pas de markdown, pas de préambule):
+---
+Titre: {title}
+Prix affiché: {price}€
+Localisation: {location}
 
-{{
-  "item_name": "Nom complet identifié (marque + modèle + année si connue)",
-  "brand": "Marque ou 'inconnu'",
-  "model": "Modèle ou 'inconnu'",
-  "year_estimate": "Année estimée ou fourchette, ou 'inconnu'",
-  "condition": "comme_neuf | bon_état | état_correct | mauvais_état",
-  "confidence": 0.0 à 1.0 (certitude de l'identification),
-  "estimated_resale_min": prix minimum réaliste de revente en EUR (leboncoin, mai-juin),
-  "estimated_resale_max": prix maximum réaliste de revente en EUR (leboncoin, mai-juin),
-  "resale_platform": "meilleure plateforme de revente (leboncoin | troc-velo | ebay)",
-  "reasoning": "1-2 phrases expliquant ta valorisation (en français)"
-}}
+Description du vendeur:
+{description}
+---
 
-Règles importantes:
-- Les estimations de revente doivent correspondre au marché Île-de-France, printemps/été 2026.
-- Le revendeur nettoiera le vélo et fera de belles photos avant de revendre.
-- Si le titre ou la description sont trop vagues pour identifier l'article, mets confidence en dessous de 0.5.
-- Donne des estimations de revente réalistes — base-toi sur les prix réels observés sur leboncoin et troc-velo pour des articles similaires.
-- Termes courants sur leboncoin: "TBE" = très bon état, "BE" = bon état, "RAS" = rien à signaler, "taille M/L/54/56" = taille du cadre.
-- "Remise en main propre" = retrait en personne (normal sur leboncoin)."""
-
-
-VISION_PROMPT = """Tu es un expert du marché du vélo d'occasion en Île-de-France. Tu analyses les photos et la description d'une annonce leboncoin pour évaluer son potentiel de revente.
-
-IMPORTANT: L'annonce est en français. Titre et description sont en français.
-
-Annonce:
-- Titre: {title}
-- Prix: {price}€
-- Description: {description}
-- Localisation: {location}
-
-Les photos sont jointes. Analyse-les attentivement.
-
-À partir des photos, identifie:
-1. La marque et le modèle exact si visible (logos sur le cadre, marquages sur les composants)
-2. Le matériau du cadre (aluminium, carbone, acier, chromoly) d'après la forme des tubes et les soudures
-3. La qualité du groupe (Shimano: Claris/Sora/Tiagra/105/Ultegra/Dura-Ace, équivalent SRAM)
-4. Le type de roues (clincher/tubeless, marque si visible)
-5. L'état: rayures, bosses, rouille, état des câbles, usure des pneus, état de la guidoline
-6. Signaux d'alerte: dommages de chute, pièces dépareillées, composants manquants, fissures du cadre
-7. Valeur cachée: cadre vintage à restaurer, composants premium que le vendeur ne connaît peut-être pas
-
-Réponds UNIQUEMENT en JSON (pas de markdown, pas de préambule):
+Réponds UNIQUEMENT en JSON valide:
 
 {{
-  "item_name": "Nom complet identifié",
-  "brand": "Marque ou 'inconnu'",
-  "model": "Modèle ou 'inconnu'",
-  "year_estimate": "Année estimée ou fourchette",
-  "frame_material": "carbone | aluminium | acier | chromoly | inconnu",
-  "component_group": "Groupe identifié ou 'inconnu'",
+  "item_name": "identification complète (marque + modèle + année si possible)",
+  "brand": "marque identifiée ou 'inconnu'",
+  "model": "modèle identifié ou 'inconnu'",
   "condition": "comme_neuf | bon_état | état_correct | mauvais_état",
-  "condition_details": "Observations spécifiques à partir des photos (en français)",
-  "red_flags": ["liste de problèmes observés"] ou [],
-  "hidden_value": ["liste de signaux de valeur cachée"] ou [],
-  "confidence": 0.0 à 1.0,
-  "estimated_resale_min": prix minimum de revente EUR,
-  "estimated_resale_max": prix maximum de revente EUR,
-  "resale_platform": "meilleure plateforme de revente",
-  "reasoning": "2-3 phrases expliquant ta valorisation d'après ce que tu vois (en français)"
+  "confidence": 0.0-1.0,
+  "estimated_resale_min": prix revente minimum réaliste EUR,
+  "estimated_resale_max": prix revente maximum réaliste EUR,
+  "reasoning": "2-3 phrases: ce que tu achètes exactement pour le prix affiché, pourquoi c'est (ou pas) une bonne affaire, sur quoi tu bases ton estimation de revente"
 }}
 
-Règles importantes:
-- Si les photos sont floues, mal éclairées ou montrent peu du vélo, baisse ta confidence.
-- Cherche les marquages de marque que le vendeur a pu manquer (petits logos sur tige de selle, badges sur le tube de direction).
-- Les cadres acier vintage (Peugeot, Motobécane, Gitane, Mercier) peuvent valoir bien plus que ce que les vendeurs imaginent.
-- Donne des estimations de revente réalistes — base-toi sur les prix réels observés sur leboncoin et troc-velo.
-- Termes courants: "TBE" = très bon état, "BE" = bon état, "RAS" = rien à signaler."""
+Contexte marché: Île-de-France, printemps/été 2026. Le revendeur nettoiera le vélo et fera de belles photos. Base tes estimations sur les prix réels leboncoin et troc-velo. Abréviations courantes: TBE = très bon état, BE = bon état, RAS = rien à signaler."""
+
+
+VISION_PROMPT = """Tu es un expert du marché du vélo d'occasion en Île-de-France, spécialisé dans l'achat-revente. On te présente une annonce leboncoin avec ses photos. Détermine si c'est une bonne affaire pour un revendeur.
+
+Lis attentivement l'intégralité de l'annonce et analyse les photos pour comprendre exactement ce qui est vendu, dans quel état, et à quel prix réel.
+
+---
+Titre: {title}
+Prix affiché: {price}€
+Localisation: {location}
+
+Description du vendeur:
+{description}
+---
+
+Les photos sont jointes. Utilise-les pour identifier marque, modèle, matériaux, état réel, et tout ce que le vendeur a pu manquer (logos, composants premium, défauts cachés).
+
+Réponds UNIQUEMENT en JSON valide:
+
+{{
+  "item_name": "identification complète",
+  "brand": "marque identifiée ou 'inconnu'",
+  "model": "modèle identifié ou 'inconnu'",
+  "condition": "comme_neuf | bon_état | état_correct | mauvais_état",
+  "condition_details": "observations concrètes depuis les photos",
+  "red_flags": [],
+  "hidden_value": [],
+  "confidence": 0.0-1.0,
+  "estimated_resale_min": prix revente minimum réaliste EUR,
+  "estimated_resale_max": prix revente maximum réaliste EUR,
+  "reasoning": "2-3 phrases: ce que tu achètes exactement pour le prix affiché, pourquoi c'est (ou pas) une bonne affaire, sur quoi tu bases ton estimation de revente"
+}}
+
+Contexte marché: Île-de-France, printemps/été 2026. Le revendeur nettoiera le vélo et fera de belles photos. Base tes estimations sur les prix réels leboncoin et troc-velo."""
+
+
+# ═══════════════════════════════════════════════════════════════════
+# FURNITURE PROMPTS
+# ═══════════════════════════════════════════════════════════════════
+
+FURNITURE_TEXT_ONLY_PROMPT = """Tu es un expert du marché du mobilier design et vintage en France, spécialisé dans l'achat-revente. On te présente une annonce leboncoin. Détermine si c'est une bonne affaire pour un revendeur.
+
+Lis attentivement l'intégralité de l'annonce ci-dessous — titre, prix, description — pour comprendre exactement ce qui est vendu, dans quel état, et à quel prix réel.
+
+---
+Titre: {title}
+Prix affiché: {price}€
+Localisation: {location}
+
+Description du vendeur:
+{description}
+---
+
+Réponds UNIQUEMENT en JSON valide:
+
+{{
+  "item_name": "identification complète (designer/marque + modèle + type)",
+  "brand": "marque ou maison de design, ou 'inconnu'",
+  "model": "modèle ou 'inconnu'",
+  "designer": "designer ou 'inconnu'",
+  "era": "période estimée ou 'inconnu'",
+  "condition": "comme_neuf | bon_état | état_correct | mauvais_état",
+  "confidence": 0.0-1.0,
+  "estimated_resale_min": prix revente minimum réaliste EUR,
+  "estimated_resale_max": prix revente maximum réaliste EUR,
+  "reasoning": "2-3 phrases: ce que tu achètes exactement pour le prix affiché, pourquoi c'est (ou pas) une bonne affaire, sur quoi tu bases ton estimation de revente"
+}}
+
+Contexte marché: Île-de-France 2026. Le revendeur nettoiera l'objet et fera de belles photos. Base tes estimations sur les prix réels Selency, Design Market, Kolectiv Design, eBay.fr et leboncoin. La patine est un plus pour le vintage. Abréviations courantes: TBE = très bon état, BE = bon état."""
+
+
+FURNITURE_VISION_PROMPT = """Tu es un expert du marché du mobilier design et vintage en France, spécialisé dans l'achat-revente. On te présente une annonce leboncoin avec ses photos. Détermine si c'est une bonne affaire pour un revendeur.
+
+Lis attentivement l'intégralité de l'annonce et analyse les photos pour comprendre exactement ce qui est vendu, dans quel état, et à quel prix réel.
+
+---
+Titre: {title}
+Prix affiché: {price}€
+Localisation: {location}
+
+Description du vendeur:
+{description}
+---
+
+Les photos sont jointes. Utilise-les pour identifier designer, marque, matériaux, époque, état réel, et tout ce que le vendeur a pu manquer (étiquettes sous la chaise, formes iconiques, matériaux nobles).
+
+Réponds UNIQUEMENT en JSON valide:
+
+{{
+  "item_name": "identification complète",
+  "brand": "marque/maison de design ou 'inconnu'",
+  "model": "modèle ou 'inconnu'",
+  "designer": "designer ou 'inconnu'",
+  "era": "période estimée ou 'inconnu'",
+  "condition": "comme_neuf | bon_état | état_correct | mauvais_état",
+  "condition_details": "observations concrètes depuis les photos",
+  "red_flags": [],
+  "hidden_value": [],
+  "confidence": 0.0-1.0,
+  "estimated_resale_min": prix revente minimum réaliste EUR,
+  "estimated_resale_max": prix revente maximum réaliste EUR,
+  "reasoning": "2-3 phrases: ce que tu achètes exactement pour le prix affiché, pourquoi c'est (ou pas) une bonne affaire, sur quoi tu bases ton estimation de revente"
+}}
+
+Contexte marché: Île-de-France 2026. Le revendeur nettoiera l'objet et fera de belles photos. Base tes estimations sur les prix réels Selency, Design Market, Kolectiv Design, eBay.fr et leboncoin. La patine est un plus pour le vintage."""
+
+
+# ═══════════════════════════════════════════════════════════════════
+# PROMPT REGISTRY — maps category → (text_prompt, vision_prompt)
+# ═══════════════════════════════════════════════════════════════════
+
+PROMPTS = {
+    "bikes": (TEXT_ONLY_PROMPT, VISION_PROMPT),
+    "furniture": (FURNITURE_TEXT_ONLY_PROMPT, FURNITURE_VISION_PROMPT),
+}

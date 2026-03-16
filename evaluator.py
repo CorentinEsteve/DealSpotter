@@ -7,46 +7,56 @@ import httpx
 import anthropic
 from config import (
     ANTHROPIC_API_KEY, HAIKU_MODEL, SONNET_MODEL,
+    CATEGORIES,
+    # Backward-compat flat imports (used as defaults)
     MIN_PRICE_EUR, MAX_PRICE_EUR,
     SKIP_KEYWORDS, SKIP_SELLER_TYPES, JUNK_INDICATORS,
-    HIGH_VALUE_BRANDS, VISION_CONFIDENCE_THRESHOLD,
+    VISION_CONFIDENCE_THRESHOLD,
 )
-from prompts import TEXT_ONLY_PROMPT, VISION_PROMPT
+from prompts import PROMPTS
 import db
 
-log = logging.getLogger("bikeflip.evaluator")
+log = logging.getLogger("dealspotter.evaluator")
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 # --- Tier 0: Pre-filter (free) ---
 
-def pre_filter(listing: dict) -> tuple:
+def pre_filter(listing: dict, category: str = "bikes") -> tuple:
     """Returns (should_skip, reason). No API calls.
     All keyword matching is in French since leboncoin is a French platform."""
+
+    cat = CATEGORIES.get(category, CATEGORIES["bikes"])
 
     title_lower = (listing.get("title") or "").lower()
     desc_lower = (listing.get("description") or "").lower()
     price = listing.get("price", 0)
 
+    min_price = cat.get("min_price", MIN_PRICE_EUR)
+    max_price = cat.get("max_price", MAX_PRICE_EUR)
+    skip_keywords = cat.get("skip_keywords", SKIP_KEYWORDS)
+    junk_indicators = cat.get("junk_indicators", JUNK_INDICATORS)
+    skip_seller_types = cat.get("skip_seller_types", SKIP_SELLER_TYPES)
+
     # Price out of range
-    if price < MIN_PRICE_EUR:
+    if price < min_price:
         return True, f"prix_trop_bas ({price}€)"
-    if price > MAX_PRICE_EUR:
+    if price > max_price:
         return True, f"prix_trop_haut ({price}€)"
 
     # Blocked keywords in title
-    for kw in SKIP_KEYWORDS:
+    for kw in skip_keywords:
         if kw in title_lower:
             return True, f"mot_clé_bloqué ({kw})"
 
     # Junk indicators in title or description
-    for kw in JUNK_INDICATORS:
+    for kw in junk_indicators:
         if kw in title_lower or kw in desc_lower:
             return True, f"annonce_épave ({kw})"
 
     # Pro seller
-    if listing.get("seller_type") in SKIP_SELLER_TYPES:
+    if listing.get("seller_type") in skip_seller_types:
         return True, "vendeur_pro"
 
     return False, ""
@@ -84,11 +94,13 @@ def parse_llm_json(text: str) -> dict:
 
 # --- Tier 1: Text-only (Claude Haiku) ---
 
-def evaluate_text_only(listing: dict) -> dict:
+def evaluate_text_only(listing: dict, category: str = "bikes") -> dict:
     """Evaluate listing using text only (Tier 1, Claude Haiku).
     Returns parsed evaluation dict or None on failure."""
 
-    prompt = TEXT_ONLY_PROMPT.format(
+    text_prompt_template, _ = PROMPTS.get(category, PROMPTS["bikes"])
+
+    prompt = text_prompt_template.format(
         title=listing.get("title", ""),
         price=listing.get("price", 0),
         description=listing.get("description", "Pas de description"),
@@ -150,7 +162,7 @@ def fetch_images(photo_urls: list, max_images: int = 4) -> list:
     return images
 
 
-def evaluate_with_vision(listing: dict) -> dict:
+def evaluate_with_vision(listing: dict, category: str = "bikes") -> dict:
     """Evaluate listing using photos + text (Tier 2, Claude Sonnet).
     Returns parsed evaluation dict or None on failure."""
 
@@ -170,9 +182,11 @@ def evaluate_with_vision(listing: dict) -> dict:
     if not images:
         log.warning(f"[evaluator] {listing['lbc_id']} — No images available for Tier 2")
         # Fall back to text-only with Sonnet (still more capable than Haiku)
-        return evaluate_text_only_sonnet(listing)
+        return evaluate_text_only_sonnet(listing, category)
 
-    prompt_text = VISION_PROMPT.format(
+    _, vision_prompt_template = PROMPTS.get(category, PROMPTS["bikes"])
+
+    prompt_text = vision_prompt_template.format(
         title=listing.get("title", ""),
         price=listing.get("price", 0),
         description=listing.get("description", "Pas de description"),
@@ -205,9 +219,11 @@ def evaluate_with_vision(listing: dict) -> dict:
         return None
 
 
-def evaluate_text_only_sonnet(listing: dict) -> dict:
+def evaluate_text_only_sonnet(listing: dict, category: str = "bikes") -> dict:
     """Fallback: text-only evaluation using Sonnet (when no images for Tier 2)."""
-    prompt = TEXT_ONLY_PROMPT.format(
+    text_prompt_template, _ = PROMPTS.get(category, PROMPTS["bikes"])
+
+    prompt = text_prompt_template.format(
         title=listing.get("title", ""),
         price=listing.get("price", 0),
         description=listing.get("description", "Pas de description"),
@@ -234,7 +250,7 @@ def evaluate_text_only_sonnet(listing: dict) -> dict:
 
 # --- Tier routing ---
 
-def evaluate_listing(listing: dict) -> dict:
+def evaluate_listing(listing: dict, category: str = "bikes") -> dict:
     """Route listing through the cheapest adequate AI evaluation tier.
 
     Pre-filter (Tier 0) is NOT called here — it runs earlier in the pipeline
@@ -246,22 +262,21 @@ def evaluate_listing(listing: dict) -> dict:
     Returns evaluation result dict or None if evaluation failed.
     """
     lbc_id = listing.get("lbc_id", "???")
+    cat = CATEGORIES.get(category, CATEGORIES["bikes"])
+    confidence_threshold = cat.get("vision_confidence_threshold", VISION_CONFIDENCE_THRESHOLD)
 
-    # Decide tier based on enriched data
-    title_lower = (listing.get("title") or "").lower()
-    has_known_brand = any(brand in title_lower for brand in HIGH_VALUE_BRANDS)
     has_clear_description = len(listing.get("description") or "") > 100
+    has_photos = bool(listing.get("photo_urls"))
 
-    if has_known_brand and has_clear_description:
-        # Tier 1: text-only (cheap)
-        result = evaluate_text_only(listing)
-        if result and result.get("confidence", 0) >= VISION_CONFIDENCE_THRESHOLD:
+    # Tier 1: text-only (cheap) — when we have a good description
+    if has_clear_description:
+        result = evaluate_text_only(listing, category)
+        if result and result.get("confidence", 0) >= confidence_threshold:
             return result
-        # Fall through to Tier 2 if not confident enough
         log.info(f"[evaluator] {lbc_id} — Tier 1 low confidence, escalating to Tier 2")
 
-    # Tier 2: vision (more expensive but more accurate)
-    result = evaluate_with_vision(listing)
+    # Tier 2: vision (more accurate, uses photos)
+    result = evaluate_with_vision(listing, category)
 
     # Small delay between API calls to avoid rate limits
     time.sleep(0.5)

@@ -1,17 +1,26 @@
-from config import PLATFORM_FEE_PERCENT, TRANSPORT_COST_EUR, TIME_COST_EUR, MIN_FLIP_MARGIN_EUR
+from config import CATEGORIES, PLATFORM_FEE_PERCENT, TRANSPORT_COST_EUR, TIME_COST_EUR, MIN_FLIP_MARGIN_EUR
 
 
-def calculate_flip_margin(buy_price: float, resale_min: float, resale_max: float) -> dict:
+def calculate_flip_margin(buy_price: float, resale_min: float, resale_max: float,
+                          category: str = "bikes") -> dict:
     """Calculate net margin for a flip opportunity.
 
     Uses expected margin (mid) for the alert decision.
     Reports conservative, mid, and optimistic scenarios.
+    Costs are pulled from the category config.
     """
+    cat = CATEGORIES.get(category, CATEGORIES["bikes"])
+
+    fee_pct = cat.get("platform_fee_pct", PLATFORM_FEE_PERCENT)
+    transport = cat.get("transport_cost", TRANSPORT_COST_EUR)
+    time_cost = cat.get("time_cost", TIME_COST_EUR)
+    min_margin = cat.get("min_flip_margin", MIN_FLIP_MARGIN_EUR)
+
     resale_mid = (resale_min + resale_max) / 2
 
     # Costs that apply to every flip
-    platform_fee = resale_mid * PLATFORM_FEE_PERCENT
-    total_cost = buy_price + platform_fee + TRANSPORT_COST_EUR + TIME_COST_EUR
+    platform_fee = resale_mid * fee_pct
+    total_cost = buy_price + platform_fee + transport + time_cost
 
     margin_conservative = resale_min - total_cost  # worst case
     margin_mid = resale_mid - total_cost           # expected
@@ -22,12 +31,12 @@ def calculate_flip_margin(buy_price: float, resale_min: float, resale_max: float
         "resale_min": resale_min,
         "resale_max": resale_max,
         "platform_fee": round(platform_fee, 2),
-        "transport_cost": TRANSPORT_COST_EUR,
-        "time_cost": TIME_COST_EUR,
+        "transport_cost": transport,
+        "time_cost": time_cost,
         "total_cost": round(total_cost, 2),
         "margin_conservative": round(margin_conservative, 2),
         "margin_mid": round(margin_mid, 2),
         "margin_optimistic": round(margin_optimistic, 2),
-        "is_worth_it": margin_mid >= MIN_FLIP_MARGIN_EUR,
+        "is_worth_it": margin_mid >= min_margin,
         "roi_percent": round((margin_mid / buy_price) * 100, 1) if buy_price > 0 else 0,
     }

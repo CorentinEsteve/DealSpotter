@@ -763,7 +763,7 @@ def build():
         ["Vision share", pct(vision_share), f"{tier2} of {tier1 + tier2} evals"],
         ["Alert rate", pct(metrics["alert_rate"]), f"{metrics['alerted']} alerts"],
         ["Positive margin rate", pct(metrics["positive_rate"]), f"{stats.get('margin_positive', 0)} positive"],
-        ["Max alerts/day", str(config.MAX_ALERTS_PER_DAY), ""],
+        ["Max alerts/day", "unlimited", ""],
     ]
     story.append(make_table(
         ["Metric", "Value", "Notes"],
