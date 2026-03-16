@@ -1359,3 +1359,434 @@
   AI evaluated: 30 | From DB pending: 30 | Eval failed: 0 | Alerted: 11 | margins: avg 60€, best 398€, worst -38€
   ──────────────────────────────────────────────────────────
 2026-03-16 02:18:50 INFO  [pipeline] [furniture] DB totals: 707 total | 64 evaluated | 106 skipped | 40 alerted | 2 interested
+2026-03-16 02:19:37 INFO  [telegram] Button pressed: interested:3160976716
+2026-03-16 02:21:08 INFO  [telegram] Button pressed: interested:3138009800
+2026-03-16 10:54:17 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 10:54:17 INFO  Database initialized
+2026-03-16 10:54:17 INFO  🪑 Mobilier design — 10 search queries (Tier A: 4, Tier B: 6)
+2026-03-16 10:54:17 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 10:54:18 INFO  [telegram] Bot started for [furniture]
+2026-03-16 10:54:18 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 10:54:18 INFO  [pipeline] [furniture] Cycle queries (7): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois, fauteuil vintage
+2026-03-16 10:54:19 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 10:54:21 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 10:54:25 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 10:54:25 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 10:54:25 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 10:54:30 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 10:54:34 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 10:54:38 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 10:54:38 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 10:54:38 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 10:54:42 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 10:54:46 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 10:54:49 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 10:54:49 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 10:54:49 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 10:54:52 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 10:54:56 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 10:54:59 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 10:54:59 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 10:54:59 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 10:55:04 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 10:55:07 INFO  [scraper] 'lampadaire vintage' page 2/2: 4 listings (total available: 2 pages)
+2026-03-16 10:55:07 INFO  [scraper] 'lampadaire vintage' returned 39 total listings
+2026-03-16 10:55:07 INFO  [pipeline] [furniture] 'lampadaire vintage': 39 listings
+2026-03-16 10:55:11 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 10:55:14 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 10:55:18 INFO  [scraper] 'tabouret vintage bois' page 3/3: 35 listings (total available: 3 pages)
+2026-03-16 10:55:18 INFO  [scraper] 'tabouret vintage bois' returned 105 total listings
+2026-03-16 10:55:18 INFO  [pipeline] [furniture] 'tabouret vintage bois': 105 listings
+2026-03-16 10:55:22 INFO  [scraper] 'fauteuil vintage' page 1/3: 35 listings (total available: 22 pages)
+2026-03-16 10:55:25 INFO  [scraper] 'fauteuil vintage' page 2/3: 35 listings (total available: 22 pages)
+2026-03-16 10:55:28 INFO  [scraper] 'fauteuil vintage' page 3/3: 35 listings (total available: 22 pages)
+2026-03-16 10:55:28 INFO  [scraper] 'fauteuil vintage' returned 105 total listings
+2026-03-16 10:55:28 INFO  [pipeline] [furniture] 'fauteuil vintage': 105 listings
+2026-03-16 10:55:33 INFO  [pipeline] [furniture] 614 unique listings from 7 queries
+2026-03-16 10:55:33 INFO  [pipeline] [furniture] 3045382411 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 10:55:33 INFO  [pipeline] [furniture] 3044219340 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 10:55:33 ERROR [evaluator] Tier 1 failed for 3072553544: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZL1P9YSFMKSnAn2LXR'}
+2026-03-16 10:55:33 INFO  [evaluator] 3072553544 — Tier 1 low confidence, escalating to Tier 2
+2026-03-16 10:55:36 ERROR [evaluator] Tier 2 failed for 3072553544: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZLDvx8yWUs47gSVwzm'}
+2026-03-16 10:55:40 ERROR [evaluator] Tier 2 failed for 3001494480: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZLUNc89KUnPjeWimqQ'}
+2026-03-16 10:55:40 ERROR [evaluator] Tier 1 failed for 3142347269: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZLY389ViMeoLrfLPu6'}
+2026-03-16 10:55:40 INFO  [evaluator] 3142347269 — Tier 1 low confidence, escalating to Tier 2
+2026-03-16 10:55:45 ERROR [evaluator] Tier 2 failed for 3142347269: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZLpjxw4nKFBaNjU8Pq'}
+2026-03-16 10:55:46 INFO  [pipeline] [furniture] 3146874316 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-16 10:55:46 INFO  [pipeline] [furniture] 495 pending listings in DB, evaluating up to 30
+2026-03-16 10:55:48 ERROR [evaluator] Tier 2 failed for 3147903557: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZM6wHgVX7NEhAXV54q'}
+2026-03-16 10:55:52 ERROR [evaluator] Tier 2 failed for 3147824526: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZMNi54m3CgLvN6n6tx'}
+2026-03-16 10:55:54 ERROR [evaluator] Tier 2 failed for 3145666706: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZMZGKnvwTgYWv2hfBt'}
+2026-03-16 10:55:57 ERROR [evaluator] Tier 2 failed for 3145578680: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZMmZ13zM3vb5M5nU37'}
+2026-03-16 10:56:00 ERROR [evaluator] Tier 2 failed for 3144556403: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZMzNRoR12Tv9YjY1ha'}
+2026-03-16 10:56:02 ERROR [evaluator] Tier 2 failed for 3142648351: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZN8FCTzaqjzKVMe2Rq'}
+2026-03-16 10:56:05 ERROR [evaluator] Tier 2 failed for 3140520542: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZNKtgWLKKFfjARBxCc'}
+2026-03-16 10:56:08 ERROR [evaluator] Tier 2 failed for 3139481642: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZNZeREons1nPeoW5iV'}
+2026-03-16 10:56:11 ERROR [evaluator] Tier 2 failed for 3137770329: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZNoSdgXcB3YbGToS9U'}
+2026-03-16 10:56:14 ERROR [evaluator] Tier 2 failed for 3137237911: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZP18bQVfZxBjvmrc8s'}
+2026-03-16 10:56:17 ERROR [evaluator] Tier 2 failed for 3136878346: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZPDgeoYhBVBwc2vw6y'}
+2026-03-16 10:56:20 ERROR [evaluator] Tier 2 failed for 3136334057: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZPTwtieMrKnoQtNNn7'}
+2026-03-16 10:56:24 ERROR [evaluator] Tier 2 failed for 3135994261: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZPkR6MSjQLGvdDHRAB'}
+2026-03-16 10:56:27 ERROR [evaluator] Tier 2 failed for 3134356748: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZPy7q7rWg9WnkhBVAb'}
+2026-03-16 10:56:31 ERROR [evaluator] Tier 2 failed for 3134282069: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZQCzzuJaJhJU1WM1Pj'}
+2026-03-16 10:56:34 ERROR [evaluator] Tier 2 failed for 3134279794: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZQVtkSfNCkzTdpoPro'}
+2026-03-16 11:02:03 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 11:02:03 INFO  Database initialized
+2026-03-16 11:02:03 INFO  🪑 Mobilier design — 10 search queries (Tier A: 4, Tier B: 6)
+2026-03-16 11:02:03 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 11:02:04 INFO  [telegram] Bot started for [furniture]
+2026-03-16 11:02:04 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 11:02:04 INFO  [pipeline] [furniture] Cycle queries (7): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois, fauteuil vintage
+2026-03-16 11:02:05 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 11:02:09 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 11:02:12 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 11:02:12 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 11:02:12 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 11:02:15 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 11:02:18 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 11:02:22 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 11:02:22 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 11:02:22 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 11:02:27 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 11:02:30 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 11:02:33 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 11:02:33 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 11:02:33 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 11:02:38 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 11:02:43 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 11:02:47 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 11:02:47 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 11:02:47 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 11:02:50 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-16 11:02:54 INFO  [scraper] 'lampadaire vintage' page 2/2: 4 listings (total available: 2 pages)
+2026-03-16 11:02:54 INFO  [scraper] 'lampadaire vintage' returned 39 total listings
+2026-03-16 11:02:54 INFO  [pipeline] [furniture] 'lampadaire vintage': 39 listings
+2026-03-16 11:02:57 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-16 11:03:01 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-16 11:03:05 INFO  [scraper] 'tabouret vintage bois' page 3/3: 35 listings (total available: 3 pages)
+2026-03-16 11:03:05 INFO  [scraper] 'tabouret vintage bois' returned 105 total listings
+2026-03-16 11:03:05 INFO  [pipeline] [furniture] 'tabouret vintage bois': 105 listings
+2026-03-16 11:03:10 INFO  [scraper] 'fauteuil vintage' page 1/3: 35 listings (total available: 22 pages)
+2026-03-16 11:03:14 INFO  [scraper] 'fauteuil vintage' page 2/3: 35 listings (total available: 22 pages)
+2026-03-16 11:03:18 INFO  [scraper] 'fauteuil vintage' page 3/3: 35 listings (total available: 22 pages)
+2026-03-16 11:03:18 INFO  [scraper] 'fauteuil vintage' returned 105 total listings
+2026-03-16 11:03:18 INFO  [pipeline] [furniture] 'fauteuil vintage': 105 listings
+2026-03-16 11:03:22 INFO  [pipeline] [furniture] 614 unique listings from 7 queries
+2026-03-16 11:03:22 INFO  [pipeline] [furniture] 479 pending listings in DB, evaluating up to 30
+2026-03-16 11:03:25 ERROR [evaluator] Tier 2 failed for 3134021997: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6Zvmdt5Ytu1c7ZN4Dmw'}
+2026-03-16 11:03:27 ERROR [evaluator] Tier 2 failed for 3132665579: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZvuPTPZoiTh5Qhvczh'}
+2026-03-16 11:03:29 ERROR [evaluator] Tier 2 failed for 3132209915: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6Zw56ruBLMCwNfw5c8V'}
+2026-03-16 11:03:33 ERROR [evaluator] Tier 2 failed for 3131644583: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZwNFEfL77dmMTRowze'}
+2026-03-16 11:03:35 ERROR [evaluator] Tier 2 failed for 3131488799: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZwX2LAP3mEh1YwwqWV'}
+2026-03-16 11:03:37 ERROR [evaluator] Tier 2 failed for 3131391592: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZwfEwJQVBwFwzRK4KS'}
+2026-03-16 11:03:39 ERROR [evaluator] Tier 2 failed for 3129605492: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZwqW5LyLXf1b2Xd2Pj'}
+2026-03-16 11:03:42 ERROR [evaluator] Tier 2 failed for 3127303093: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6Zx2wf9PkrNYiXavBYH'}
+2026-03-16 11:03:46 ERROR [evaluator] Tier 2 failed for 3125306736: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZxJjRsYMSeWg1zdMY1'}
+2026-03-16 11:03:49 ERROR [evaluator] Tier 2 failed for 3124841319: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZxZq2g1UyQ3g2FzmxP'}
+2026-03-16 11:03:51 ERROR [evaluator] Tier 2 failed for 3123925776: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZxirWK6memzAdxzLgi'}
+2026-03-16 11:03:55 ERROR [evaluator] Tier 2 failed for 3123123827: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZxyPNJjRViJ1ipgz9T'}
+2026-03-16 11:03:57 ERROR [evaluator] Tier 2 failed for 3122178685: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6Zy7m9qd729RcnkCQvj'}
+2026-03-16 11:03:59 ERROR [evaluator] Tier 2 failed for 3122170258: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZyFvnYG11mAPfcBYAo'}
+2026-03-16 11:04:03 ERROR [evaluator] Tier 2 failed for 3122106478: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZyXrk5X1FJ5mFbdKWf'}
+2026-03-16 11:04:05 ERROR [evaluator] Tier 2 failed for 3122105749: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZyjBscmjtbUKd1Vy8A'}
+2026-03-16 11:04:09 ERROR [evaluator] Tier 2 failed for 3121251766: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZyyXLG7odASUwEYd3s'}
+2026-03-16 11:04:12 ERROR [evaluator] Tier 2 failed for 3121074564: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZzCyxZUUtsw1zYrZCV'}
+2026-03-16 11:04:13 ERROR [evaluator] Tier 2 failed for 3120556372: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZzLBJPJuxMsD9pWHKU'}
+2026-03-16 11:04:16 ERROR [evaluator] Tier 2 failed for 3120515662: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZzXpYC9pSXVPteRkhn'}
+2026-03-16 11:04:18 ERROR [evaluator] Tier 2 failed for 3120507341: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZzhUDHRC5RNC4rDy72'}
+2026-03-16 11:04:22 ERROR [evaluator] Tier 2 failed for 3120440702: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6ZzwW4rQeCsA6rS2ayX'}
+2026-03-16 11:04:24 ERROR [evaluator] Tier 2 failed for 3118655536: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a16MNfLqNAnQvxtQZA'}
+2026-03-16 11:04:26 ERROR [evaluator] Tier 2 failed for 3117175367: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a1ErbkLyfSqhcETUwt'}
+2026-03-16 11:04:29 ERROR [evaluator] Tier 2 failed for 3116603622: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a1VUfy9qLfgj6DvonZ'}
+2026-03-16 11:04:31 ERROR [evaluator] Tier 2 failed for 3115260868: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a1e5rDvtkXzfb9bmFU'}
+2026-03-16 11:04:33 ERROR [evaluator] Tier 2 failed for 3114488760: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a1pEnZHfMDd9G911n2'}
+2026-03-16 11:04:37 ERROR [evaluator] Tier 2 failed for 3113395210: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a24Q5TXmN7LpVCfEoW'}
+2026-03-16 11:04:41 ERROR [evaluator] Tier 2 failed for 3113393220: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a2LnpDzu7vnKxyCq9w'}
+2026-03-16 11:04:44 ERROR [evaluator] Tier 2 failed for 3112909223: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6a2d6qeVsPicW3gAXpL'}
+2026-03-16 11:04:45 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 614 | Already seen: 614 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 30 | Alerted: 0
+  ──────────────────────────────────────────────────────────
+2026-03-16 11:04:45 INFO  [pipeline] [furniture] DB totals: 713 total | 64 evaluated | 158 skipped | 38 alerted | 4 interested
+2026-03-16 11:04:45 INFO  Scheduler running — polling every 300s
+2026-03-16 11:09:45 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 11:09:45 INFO  [pipeline] [furniture] Cycle queries (7): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, luminaire ancien, lampe tiffany, lampe vitrail
+2026-03-16 11:09:46 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 11:09:50 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 11:09:54 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 11:09:54 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-16 11:09:54 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-16 11:09:57 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 9 pages)
+2026-03-16 11:10:01 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 9 pages)
+2026-03-16 11:10:04 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 9 pages)
+2026-03-16 11:10:04 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-16 11:10:04 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-16 11:10:07 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 11:10:11 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 11:10:14 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 11:10:14 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-16 11:10:14 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-16 11:10:19 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-16 11:10:22 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-16 11:10:27 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-16 11:10:27 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-16 11:10:27 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-16 11:10:32 INFO  [scraper] 'luminaire ancien' page 1/3: 35 listings (total available: 6 pages)
+2026-03-16 11:10:36 INFO  [scraper] 'luminaire ancien' page 2/3: 35 listings (total available: 6 pages)
+2026-03-16 11:10:39 INFO  [scraper] 'luminaire ancien' page 3/3: 35 listings (total available: 6 pages)
+2026-03-16 11:10:39 INFO  [scraper] 'luminaire ancien' returned 105 total listings
+2026-03-16 11:10:39 INFO  [pipeline] [furniture] 'luminaire ancien': 105 listings
+2026-03-16 11:10:43 WARNING [scraper] API blocked (403)
+2026-03-16 11:10:43 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:10:43 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:10:44 WARNING [scraper] API blocked (403)
+2026-03-16 11:10:44 INFO  [scraper] 'lampe tiffany' API unavailable, trying HTML for page 1
+2026-03-16 11:10:44 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+tiffany&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:10:45 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:10:45 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:10:45 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+tiffany&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:10:45 WARNING [scraper] 'lampe tiffany' page 1 blocked on both API and HTML
+2026-03-16 11:10:45 INFO  [scraper] 'lampe tiffany' returned 0 total listings
+2026-03-16 11:10:45 INFO  [pipeline] [furniture] 'lampe tiffany': 0 listings
+2026-03-16 11:10:50 WARNING [scraper] API blocked (403)
+2026-03-16 11:10:50 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:10:50 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:10:51 WARNING [scraper] API blocked (403)
+2026-03-16 11:10:51 INFO  [scraper] 'lampe vitrail' API unavailable, trying HTML for page 1
+2026-03-16 11:10:51 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+vitrail&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:10:51 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:10:51 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:10:51 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+vitrail&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:10:51 WARNING [scraper] 'lampe vitrail' page 1 blocked on both API and HTML
+2026-03-16 11:10:51 INFO  [scraper] 'lampe vitrail' returned 0 total listings
+2026-03-16 11:10:51 INFO  [pipeline] [furniture] 'lampe vitrail': 0 listings
+2026-03-16 11:10:54 INFO  [pipeline] [furniture] 492 unique listings from 7 queries
+2026-03-16 11:10:55 ERROR [evaluator] Tier 1 failed for 2597659636: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6aVwHEMX9iNVuRxrw6Y'}
+2026-03-16 11:10:55 INFO  [evaluator] 2597659636 — Tier 1 low confidence, escalating to Tier 2
+2026-03-16 11:10:57 ERROR [evaluator] Tier 2 failed for 2597659636: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6aW8XesPhycBtRpCeyh'}
+2026-03-16 11:10:58 INFO  [pipeline] [furniture] 449 pending listings in DB, evaluating up to 30
+2026-03-16 11:10:59 ERROR [evaluator] Tier 2 failed for 3111726550: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6aWExMjT3at5hbgy7km'}
+2026-03-16 11:11:02 ERROR [evaluator] Tier 2 failed for 3110199335: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6aWVM3QiifPisYidUMv'}
+2026-03-16 11:11:31 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 11:11:31 INFO  Database initialized
+2026-03-16 11:11:31 INFO  🪑 Mobilier design — 10 search queries (Tier A: 4, Tier B: 6)
+2026-03-16 11:11:31 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 11:11:32 INFO  [telegram] Bot started for [furniture]
+2026-03-16 11:11:32 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 11:11:32 INFO  [pipeline] [furniture] Cycle queries (7): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois, fauteuil vintage
+2026-03-16 11:11:33 WARNING [scraper] API blocked (403)
+2026-03-16 11:11:33 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:11:33 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:11:33 WARNING [scraper] API blocked (403)
+2026-03-16 11:11:33 INFO  [scraper] 'chaise design vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:11:34 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=chaise+design+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:11:34 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:11:34 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:11:34 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=chaise+design+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:11:34 WARNING [scraper] 'chaise design vintage' page 1 blocked on both API and HTML
+2026-03-16 11:11:34 INFO  [scraper] 'chaise design vintage' returned 0 total listings
+2026-03-16 11:11:34 INFO  [pipeline] [furniture] 'chaise design vintage': 0 listings
+2026-03-16 11:11:38 WARNING [scraper] API blocked (403)
+2026-03-16 11:11:38 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:11:38 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:11:39 WARNING [scraper] API blocked (403)
+2026-03-16 11:11:39 INFO  [scraper] 'lampe vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:11:39 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:11:39 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:11:39 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:11:40 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:11:40 WARNING [scraper] 'lampe vintage' page 1 blocked on both API and HTML
+2026-03-16 11:11:40 INFO  [scraper] 'lampe vintage' returned 0 total listings
+2026-03-16 11:11:40 INFO  [pipeline] [furniture] 'lampe vintage': 0 listings
+2026-03-16 11:11:42 WARNING [scraper] API blocked (403)
+2026-03-16 11:11:42 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:11:42 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:11:43 WARNING [scraper] API blocked (403)
+2026-03-16 11:11:43 INFO  [scraper] 'miroir vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:11:43 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=miroir+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:11:43 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:11:43 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:11:44 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=miroir+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:11:44 WARNING [scraper] 'miroir vintage' page 1 blocked on both API and HTML
+2026-03-16 11:11:44 INFO  [scraper] 'miroir vintage' returned 0 total listings
+2026-03-16 11:11:44 INFO  [pipeline] [furniture] 'miroir vintage': 0 listings
+2026-03-16 11:12:11 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 11:12:11 INFO  Database initialized
+2026-03-16 11:12:11 INFO  🪑 Mobilier design — 10 search queries (Tier A: 4, Tier B: 6)
+2026-03-16 11:12:11 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 11:12:12 INFO  [telegram] Bot started for [furniture]
+2026-03-16 11:12:12 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 11:12:12 INFO  [pipeline] [furniture] Cycle queries (7): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois, fauteuil vintage
+2026-03-16 11:12:13 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:13 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:13 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:13 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:13 INFO  [scraper] 'chaise design vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:12:14 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=chaise+design+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:14 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:14 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:14 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=chaise+design+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:14 WARNING [scraper] 'chaise design vintage' page 1 blocked on both API and HTML
+2026-03-16 11:12:14 INFO  [scraper] 'chaise design vintage' returned 0 total listings
+2026-03-16 11:12:14 INFO  [pipeline] [furniture] 'chaise design vintage': 0 listings
+2026-03-16 11:12:18 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:18 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:18 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:18 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:18 INFO  [scraper] 'lampe vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:12:19 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:19 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:19 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:19 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampe+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:19 WARNING [scraper] 'lampe vintage' page 1 blocked on both API and HTML
+2026-03-16 11:12:19 INFO  [scraper] 'lampe vintage' returned 0 total listings
+2026-03-16 11:12:19 INFO  [pipeline] [furniture] 'lampe vintage': 0 listings
+2026-03-16 11:12:23 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:23 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:23 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:24 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:24 INFO  [scraper] 'miroir vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:12:24 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=miroir+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:24 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:24 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:24 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=miroir+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:24 WARNING [scraper] 'miroir vintage' page 1 blocked on both API and HTML
+2026-03-16 11:12:24 INFO  [scraper] 'miroir vintage' returned 0 total listings
+2026-03-16 11:12:24 INFO  [pipeline] [furniture] 'miroir vintage': 0 listings
+2026-03-16 11:12:28 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:28 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:28 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:28 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:28 INFO  [scraper] 'table basse vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:12:29 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=table+basse+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:29 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:29 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:29 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=table+basse+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:29 WARNING [scraper] 'table basse vintage' page 1 blocked on both API and HTML
+2026-03-16 11:12:29 INFO  [scraper] 'table basse vintage' returned 0 total listings
+2026-03-16 11:12:29 INFO  [pipeline] [furniture] 'table basse vintage': 0 listings
+2026-03-16 11:12:32 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:32 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:32 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:33 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:33 INFO  [scraper] 'lampadaire vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:12:33 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampadaire+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:33 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:33 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:34 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=lampadaire+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:34 WARNING [scraper] 'lampadaire vintage' page 1 blocked on both API and HTML
+2026-03-16 11:12:34 INFO  [scraper] 'lampadaire vintage' returned 0 total listings
+2026-03-16 11:12:34 INFO  [pipeline] [furniture] 'lampadaire vintage': 0 listings
+2026-03-16 11:12:36 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:37 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:37 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:37 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:37 INFO  [scraper] 'tabouret vintage bois' API unavailable, trying HTML for page 1
+2026-03-16 11:12:37 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=tabouret+vintage+bois&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:37 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:37 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:38 WARNING [scraper] Request failed for https://www.leboncoin.fr/recherche?category=19&text=tabouret+vintage+bois&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000: Failed to perform, curl: (23) Failure writing output to destination, passed 13 returned 0. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-16 11:12:38 WARNING [scraper] 'tabouret vintage bois' page 1 blocked on both API and HTML
+2026-03-16 11:12:38 INFO  [scraper] 'tabouret vintage bois' returned 0 total listings
+2026-03-16 11:12:38 INFO  [pipeline] [furniture] 'tabouret vintage bois': 0 listings
+2026-03-16 11:12:43 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:43 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:43 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:43 WARNING [scraper] API blocked (403)
+2026-03-16 11:12:43 INFO  [scraper] 'fauteuil vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:12:43 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=fauteuil+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:44 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:12:44 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:12:44 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=fauteuil+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:12:44 WARNING [scraper] 'fauteuil vintage' page 1 blocked on both API and HTML
+2026-03-16 11:12:44 INFO  [scraper] 'fauteuil vintage' returned 0 total listings
+2026-03-16 11:12:44 INFO  [pipeline] [furniture] 'fauteuil vintage': 0 listings
+2026-03-16 11:12:47 INFO  [pipeline] [furniture] 0 unique listings from 7 queries
+2026-03-16 11:12:47 INFO  [pipeline] [furniture] 447 pending listings in DB, evaluating up to 30
+2026-03-16 11:12:50 ERROR [evaluator] Tier 2 failed for 3110036056: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6aeTRRfKV2D7MC9kkfX'}
+2026-03-16 11:12:52 ERROR [evaluator] Tier 2 failed for 3106372553: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6aea3naKKSkJVFbd44U'}
+2026-03-16 11:12:55 ERROR [evaluator] Tier 2 failed for 3105253428: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6aepddVFhmFq1XEDqHa'}
+2026-03-16 11:12:59 ERROR [evaluator] Tier 2 failed for 3104016634: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6af6DzhDY4j4i9ndrkJ'}
+2026-03-16 11:13:02 ERROR [evaluator] Tier 2 failed for 3102222993: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6afHiZEYZwc13x6hFMa'}
+2026-03-16 11:30:45 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 11:30:45 INFO  Database initialized
+2026-03-16 11:30:45 INFO  🪑 Mobilier design — 10 search queries (Tier A: 4, Tier B: 6)
+2026-03-16 11:30:45 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 11:30:45 INFO  [telegram] Bot started for [furniture]
+2026-03-16 11:30:46 INFO  [preflight] Checking LBC API access...
+2026-03-16 11:30:46 WARNING [scraper] API blocked (403)
+2026-03-16 11:30:46 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:30:46 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:30:46 WARNING [scraper] API blocked (403)
+2026-03-16 11:30:46 WARNING [preflight] ❌ LBC API — blocked (cookies expired?)
+2026-03-16 11:30:46 INFO  [preflight] Checking Anthropic API...
+2026-03-16 11:30:47 ERROR [evaluator] Anthropic health check failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZ6c1pCY5SSdLGrG3EMge'}
+2026-03-16 11:30:47 ERROR [preflight] ❌ Anthropic API — failed (check balance/key)
+2026-03-16 11:30:47 ERROR [pipeline] Both APIs down — skipping this cycle entirely
+2026-03-16 11:30:47 INFO  Scheduler running — polling every 300s
+2026-03-16 11:34:35 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-16 11:34:35 INFO  Database initialized
+2026-03-16 11:34:35 INFO  🪑 Mobilier design — 10 search queries (Tier A: 4, Tier B: 6)
+2026-03-16 11:34:35 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-16 11:34:35 INFO  [telegram] Bot started for [furniture]
+2026-03-16 11:34:36 INFO  [preflight] Checking LBC API access...
+2026-03-16 11:34:36 WARNING [scraper] API blocked (403)
+2026-03-16 11:34:36 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:34:36 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:34:36 WARNING [scraper] API blocked (403)
+2026-03-16 11:34:36 WARNING [preflight] ❌ LBC API — blocked (cookies expired?)
+2026-03-16 11:34:36 INFO  [preflight] Checking Anthropic API...
+2026-03-16 11:34:37 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-16 11:34:37 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 11:34:37 INFO  [pipeline] [furniture] Skipping scrape (LBC blocked)
+2026-03-16 11:34:37 INFO  [pipeline] [furniture] 442 pending listings in DB, evaluating up to 30
+2026-03-16 11:34:59 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Paire de tables de chevet Art Déco en palissandre/bois de rose avec marqueterie géométrique, pieds fuselés effilés, 2 tiroirs par chevet",
+  "brand": "inconnu",
+  "model": "i...
+2026-03-16 11:35:22 INFO  [evaluator] 3092788764 — Tier 2 vision — confidence 0.65
+2026-03-16 11:35:23 INFO  [pipeline] [furniture] 3092788764 (pending) — margin 126.0€ (ROI 105.0%) — ALERT
+2026-03-16 11:35:23 INFO  [telegram:furniture] 3092788764 — Alert sent
+2026-03-16 11:35:44 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Ensemble de deux commodes/buffets bas en bois laqué noir avec incrustations et poignées laiton doré, sur piètement laiton",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "des...
+2026-03-16 11:36:04 INFO  [evaluator] 3091679018 — Tier 2 vision — confidence 0.62
+2026-03-16 11:36:04 INFO  [pipeline] [furniture] 3091679018 (pending) — margin 13.8€ (ROI 86.2%) — no alert
+2026-03-16 11:36:21 INFO  [telegram] Button pressed: interested:3092788764
+2026-03-16 11:36:25 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Lampe de table en porcelaine à décor floral, pied urne avec base en marbre noir et laiton doré",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era":...
+2026-03-16 11:36:41 INFO  [evaluator] 3088598161 — Tier 2 vision — confidence 0.55
+2026-03-16 11:36:41 INFO  [pipeline] [furniture] 3088598161 (pending) — margin -30.04€ (ROI -250.3%) — no alert
+2026-03-16 11:37:03 INFO  [evaluator] 3086889869 — Tier 2 vision — confidence 0.62
+2026-03-16 11:37:04 INFO  [pipeline] [furniture] 3086889869 (pending) — margin 33.0€ (ROI 33.7%) — ALERT
+2026-03-16 11:37:04 INFO  [telegram:furniture] 3086889869 — Alert sent
+2026-03-16 11:37:22 INFO  [evaluator] 3085203736 — Tier 2 vision — confidence 0.55
+2026-03-16 11:37:22 INFO  [pipeline] [furniture] 3085203736 (pending) — margin -29.7€ (ROI -118.8%) — no alert
+2026-03-16 11:37:40 INFO  [evaluator] 3084152299 — Tier 2 vision — confidence 0.45
+2026-03-16 11:37:40 INFO  [pipeline] [furniture] 3084152299 (pending) — margin 2.8€ (ROI 5.6%) — no alert
+2026-03-16 11:38:01 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Lot rotin & bambou vintage : 2 fauteuils en rotin tressé + 1 table étagère en bambou 2 niveaux",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era":...
+2026-03-16 11:38:18 INFO  [evaluator] 3080682732 — Tier 2 vision — confidence 0.72
+2026-03-16 11:38:18 INFO  [pipeline] [furniture] 3080682732 (pending) — margin -20.0€ (ROI -55.6%) — no alert
+2026-03-16 11:38:39 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Meuble bar / buffet vitrine vintage français style Art Déco tardif / années 50",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era": "1945-1960 (rec...

@@ -21,6 +21,21 @@ log = logging.getLogger("dealspotter.evaluator")
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
+def check_anthropic_access() -> bool:
+    """Quick health check: can we call the Anthropic API?
+    Sends a tiny request to Haiku. Returns True if OK, False on error."""
+    try:
+        resp = client.messages.create(
+            model=HAIKU_MODEL,
+            max_tokens=10,
+            messages=[{"role": "user", "content": "Dis 'ok'"}],
+        )
+        return bool(resp.content)
+    except Exception as e:
+        log.error(f"[evaluator] Anthropic health check failed: {e}")
+        return False
+
+
 # --- Tier 0: Pre-filter (free) ---
 
 def pre_filter(listing: dict, category: str = "bikes") -> tuple:
@@ -110,7 +125,7 @@ def evaluate_text_only(listing: dict, category: str = "bikes") -> dict:
     try:
         response = client.messages.create(
             model=HAIKU_MODEL,
-            max_tokens=1024,
+            max_tokens=800,
             messages=[{"role": "user", "content": prompt}],
         )
         result_text = response.content[0].text
@@ -132,7 +147,7 @@ def evaluate_text_only(listing: dict, category: str = "bikes") -> dict:
 
 # --- Tier 2: Vision (Claude Sonnet) ---
 
-def fetch_images(photo_urls: list, max_images: int = 4) -> list:
+def fetch_images(photo_urls: list, max_images: int = 2) -> list:
     """Download listing images and return as base64-encoded data.
     Returns list of dicts with 'type', 'media_type', 'data'."""
     if not photo_urls:
@@ -199,7 +214,7 @@ def evaluate_with_vision(listing: dict, category: str = "bikes") -> dict:
     try:
         response = client.messages.create(
             model=SONNET_MODEL,
-            max_tokens=1500,
+            max_tokens=800,
             messages=[{"role": "user", "content": content}],
         )
         result_text = response.content[0].text
@@ -233,7 +248,7 @@ def evaluate_text_only_sonnet(listing: dict, category: str = "bikes") -> dict:
     try:
         response = client.messages.create(
             model=SONNET_MODEL,
-            max_tokens=1024,
+            max_tokens=800,
             messages=[{"role": "user", "content": prompt}],
         )
         result_text = response.content[0].text
@@ -271,14 +286,23 @@ def evaluate_listing(listing: dict, category: str = "bikes") -> dict:
     # Tier 1: text-only (cheap) — when we have a good description
     if has_clear_description:
         result = evaluate_text_only(listing, category)
-        if result and result.get("confidence", 0) >= confidence_threshold:
-            return result
-        log.info(f"[evaluator] {lbc_id} — Tier 1 low confidence, escalating to Tier 2")
+        if result:
+            confidence = result.get("confidence", 0)
+            resale_max = result.get("estimated_resale_max", 0)
+            buy_price = listing.get("price", 0)
 
-    # Tier 2: vision (more accurate, uses photos)
+            # High confidence → trust Haiku, no need for Sonnet
+            if confidence >= confidence_threshold:
+                return result
+
+            # If Haiku says it's clearly not worth it, trust that too (save Sonnet cost)
+            if confidence >= 0.4 and resale_max <= buy_price * 1.3:
+                log.info(f"[evaluator] {lbc_id} — Tier 1 says not worth it (resale {resale_max}€ vs buy {buy_price}€), skipping Tier 2")
+                return result
+
+            log.info(f"[evaluator] {lbc_id} — Tier 1 confidence {confidence}, escalating to Tier 2")
+
+    # Tier 2: vision (more accurate, uses photos) — only for promising or unclear listings
     result = evaluate_with_vision(listing, category)
-
-    # Small delay between API calls to avoid rate limits
-    time.sleep(0.5)
-
+    time.sleep(0.3)
     return result

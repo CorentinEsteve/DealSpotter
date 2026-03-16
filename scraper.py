@@ -809,6 +809,20 @@ def import_cookies_manual(cookie_string: str):
     print(f"Saved to {COOKIES_FILE}")
 
 
+def check_lbc_access() -> bool:
+    """Quick health check: can we reach the LBC search API?
+    Returns True if API works, False if blocked.
+    Tries refreshing cookies once on failure."""
+    def try_api():
+        return _search_via_api(
+            "https://www.leboncoin.fr/recherche?category=55&text=velo&price=50-500",
+            page=1,
+        )
+
+    result = _fetch_with_retry(try_api)
+    return result is not None
+
+
 def test_access():
     """Test if we can access leboncoin.
 

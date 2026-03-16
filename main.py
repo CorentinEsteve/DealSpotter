@@ -12,9 +12,9 @@ from config import (
     SEARCH_BASE, SEARCH_QUERIES, QUERIES_PER_CYCLE,
 )
 import db
-from evaluator import pre_filter, evaluate_listing
+from evaluator import pre_filter, evaluate_listing, check_anthropic_access
 from flip_calculator import calculate_flip_margin
-from scraper import scrape_search, scrape_search_from_config, scrape_listing
+from scraper import scrape_search, scrape_search_from_config, scrape_listing, check_lbc_access
 from telegram_bot import send_telegram_alert, start_telegram_bots
 
 # --- Logging setup ---
@@ -92,9 +92,17 @@ def _scrape_all_searches(category: str, cat_config: dict, run_stats: dict) -> li
             "category": cat_config["lbc_category"],
         }
         queries = get_queries_for_cycle(category, cat_config)
-        for query in queries:
+        first_query_blocked = False
+        for i, query in enumerate(queries):
+            # If first query returned 0 (blocked), don't waste time on the rest
+            if first_query_blocked:
+                log.info(f"[pipeline] [{category}] Skipping '{query['text']}' (API blocked)")
+                continue
             try:
                 results = scrape_search_from_config(query, search_base, max_pages=MAX_SEARCH_PAGES)
+                if i == 0 and len(results) == 0:
+                    first_query_blocked = True
+                    log.warning(f"[pipeline] [{category}] First query blocked — skipping remaining queries")
                 for listing in results:
                     lbc_id = listing.get("lbc_id")
                     if lbc_id and lbc_id not in seen_ids:
@@ -126,7 +134,7 @@ def _scrape_all_searches(category: str, cat_config: dict, run_stats: dict) -> li
     return all_listings
 
 
-def run_pipeline_for_category(category: str, cat_config: dict):
+def run_pipeline_for_category(category: str, cat_config: dict, lbc_ok: bool = True, anthropic_ok: bool = True):
     """Single pipeline run for one category.
 
     Flow: scrape search → dedup → pre-filter → fetch full listing → AI evaluate → alert
@@ -160,8 +168,13 @@ def run_pipeline_for_category(category: str, cat_config: dict):
         "skip_reasons": {},
     }
 
-    # Step 1: Scrape all searches (with rotation + pagination)
-    all_listings = _scrape_all_searches(category, cat_config, run_stats)
+    # Step 1: Scrape all searches (skip if LBC is down)
+    if lbc_ok:
+        all_listings = _scrape_all_searches(category, cat_config, run_stats)
+    else:
+        all_listings = []
+        log.info(f"[pipeline] [{category}] Skipping scrape (LBC blocked)")
+        run_stats["scraped"] = 0
 
     # Step 2: Process each listing
     scrapes_this_cycle = 0
@@ -230,7 +243,9 @@ def run_pipeline_for_category(category: str, cat_config: dict):
                         listing.update(scraped)
                         time.sleep(random.uniform(SCRAPE_DELAY_MIN, SCRAPE_DELAY_MAX))
 
-            # AI evaluation
+            # AI evaluation (skip if Anthropic is down)
+            if not anthropic_ok:
+                continue
             result = evaluate_listing(listing, category)
             if result is None:
                 db.update_status(lbc_id, "skipped", skip_reason="eval_failed")
@@ -291,6 +306,11 @@ def run_pipeline_for_category(category: str, cat_config: dict):
 
     # Step 3: Pick up any pending listings from DB that weren't evaluated yet
     #         (e.g. from a previous run where scraping failed before evaluation)
+    if not anthropic_ok:
+        log.info(f"[pipeline] [{category}] Skipping pending evaluations (Anthropic down)")
+        _log_run_summary(category, run_stats)
+        return
+
     MAX_PENDING_PER_CYCLE = 30  # Avoid hammering the API with hundreds of evals at once
     pending = db.get_pending_listings(category)
     if pending:
@@ -377,15 +397,47 @@ def run_pipeline_for_category(category: str, cat_config: dict):
     _log_run_summary(category, run_stats)
 
 
+def _preflight_checks() -> dict:
+    """Run quick health checks before the pipeline. Returns status dict."""
+    status = {"lbc_ok": False, "anthropic_ok": False}
+
+    log.info("[preflight] Checking LBC API access...")
+    status["lbc_ok"] = check_lbc_access()
+    if status["lbc_ok"]:
+        log.info("[preflight] ✅ LBC API — OK")
+    else:
+        log.warning("[preflight] ❌ LBC API — blocked (cookies expired?)")
+
+    log.info("[preflight] Checking Anthropic API...")
+    status["anthropic_ok"] = check_anthropic_access()
+    if status["anthropic_ok"]:
+        log.info("[preflight] ✅ Anthropic API — OK")
+    else:
+        log.error("[preflight] ❌ Anthropic API — failed (check balance/key)")
+
+    return status
+
+
 def run_pipeline(categories: list = None):
     """Run pipeline for specified categories (or all active ones)."""
     cats = categories or ACTIVE_CATEGORIES
+
+    # Preflight: check APIs before wasting time
+    status = _preflight_checks()
+
+    if not status["lbc_ok"] and not status["anthropic_ok"]:
+        log.error("[pipeline] Both APIs down — skipping this cycle entirely")
+        return
+
+    if not status["anthropic_ok"]:
+        log.warning("[pipeline] Anthropic API down — scraping only (no evaluations)")
+
     for category in cats:
         cat_config = CATEGORIES.get(category)
         if not cat_config:
             log.error(f"[pipeline] Unknown category '{category}' — skipping")
             continue
-        run_pipeline_for_category(category, cat_config)
+        run_pipeline_for_category(category, cat_config, lbc_ok=status["lbc_ok"], anthropic_ok=status["anthropic_ok"])
 
 
 def _log_run_summary(category: str, stats: dict):
