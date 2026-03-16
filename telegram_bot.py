@@ -47,18 +47,20 @@ def format_alert_message(listing: dict, evaluation: dict, margin: dict) -> str:
     resale_max = margin.get("resale_max", 0)
     margin_mid = margin.get("margin_mid", 0)
     roi = margin.get("roi_percent", 0)
-    condition = escape_md(evaluation.get("ai_condition", "inconnu"))
     reasoning = escape_md(evaluation.get("reasoning", ""))
     url = listing.get("url", "")
 
+    # Pretty-print condition
+    condition_raw = evaluation.get("ai_condition", "inconnu")
+    condition_display = escape_md(condition_raw.replace("_", " ").capitalize())
+
     msg = (
-        f"{header_emoji} *OPPORTUNITÉ FLIP*\n\n"
-        f"*{item_name}*\n"
+        f"{header_emoji} *{item_name}*\n\n"
         f"📍 {location}\n\n"
-        f"💰 Achat: {escape_md(str(int(buy_price)))}€\n"
+        f"💰 Prix: {escape_md(str(int(buy_price)))}€\n"
         f"📈 Revente estimée: {escape_md(str(int(resale_min)))}–{escape_md(str(int(resale_max)))}€\n"
-        f"✅ Marge nette: \\~{escape_md(str(int(margin_mid)))}€ \\(ROI {escape_md(str(roi))}%\\)\n\n"
-        f"État: {condition}\n"
+        f"✅ Marge nette: \\~{escape_md(str(int(margin_mid)))}€ \\(ROI {escape_md(str(roi))}%\\)\n"
+        f"🔎 État: {condition_display}\n\n"
         f"Pourquoi: {reasoning}\n\n"
         f"🔗 [Voir l'annonce]({url})"
     )
@@ -69,15 +71,11 @@ def build_inline_keyboard(lbc_id: str) -> InlineKeyboardMarkup:
     """Build inline keyboard buttons for a listing alert."""
     keyboard = [
         [
-            InlineKeyboardButton("✅ Intéressé", callback_data=f"interested:{lbc_id}"),
-            InlineKeyboardButton("❌ Passer", callback_data=f"skip:{lbc_id}"),
+            InlineKeyboardButton("👍 Intéressé", callback_data=f"interested:{lbc_id}"),
+            InlineKeyboardButton("👎 Passer", callback_data=f"pass:{lbc_id}"),
         ],
         [
             InlineKeyboardButton("📸 Analyser photos", callback_data=f"analyze:{lbc_id}"),
-        ],
-        [
-            InlineKeyboardButton("👍", callback_data=f"good:{lbc_id}"),
-            InlineKeyboardButton("👎", callback_data=f"bad:{lbc_id}"),
         ],
     ]
     return InlineKeyboardMarkup(keyboard)
@@ -145,13 +143,15 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         if action == "interested":
             db.update_status(lbc_id, "interested")
+            db.update_feedback(lbc_id, "good")
             await query.edit_message_reply_markup(reply_markup=None)
-            await query.message.reply_text(f"✅ Marqué comme intéressé")
+            await query.message.reply_text("👍 Intéressé")
 
-        elif action == "skip":
-            db.update_status(lbc_id, "skipped", skip_reason="user_skip")
+        elif action == "pass":
+            db.update_status(lbc_id, "skipped", skip_reason="user_pass")
+            db.update_feedback(lbc_id, "bad")
             await query.edit_message_reply_markup(reply_markup=None)
-            await query.message.reply_text(f"❌ Passé")
+            await query.message.reply_text("👎 Passé")
 
         elif action == "analyze":
             await query.message.reply_text("📸 Analyse des photos en cours...")
@@ -172,14 +172,6 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     await query.message.reply_text(response)
                 else:
                     await query.message.reply_text("❌ Impossible d'analyser les photos")
-
-        elif action == "good":
-            db.update_feedback(lbc_id, "good")
-            await query.message.reply_text("👍 Feedback enregistré — bon deal")
-
-        elif action == "bad":
-            db.update_feedback(lbc_id, "bad")
-            await query.message.reply_text("👎 Feedback enregistré — mauvais deal")
 
         else:
             log.warning(f"[telegram] Unknown action: {action}")
@@ -306,11 +298,12 @@ def _make_stats_handler(bot_categories: list):
             lines = "\n".join(f"  {reason}: {count}" for reason, count in top)
             text += f"🚫 Top filtres:\n{lines}\n"
 
-        good = global_stats.get("good_feedback", 0)
-        bad = global_stats.get("bad_feedback", 0)
-        fb_total = good + bad
-        if fb_total > 0:
-            text += f"\n👍 {good}  👎 {bad}  ({fb_total} labels)\n"
+        good = global_stats.get("interested", 0)
+        bad = global_stats.get("good_feedback", 0) + global_stats.get("bad_feedback", 0)
+        # Show user feedback summary
+        total_feedback = good + bad
+        if total_feedback > 0:
+            text += f"\n👍 {good} intéressé  👎 {total_feedback - good} passé\n"
         else:
             text += f"\n⚠️ 0 feedback — utilise 👍/👎 sur les alertes!\n"
 

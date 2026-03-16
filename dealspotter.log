@@ -1282,3 +1282,80 @@
 2026-03-16 02:08:03 INFO  [pipeline] [furniture] 'luminaire ancien': 105 listings
 2026-03-16 02:08:08 INFO  [pipeline] [furniture] 590 unique listings from 6 queries
 2026-03-16 02:08:08 INFO  [pipeline] [furniture] 525 pending listings in DB, evaluating up to 30
+2026-03-16 02:08:26 INFO  [evaluator] 3079530810 — Tier 2 vision — confidence 0.82
+2026-03-16 02:08:26 INFO  [pipeline] [furniture] 3079530810 (pending) — margin 6.0€ (ROI 60.0%) — no alert
+2026-03-16 02:08:49 INFO  [evaluator] 3058985881 — Tier 2 vision — confidence 0.72
+2026-03-16 02:08:50 INFO  [pipeline] [furniture] 3058985881 (pending) — margin 40.0€ (ROI 25.0%) — ALERT
+2026-03-16 02:08:50 INFO  [telegram:furniture] 3058985881 — Alert sent
+2026-03-16 02:09:11 INFO  [evaluator] 3058109135 — Tier 2 vision — confidence 0.82
+2026-03-16 02:09:12 INFO  [pipeline] [furniture] 3058109135 (pending) — margin 226.8€ (ROI 181.4%) — ALERT
+2026-03-16 02:09:12 INFO  [telegram:furniture] 3058109135 — Alert sent
+2026-03-16 02:09:33 INFO  [evaluator] 3056769217 — Tier 2 vision — confidence 0.88
+2026-03-16 02:09:34 INFO  [pipeline] [furniture] 3056769217 (pending) — margin 14.8€ (ROI 11.4%) — no alert
+2026-03-16 02:09:56 INFO  [evaluator] 3052684059 — Tier 2 vision — confidence 0.55
+2026-03-16 02:09:57 INFO  [pipeline] [furniture] 3052684059 (pending) — margin 107.8€ (ROI 179.7%) — ALERT
+2026-03-16 02:09:57 INFO  [telegram:furniture] 3052684059 — Alert sent
+2026-03-16 02:10:23 INFO  [evaluator] 3050951946 — Tier 2 vision — confidence 0.72
+2026-03-16 02:10:23 INFO  [pipeline] [furniture] 3050951946 (pending) — margin 398.4€ (ROI 796.8%) — ALERT
+2026-03-16 02:10:23 INFO  [telegram:furniture] 3050951946 — Alert sent
+2026-03-16 02:10:43 INFO  [evaluator] 3162578573 — Tier 2 vision — confidence 0.45
+2026-03-16 02:10:43 INFO  [pipeline] [furniture] 3162578573 (pending) — margin -13.2€ (ROI -66.0%) — no alert
+2026-03-16 02:11:02 INFO  [evaluator] 3162520262 — Tier 2 vision — confidence 0.78
+2026-03-16 02:11:03 INFO  [pipeline] [furniture] 3162520262 (pending) — margin 77.6€ (ROI 51.7%) — ALERT
+2026-03-16 02:11:03 INFO  [telegram:furniture] 3162520262 — Alert sent
+2026-03-16 02:11:24 INFO  [evaluator] 3015291902 — Tier 2 vision — confidence 0.62
+2026-03-16 02:11:24 INFO  [pipeline] [furniture] 3015291902 (pending) — margin 17.5€ (ROI 175.0%) — no alert
+2026-03-16 02:11:47 INFO  [evaluator] 3161586110 — Tier 2 vision — confidence 0.62
+2026-03-16 02:11:47 INFO  [pipeline] [furniture] 3161586110 (pending) — margin -20.3€ (ROI -25.4%) — no alert
+2026-03-16 02:12:09 INFO  [evaluator] 3161230018 — Tier 2 vision — confidence 0.78
+2026-03-16 02:12:10 INFO  [pipeline] [furniture] 3161230018 (pending) — margin 31.4€ (ROI 33.1%) — ALERT
+2026-03-16 02:12:10 INFO  [telegram:furniture] 3161230018 — Alert sent
+2026-03-16 02:12:29 INFO  [evaluator] 3161130208 — Tier 2 vision — confidence 0.62
+2026-03-16 02:12:30 INFO  [pipeline] [furniture] 3161130208 (pending) — margin -38.2€ (ROI -84.9%) — no alert
+2026-03-16 02:12:53 INFO  [evaluator] 3160976716 — Tier 2 vision — confidence 0.72
+2026-03-16 02:12:53 INFO  [pipeline] [furniture] 3160976716 (pending) — margin 106.2€ (ROI 132.8%) — ALERT
+2026-03-16 02:12:54 INFO  [telegram:furniture] 3160976716 — Alert sent
+2026-03-16 02:13:16 INFO  [evaluator] 3160973924 — Tier 2 vision — confidence 0.72
+2026-03-16 02:13:17 INFO  [pipeline] [furniture] 3160973924 (pending) — margin 275.3€ (ROI 276.7%) — ALERT
+2026-03-16 02:13:17 INFO  [telegram:furniture] 3160973924 — Alert sent
+2026-03-16 02:13:33 INFO  [evaluator] 3160412111 — Tier 2 vision — confidence 0.72
+2026-03-16 02:13:34 INFO  [pipeline] [furniture] 3160412111 (pending) — margin 17.1€ (ROI 114.0%) — no alert
+2026-03-16 02:13:53 INFO  [evaluator] 3147409019 — Tier 2 vision — confidence 0.55
+2026-03-16 02:13:53 INFO  [pipeline] [furniture] 3147409019 (pending) — margin -18.1€ (ROI -28.3%) — no alert
+2026-03-16 02:14:10 INFO  [evaluator] 3160010230 — Tier 2 vision — confidence 0.62
+2026-03-16 02:14:11 INFO  [pipeline] [furniture] 3160010230 (pending) — margin 12.1€ (ROI 60.5%) — no alert
+2026-03-16 02:14:32 INFO  [evaluator] 3159984074 — Tier 2 vision — confidence 0.62
+2026-03-16 02:14:33 INFO  [pipeline] [furniture] 3159984074 (pending) — margin 10.9€ (ROI 31.1%) — no alert
+2026-03-16 02:14:54 INFO  [evaluator] 3159874844 — Tier 2 vision — confidence 0.62
+2026-03-16 02:14:55 INFO  [pipeline] [furniture] 3159874844 (pending) — margin 7.1€ (ROI 28.4%) — no alert
+2026-03-16 02:15:13 INFO  [evaluator] 3159817044 — Tier 2 vision — confidence 0.55
+2026-03-16 02:15:14 INFO  [pipeline] [furniture] 3159817044 (pending) — margin -4.0€ (ROI -20.0%) — no alert
+2026-03-16 02:15:31 INFO  [evaluator] 3159306213 — Tier 2 vision — confidence 0.72
+2026-03-16 02:15:31 INFO  [pipeline] [furniture] 3159306213 (pending) — margin -15.9€ (ROI -63.6%) — no alert
+2026-03-16 02:15:50 INFO  [evaluator] 3159250080 — Tier 2 vision — confidence 0.55
+2026-03-16 02:15:51 INFO  [pipeline] [furniture] 3159250080 (pending) — margin 15.5€ (ROI 44.3%) — no alert
+2026-03-16 02:16:08 INFO  [evaluator] 3158545889 — Tier 2 vision — confidence 0.65
+2026-03-16 02:16:09 INFO  [pipeline] [furniture] 3158545889 (pending) — margin -6.0€ (ROI -13.3%) — no alert
+2026-03-16 02:16:30 INFO  [evaluator] 3157940574 — Tier 2 vision — confidence 0.72
+2026-03-16 02:16:31 INFO  [pipeline] [furniture] 3157940574 (pending) — margin 25.1€ (ROI 83.7%) — no alert
+2026-03-16 02:16:54 INFO  [evaluator] 3156275995 — Tier 2 vision — confidence 0.88
+2026-03-16 02:16:54 INFO  [pipeline] [furniture] 3156275995 (pending) — margin 59.6€ (ROI 198.7%) — ALERT
+2026-03-16 02:16:55 INFO  [telegram:furniture] 3156275995 — Alert sent
+2026-03-16 02:17:18 INFO  [evaluator] 3155415626 — Tier 2 vision — confidence 0.62
+2026-03-16 02:17:19 INFO  [pipeline] [furniture] 3155415626 (pending) — margin 8.5€ (ROI 20.2%) — no alert
+2026-03-16 02:17:40 INFO  [evaluator] 3154940745 — Tier 2 vision — confidence 0.55
+2026-03-16 02:17:40 INFO  [pipeline] [furniture] 3154940745 (pending) — margin 25.9€ (ROI 129.5%) — no alert
+2026-03-16 02:18:06 INFO  [evaluator] 3138009800 — Tier 2 vision — confidence 0.72
+2026-03-16 02:18:06 INFO  [pipeline] [furniture] 3138009800 (pending) — margin 349.0€ (ROI 232.7%) — ALERT
+2026-03-16 02:18:07 INFO  [telegram:furniture] 3138009800 — Alert sent
+2026-03-16 02:18:27 INFO  [evaluator] 3149522110 — Tier 2 vision — confidence 0.72
+2026-03-16 02:18:27 INFO  [pipeline] [furniture] 3149522110 (pending) — margin -4.5€ (ROI -50.0%) — no alert
+2026-03-16 02:18:49 INFO  [evaluator] 3148403380 — Tier 2 vision — confidence 0.72
+2026-03-16 02:18:49 INFO  [pipeline] [furniture] 3148403380 (pending) — margin 80.0€ (ROI 66.7%) — ALERT
+2026-03-16 02:18:50 INFO  [telegram:furniture] 3148403380 — Alert sent
+2026-03-16 02:18:50 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 590 | Already seen: 590 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 30 | From DB pending: 30 | Eval failed: 0 | Alerted: 11 | margins: avg 60€, best 398€, worst -38€
+  ──────────────────────────────────────────────────────────
+2026-03-16 02:18:50 INFO  [pipeline] [furniture] DB totals: 707 total | 64 evaluated | 106 skipped | 40 alerted | 2 interested
