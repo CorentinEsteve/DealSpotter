@@ -197,26 +197,6 @@ def _is_prefilter_reason(reason: str) -> bool:
         or reason.startswith("vendeur_pro")
     )
 
-def parse_search_url(url: str) -> dict:
-    parsed = urlparse(url)
-    qs = parse_qs(parsed.query)
-    text = unquote(qs.get("text", [""])[0]).replace("+", " ").strip()
-    price = qs.get("price", [""])[0]
-    owner_type = qs.get("owner_type", [""])[0]
-    sort = qs.get("sort", [""])[0]
-    order = qs.get("order", [""])[0]
-    category = qs.get("category", [""])[0]
-    locations = qs.get("locations", [""])[0]
-
-    return {
-        "text": text or "—",
-        "price": price or "—",
-        "owner_type": owner_type or "—",
-        "sort": f"{sort} {order}".strip() if sort or order else "—",
-        "category": category or "—",
-        "locations": locations or "All France",
-    }
-
 def load_metrics() -> dict:
     stats = db.get_detailed_stats()
     total = stats.get("total", 0)
@@ -241,7 +221,7 @@ def load_metrics() -> dict:
     tier_counts = {row["eval_tier"]: row["c"] for row in tier_rows}
 
     top_rows = conn.execute(
-        "SELECT lbc_id, title, price, flip_margin, ai_brand, status "
+        "SELECT lbc_id, title, price, flip_margin, ai_brand, status, category "
         "FROM listings WHERE flip_margin IS NOT NULL "
         "ORDER BY flip_margin DESC LIMIT 8"
     ).fetchall()
@@ -260,7 +240,7 @@ def load_metrics() -> dict:
         "WHEN price < 100 THEN '50-99' "
         "WHEN price < 250 THEN '100-249' "
         "WHEN price < 500 THEN '250-499' "
-        "ELSE '500-1000' END AS bucket, "
+        "ELSE '500+' END AS bucket, "
         "COUNT(*) c, AVG(flip_margin) avg_margin "
         "FROM listings WHERE flip_margin IS NOT NULL "
         "GROUP BY bucket ORDER BY bucket"
@@ -272,6 +252,15 @@ def load_metrics() -> dict:
         "SELECT COUNT(*) c FROM listings WHERE first_seen_at >= ?",
         (since,)
     ).fetchone()["c"]
+
+    # Per-category stats
+    cat_rows = conn.execute(
+        "SELECT category, COUNT(*) total, "
+        "SUM(CASE WHEN status IN ('evaluated', 'alerted', 'interested') THEN 1 ELSE 0 END) evaluated, "
+        "SUM(CASE WHEN status = 'alerted' OR status = 'interested' THEN 1 ELSE 0 END) alerted "
+        "FROM listings GROUP BY category"
+    ).fetchall()
+    category_stats = {row["category"]: dict(row) for row in cat_rows}
 
     conn.close()
 
@@ -289,6 +278,7 @@ def load_metrics() -> dict:
         "brand_stats": brand_stats,
         "price_buckets": price_buckets,
         "last_24h": last_24h,
+        "category_stats": category_stats,
     }
 
 # ── Page Templates ──
@@ -316,12 +306,12 @@ def cover_page(canvas_obj, doc):
     canvas_obj.drawString(2*cm, H - 200, "Project Briefing")
     canvas_obj.setFillColor(HexColor("#adb5bd"))
     canvas_obj.setFont('Helvetica', 12)
-    date_str = REPORT_DATE_LONG or "March 15, 2026"
+    date_str = REPORT_DATE_LONG or "March 16, 2026"
     canvas_obj.drawString(2*cm, H - 222, f"CTO Report  |  {date_str}")
     # Footer line
     canvas_obj.setFillColor(TEXT_MUTED)
     canvas_obj.setFont('Helvetica', 8)
-    canvas_obj.drawString(2*cm, 2*cm, "Confidential  |  DealSpotter v1.0")
+    canvas_obj.drawString(2*cm, 2*cm, "Confidential  |  DealSpotter v2.0")
     canvas_obj.restoreState()
 
 def normal_page(canvas_obj, doc):
@@ -336,7 +326,7 @@ def normal_page(canvas_obj, doc):
     canvas_obj.setFont('Helvetica-Bold', 9)
     canvas_obj.drawString(2*cm, H - 20, "DealSpotter  |  Project Briefing")
     canvas_obj.setFont('Helvetica', 8)
-    date_str = REPORT_DATE_SHORT or "Mar 15, 2026"
+    date_str = REPORT_DATE_SHORT or "Mar 16, 2026"
     canvas_obj.drawRightString(W - 2*cm, H - 20, date_str)
     # Footer
     canvas_obj.setFillColor(HexColor("#dee2e6"))
@@ -357,7 +347,6 @@ def build():
 
     metrics = load_metrics()
     stats = metrics["stats"]
-    searches = [parse_search_url(u) for u in config.SEARCH_URLS]
 
     doc = SimpleDocTemplate(
         "/Users/corentinesteve/Downloads/DealSpotter/BRIEFING.pdf",
@@ -375,35 +364,52 @@ def build():
     # ═══════════════════════════════════════
     story.append(Spacer(1, 200))
 
-    # Key stats on cover
+    # Key stats on cover — use separate rows with explicit spacing to avoid overlap
+    kpi_number_style = lambda name, color: ParagraphStyle(
+        name, fontName='Helvetica-Bold', fontSize=28,
+        textColor=color, alignment=TA_CENTER, leading=32,
+    )
+    kpi_label_style = lambda name: ParagraphStyle(
+        name, fontName='Helvetica', fontSize=9,
+        textColor=TEXT_MUTED, alignment=TA_CENTER, leading=12,
+    )
+
     kpi_data = [
         [
-            Paragraph(f"<b>{metrics['total']}</b>", ParagraphStyle('kpi', fontName='Helvetica-Bold', fontSize=24, textColor=ACCENT, alignment=TA_CENTER)),
-            Paragraph(f"<b>{metrics['evaluated_total']}</b>", ParagraphStyle('kpi2', fontName='Helvetica-Bold', fontSize=24, textColor=SUCCESS, alignment=TA_CENTER)),
-            Paragraph(f"<b>{stats.get('margin_positive', 0)}</b>", ParagraphStyle('kpi3', fontName='Helvetica-Bold', fontSize=24, textColor=INFO_BLUE, alignment=TA_CENTER)),
-            Paragraph(f"<b>+{int(stats.get('margin_best', 0))}€</b>", ParagraphStyle('kpi4', fontName='Helvetica-Bold', fontSize=24, textColor=TEXT_DARK, alignment=TA_CENTER)),
+            Paragraph(f"<b>{metrics['total']}</b>", kpi_number_style('kpi_n1', ACCENT)),
+            Paragraph(f"<b>{metrics['evaluated_total']}</b>", kpi_number_style('kpi_n2', SUCCESS)),
+            Paragraph(f"<b>{stats.get('margin_positive', 0)}</b>", kpi_number_style('kpi_n3', INFO_BLUE)),
+            Paragraph(f"<b>+{int(stats.get('margin_best', 0))}€</b>", kpi_number_style('kpi_n4', TEXT_DARK)),
         ],
         [
-            Paragraph('Listings<br/>Processed', ParagraphStyle('kpilbl', fontName='Helvetica', fontSize=8, textColor=TEXT_MUTED, alignment=TA_CENTER)),
-            Paragraph('AI Evaluated<br/>(incl. alerts)', ParagraphStyle('kpilbl2', fontName='Helvetica', fontSize=8, textColor=TEXT_MUTED, alignment=TA_CENTER)),
-            Paragraph('Positive<br/>Margins', ParagraphStyle('kpilbl3', fontName='Helvetica', fontSize=8, textColor=TEXT_MUTED, alignment=TA_CENTER)),
-            Paragraph('Best<br/>Margin', ParagraphStyle('kpilbl4', fontName='Helvetica', fontSize=8, textColor=TEXT_MUTED, alignment=TA_CENTER)),
+            Paragraph('Listings<br/>Processed', kpi_label_style('kpi_l1')),
+            Paragraph('AI Evaluated<br/>(incl. alerts)', kpi_label_style('kpi_l2')),
+            Paragraph('Positive<br/>Margins', kpi_label_style('kpi_l3')),
+            Paragraph('Best<br/>Margin', kpi_label_style('kpi_l4')),
         ],
     ]
-    kpi_table = Table(kpi_data, colWidths=[3.8*cm]*4)
+    kpi_table = Table(kpi_data, colWidths=[3.8*cm]*4, rowHeights=[44, 28])
     kpi_table.setStyle(TableStyle([
         ('ALIGN', (0,0), (-1,-1), 'CENTER'),
-        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
-        ('TOPPADDING', (0,0), (-1,0), 12),
-        ('BOTTOMPADDING', (0,0), (-1,0), 4),
-        ('TOPPADDING', (0,1), (-1,1), 0),
-        ('BOTTOMPADDING', (0,1), (-1,1), 12),
+        ('VALIGN', (0,0), (-1,0), 'BOTTOM'),
+        ('VALIGN', (0,1), (-1,1), 'TOP'),
+        ('TOPPADDING', (0,0), (-1,0), 10),
+        ('BOTTOMPADDING', (0,0), (-1,0), 2),
+        ('TOPPADDING', (0,1), (-1,1), 2),
+        ('BOTTOMPADDING', (0,1), (-1,1), 10),
         ('BOX', (0,0), (-1,-1), 0.5, HexColor("#dee2e6")),
-        ('LINEBELOW', (0,0), (-1,0), 0, white),
         ('BACKGROUND', (0,0), (-1,-1), white),
         ('ROUNDEDCORNERS', [4,4,4,4]),
     ]))
     story.append(kpi_table)
+
+    # Active categories badge
+    cat_labels = " + ".join(config.CATEGORIES[c]["label"] for c in config.ACTIVE_CATEGORIES)
+    story.append(Spacer(1, 12))
+    story.append(Paragraph(
+        f'<font color="{TEXT_MUTED.hexval()}" size="9">Active categories: {cat_labels}</font>',
+        ParagraphStyle('cat_badge', alignment=TA_CENTER)
+    ))
 
     story.append(PageBreak())
 
@@ -417,12 +423,13 @@ def build():
         ("1", "What DealSpotter Does"),
         ("2", "Current Status"),
         ("3", "How the Pipeline Works"),
-        ("4", "Current Search Configuration"),
-        ("5", "Key Insights from the Data"),
-        ("6", "Recommendations"),
-        ("7", "Risks & Limitations"),
-        ("8", "Cost Projections"),
-        ("9", "How to Operate"),
+        ("4", "Scraping: How It Works and Why"),
+        ("5", "Search Configuration"),
+        ("6", "Key Insights from the Data"),
+        ("7", "Recommendations"),
+        ("8", "Risks & Limitations"),
+        ("9", "Operating Snapshot"),
+        ("10", "How to Operate"),
     ]
     for num, title in toc_items:
         story.append(Paragraph(
@@ -438,24 +445,39 @@ def build():
     story.append(section_line())
     story.append(body(
         "DealSpotter monitors <b>leboncoin.fr</b> (France's largest classifieds platform) for "
-        "undervalued road bikes. It runs autonomously and sends you a Telegram alert only when "
-        "there's an actionable opportunity."
+        "undervalued items across multiple categories. It runs autonomously and sends Telegram alerts "
+        "only when there's an actionable flip opportunity."
     ))
     story.append(Spacer(1, 6))
-    story.append(body_bold("The pipeline:"))
-    story.append(numbered(1, "Scrapes search results every <b>5 minutes</b> (~105 listings per run)"))
-    story.append(numbered(2, "Filters out junk (kids bikes, electric, broken, pro sellers, wrong prices)"))
-    story.append(numbered(3, "Fetches full listing details for promising candidates"))
-    story.append(numbered(4, "Uses <b>Claude AI</b> to identify the bike (brand, model, condition) and estimate resale value"))
-    story.append(numbered(5, "Calculates net flip margin (buy + 8% fee + transport + time vs. resale)"))
-    story.append(numbered(6, f'Sends a <b>Telegram alert</b> when expected profit <font color="#28a745"><b>&ge; {config.MIN_FLIP_MARGIN_EUR}</b></font>'))
-    story.append(Spacer(1, 10))
 
+    # Active categories
+    story.append(Paragraph("Active Categories", styles['SubSection']))
+    for cat_key in config.ACTIVE_CATEGORIES:
+        cat = config.CATEGORIES[cat_key]
+        n_queries = len(cat.get("search_queries", []))
+        price_range = f"{cat['min_price']}-{cat['max_price']}€"
+        min_margin = cat["min_flip_margin"]
+        story.append(bullet(
+            f"<b>{cat['label']}</b> — {n_queries} search queries, price range {price_range}, "
+            f"min margin {min_margin}€"
+        ))
+    story.append(Spacer(1, 8))
+
+    story.append(body_bold("The pipeline:"))
+    story.append(numbered(1, f"<b>Preflight checks</b> — tests LBC API and Anthropic API before starting"))
+    story.append(numbered(2, f"Scrapes search results every <b>{int(config.POLL_INTERVAL_SECONDS/60)} minutes</b> via the leboncoin JSON API"))
+    story.append(numbered(3, "Filters out junk (wrong prices, keywords, pro sellers) — free, no API cost"))
+    story.append(numbered(4, "Uses <b>Claude AI</b> to identify items and estimate resale value (2-tier system)"))
+    story.append(numbered(5, "Calculates net flip margin (buy + 8% fee + transport + time vs. resale)"))
+    story.append(numbered(6, "Sends a <b>Telegram alert</b> with buy/sell analysis when margin threshold is met"))
+    story.append(Spacer(1, 6))
+
+    # Separate Telegram bots
     story.append(callout_box(
         None,
         [Paragraph(
-            'You get a Telegram notification <b>only when there\'s money to be made</b>. '
-            'Everything else is handled automatically.',
+            'Each category has its own <b>dedicated Telegram bot</b>. '
+            'You receive alerts in separate chats and can run categories independently.',
             styles['CalloutText']
         )],
         border_color=SUCCESS
@@ -480,7 +502,7 @@ def build():
         ["Alerts sent", str(metrics["alerted"]), pct(metrics["alert_rate"])],
         ["Positive margins", str(stats.get("margin_positive", 0)), pct(metrics["positive_rate"])],
         ["Average margin", euro(stats.get("margin_avg", 0)), ""],
-        ["User feedback", f"{stats.get('good_feedback', 0)} good / {stats.get('bad_feedback', 0)} bad", "Needs labels"],
+        ["User feedback", f"{stats.get('good_feedback', 0)} good / {stats.get('bad_feedback', 0)} bad", ""],
     ]
     story.append(make_table(
         ["Metric", "Count", "Rate"],
@@ -488,13 +510,36 @@ def build():
         col_widths=[8*cm, 3*cm, 4*cm]
     ))
 
+    # Per-category breakdown
+    if metrics.get("category_stats"):
+        story.append(Spacer(1, 10))
+        story.append(Paragraph("Per-Category Breakdown", styles['SubSection']))
+        cat_rows = []
+        for cat_key in config.ACTIVE_CATEGORIES:
+            cs = metrics["category_stats"].get(cat_key, {})
+            label = config.CATEGORIES.get(cat_key, {}).get("label", cat_key)
+            cat_rows.append([
+                label,
+                str(cs.get("total", 0)),
+                str(cs.get("evaluated", 0)),
+                str(cs.get("alerted", 0)),
+            ])
+        story.append(make_table(
+            ["Category", "Total", "Evaluated", "Alerted"],
+            cat_rows,
+            col_widths=[5*cm, 3*cm, 3.5*cm, 3.7*cm]
+        ))
+
     story.append(Spacer(1, 12))
     story.append(Paragraph("AI Usage", styles['SubSection']))
     tier1 = metrics["tier_counts"].get(1, 0)
     tier2 = metrics["tier_counts"].get(2, 0)
-    story.append(bullet(f"Tier 1 (text-only) evaluations: <b>{tier1}</b>"))
-    story.append(bullet(f"Tier 2 (vision) evaluations: <b>{tier2}</b>"))
-    story.append(bullet("Costs are not tracked yet — add logging to estimate monthly API spend."))
+    story.append(bullet(f"Tier 1 (Claude Haiku, text-only) evaluations: <b>{tier1}</b> — ~$0.001/eval"))
+    story.append(bullet(f"Tier 2 (Claude Sonnet + 2 photos) evaluations: <b>{tier2}</b> — ~$0.01/eval"))
+    story.append(bullet(
+        "Smart escalation: Haiku evaluates first. "
+        "Only escalates to Sonnet+vision when the listing looks promising or uncertain."
+    ))
     story.append(Spacer(1, 12))
 
     story.append(Paragraph("Top Opportunities (by predicted margin)", styles['SubSection']))
@@ -503,17 +548,17 @@ def build():
         margin = f"{int(row['flip_margin'])}€" if row.get("flip_margin") is not None else "—"
         price = f"{int(row['price'])}€" if row.get("price") is not None else "—"
         brand = row.get("ai_brand") or "—"
-        status = row.get("status") or "—"
+        cat = row.get("category") or "—"
         title = row.get("title") or "—"
-        alerts_data.append([margin, price, brand, status, title])
+        alerts_data.append([margin, price, brand, cat, title])
 
     if not alerts_data:
         alerts_data = [["—", "—", "—", "—", "No evaluated listings yet"]]
 
     story.append(make_table(
-        ["Margin", "Buy Price", "Brand", "Status", "Listing"],
+        ["Margin", "Buy", "Brand", "Category", "Listing"],
         alerts_data,
-        col_widths=[2.0*cm, 2.2*cm, 2.5*cm, 2.3*cm, 6.7*cm]
+        col_widths=[2.0*cm, 1.8*cm, 2.5*cm, 2.3*cm, 7.1*cm]
     ))
 
     story.append(PageBreak())
@@ -524,31 +569,31 @@ def build():
     story.append(section_title("How the Pipeline Works", "3"))
     story.append(section_line())
 
-    pipeline_text = f"""Search URLs (leboncoin)
+    bikes_cfg = config.CATEGORIES["bikes"]
+    pipeline_text = f"""Preflight Checks ---- Test LBC API + Anthropic API (fail fast)
        |
        v
-  Scrape Search -------- JSON API + pagination (35/page x 3 pages)
-       |                 Auto-retry with cookie refresh on block
-       | ~105 listings
+  Search API --------- POST api.leboncoin.fr/finder/search
+       |                35 listings/page x {config.MAX_SEARCH_PAGES} pages per query
+       |                Early abort if first query blocked
        v
-  Dedup ---------------- SQLite: skip already-seen listings
+  Dedup -------------- SQLite: skip already-seen listings
        | new only
        v
-  Pre-Filter ----------- FREE: price range, keywords, seller type
-       |                 (removes ~53% of junk)
+  Pre-Filter --------- FREE: price range, keywords, seller type
+       |                No API cost (removes ~50% of junk)
        v
-  Fetch Full Listing --- Get description + photos from listing page
-       |                 curl_cffi + __NEXT_DATA__
+  AI Evaluation ------ Tier 1: Claude Haiku (text-only, ~$0.001)
+       |                Tier 2: Claude Sonnet + 2 photos (~$0.01)
+       |                Smart escalation: skip Tier 2 if Haiku says "not worth it"
        v
-  AI Evaluation -------- Tier 1: Claude Haiku (text, ~$0.001)
-       |                 Tier 2: Claude Sonnet + photos (~$0.01)
-       |                 Identifies brand, model, condition, resale
-       v
-  Flip Calculator ------ margin = resale - (buy + {int(config.PLATFORM_FEE_PERCENT * 100)}% fee + {config.TRANSPORT_COST_EUR} transport + {config.TIME_COST_EUR} time)
+  Flip Calculator ---- margin = resale - (buy + 8% fee + transport + time)
        |
        v
-  Alert? --------------- If margin >= {config.MIN_FLIP_MARGIN_EUR} --> Telegram notification
-                         With: buy price, resale estimate, ROI, reasoning"""
+  Alert? ------------- If margin >= threshold --> Telegram notification
+       |                With: price, resale estimate, ROI, AI reasoning
+       v
+  Pending Retry ------ Re-evaluate DB listings from previous failed runs"""
 
     for line in pipeline_text.split('\n'):
         story.append(Paragraph(line.replace(' ', '&nbsp;').replace('<', '&lt;').replace('>', '&gt;'), styles['PipelineCode']))
@@ -556,12 +601,13 @@ def build():
     story.append(Spacer(1, 14))
     story.append(Paragraph("Tech Stack", styles['SubSection']))
     tech_data = [
-        ["Scraping", "Python + curl_cffi (TLS fingerprint impersonation)"],
+        ["Scraping", "Python + curl_cffi (Chrome TLS fingerprint impersonation)"],
         ["API", "leboncoin JSON API (POST api.leboncoin.fr/finder/search)"],
-        ["AI", "Claude Haiku (text) / Sonnet (vision)"],
-        ["Database", "SQLite (dedup + tracking)"],
-        ["Alerts", "python-telegram-bot (notifications + commands)"],
-        ["Scheduling", "schedule library (polling every 5 min)"],
+        ["AI", "Claude Haiku (text) + Sonnet (vision) — smart 2-tier routing"],
+        ["Database", "SQLite (dedup, tracking, per-category stats)"],
+        ["Alerts", "python-telegram-bot (per-category bots + /stats command)"],
+        ["Scheduling", f"schedule library (polling every {int(config.POLL_INTERVAL_SECONDS/60)} min)"],
+        ["CLI", "argparse — python main.py --category bikes|furniture|all"],
     ]
     story.append(make_table(
         ["Component", "Technology"],
@@ -572,51 +618,116 @@ def build():
     story.append(PageBreak())
 
     # ═══════════════════════════════════════
-    # 4. SEARCH CONFIGURATION
+    # 4. SCRAPING: HOW IT WORKS AND WHY
     # ═══════════════════════════════════════
-    story.append(section_title("Current Search Configuration", "4"))
+    story.append(section_title("Scraping: How It Works and Why", "4"))
     story.append(section_line())
 
-    search_rows = []
-    for idx, s in enumerate(searches, 1):
-        search_rows.append([
-            f"Search {idx}",
-            s["text"],
-            s["price"],
-            s["owner_type"],
-            s["locations"],
-            s["sort"],
-        ])
-    if not search_rows:
-        search_rows = [["—", "—", "—", "—", "—", "—"]]
-
-    story.append(make_table(
-        ["Search", "Keywords", "Price", "Owner", "Location", "Sort"],
-        search_rows,
-        col_widths=[2.1*cm, 4.1*cm, 2.2*cm, 2.1*cm, 3.3*cm, 2.4*cm]
+    story.append(body(
+        "Leboncoin is protected by <b>DataDome</b>, an anti-bot system that blocks automated requests. "
+        "DealSpotter uses a multi-layered approach to access listing data reliably."
     ))
-    story.append(Spacer(1, 10))
-    story.append(bullet(f"Pages per run: <b>{config.MAX_SEARCH_PAGES}</b> (~{config.MAX_SEARCH_PAGES * 35} listings max)"))
+    story.append(Spacer(1, 8))
+
+    story.append(Paragraph("The JSON Search API", styles['SubSection']))
+    story.append(body(
+        "Instead of scraping HTML pages, DealSpotter uses leboncoin's internal <b>JSON search API</b> "
+        "(<font face='Courier' size='8'>POST api.leboncoin.fr/finder/search</font>). "
+        "This is the same API the website's frontend calls when you search."
+    ))
+    story.append(bullet("Returns <b>structured JSON</b>: title, price, full description, all photo URLs, location, seller info"))
+    story.append(bullet("Up to <b>35 listings per page</b>, paginated (we fetch up to 3 pages per query)"))
+    story.append(bullet("Descriptions from the API are typically <b>500-1200+ characters</b> — usually enough for AI evaluation without fetching individual listing pages"))
+    story.append(Spacer(1, 8))
+
+    story.append(Paragraph("Why It Works", styles['SubSection']))
+    story.append(body(
+        "The JSON API endpoint uses <b>different anti-bot rules</b> than the HTML pages:"
+    ))
+    story.append(bullet("<b>curl_cffi</b> with Chrome TLS fingerprint — the request looks identical to a real Chrome browser at the TLS level"))
+    story.append(bullet("<b>DataDome cookies</b> from a real Chrome session — auto-refreshed from the local Chrome browser when expired"))
+    story.append(bullet("Proper <b>Origin/Referer/API-key headers</b> — mimics the exact request the leboncoin frontend makes"))
+    story.append(bullet("Polite <b>rate limiting</b> — 2-5 second delays between requests, respecting the site"))
+    story.append(Spacer(1, 8))
+
+    story.append(Paragraph("Resilience Mechanisms", styles['SubSection']))
+    story.append(bullet("<b>Preflight check</b>: tests the API with a single request before starting the full pipeline"))
+    story.append(bullet("<b>Early abort</b>: if the first query is blocked (403), remaining queries are skipped immediately instead of retrying each one"))
+    story.append(bullet("<b>Cookie auto-refresh</b>: on a 403 block, cookies are automatically re-read from Chrome and the request is retried"))
+    story.append(bullet("<b>HTML fallback</b>: if the JSON API fails, attempts to scrape the HTML search page via __NEXT_DATA__ JSON blob"))
+    story.append(bullet("<b>API-first evaluation</b>: since the search API returns full descriptions + photos, individual listing pages are <b>rarely needed</b> (only when API description is &lt; 50 chars)"))
+    story.append(Spacer(1, 8))
+
+    story.append(callout_box(
+        "Key insight",
+        [Paragraph(
+            'DataDome heavily blocks individual listing page requests (HTML), but the search API '
+            'is less restrictive. By using the search API data directly for AI evaluation, '
+            'we avoid the most common blocking scenario entirely.',
+            styles['CalloutText']
+        )],
+        border_color=INFO_BLUE
+    ))
+
+    story.append(PageBreak())
+
+    # ═══════════════════════════════════════
+    # 5. SEARCH CONFIGURATION
+    # ═══════════════════════════════════════
+    story.append(section_title("Search Configuration", "5"))
+    story.append(section_line())
+
+    for cat_key in config.ACTIVE_CATEGORIES:
+        cat = config.CATEGORIES[cat_key]
+        story.append(Paragraph(f"{cat['label']}", styles['SubSection']))
+
+        # Search queries table
+        query_rows = []
+        for q in cat.get("search_queries", []):
+            query_rows.append([q["text"], q.get("tier", "A")])
+        if query_rows:
+            story.append(make_table(
+                ["Search Query", "Tier"],
+                query_rows,
+                col_widths=[10*cm, 5.2*cm]
+            ))
+
+        # Config summary
+        base = cat["search_base"]
+        story.append(Spacer(1, 4))
+        story.append(bullet(f"Price range: <b>{cat['min_price']}-{cat['max_price']}€</b>"))
+        story.append(bullet(f"Min flip margin: <b>{cat['min_flip_margin']}€</b>"))
+        story.append(bullet(f"Costs: {int(cat['platform_fee_pct']*100)}% platform fee + {cat['transport_cost']}€ transport + {cat['time_cost']}€ time"))
+        story.append(bullet(f"Location: Sartrouville area, {cat.get('max_distance_km', 40)}km radius"))
+
+        # Query rotation
+        qpc = cat.get("queries_per_cycle", {})
+        tier_info = []
+        for tier, n in sorted(qpc.items()):
+            if n is None:
+                tier_info.append(f"Tier {tier}: all every cycle")
+            else:
+                tier_info.append(f"Tier {tier}: rotate {n}")
+        if tier_info:
+            story.append(bullet(f"Rotation: {', '.join(tier_info)}"))
+
+        story.append(Spacer(1, 8))
+
+        # Skip keywords
+        skip_kw = ", ".join(cat.get("skip_keywords", []))
+        if skip_kw:
+            story.append(body(f'<font color="#dc3545" size="8"><i>Auto-skip: {skip_kw}</i></font>'))
+        story.append(Spacer(1, 10))
+
+    story.append(bullet(f"Pages per query: <b>{config.MAX_SEARCH_PAGES}</b> (~{config.MAX_SEARCH_PAGES * 35} listings max)"))
     story.append(bullet(f"Poll interval: <b>{int(config.POLL_INTERVAL_SECONDS/60)} minutes</b>"))
-    story.append(bullet(f"Distance cap configured: <b>{config.MAX_DISTANCE_KM} km</b> (not enforced in code yet)"))
 
-    story.append(Spacer(1, 12))
-    story.append(Paragraph("Pre-filter Keywords (auto-skip)", styles['SubSection']))
-    skip_kw = ", ".join(config.SKIP_KEYWORDS)
-    junk_kw = ", ".join(config.JUNK_INDICATORS)
-    story.append(body(
-        f'<font color="#dc3545"><i>{skip_kw}</i></font>'
-    ))
-    story.append(Spacer(1, 4))
-    story.append(body(
-        f'<font color="#dc3545"><i>Junk indicators: {junk_kw}</i></font>'
-    ))
+    story.append(PageBreak())
 
     # ═══════════════════════════════════════
-    # 5. KEY INSIGHTS
+    # 6. KEY INSIGHTS
     # ═══════════════════════════════════════
-    story.append(Spacer(1, 10))
-    story.append(section_title("Key Insights from the Data", "5"))
+    story.append(section_title("Key Insights from the Data", "6"))
     story.append(section_line())
 
     story.append(Paragraph("Signal Summary", styles['SubSection']))
@@ -666,23 +777,20 @@ def build():
     story.append(PageBreak())
 
     # ═══════════════════════════════════════
-    # 6. RECOMMENDATIONS
+    # 7. RECOMMENDATIONS
     # ═══════════════════════════════════════
-    story.append(section_title("Recommendations", "6"))
+    story.append(section_title("Recommendations", "7"))
     story.append(section_line())
 
     # Immediate
     story.append(callout_box(
         "IMMEDIATE (this week)",
         [
-            Paragraph('<b>A. Tighten location</b>', styles['CalloutText']),
-            Paragraph('Current search has no location filter. Add a Paris/Sartrouville radius in the URL and/or enforce <b>MAX_DISTANCE_KM</b> in code.', styles['CalloutText']),
+            Paragraph('<b>A. Collect user feedback</b>', styles['CalloutText']),
+            Paragraph('Tap "Interested" or "Pass" on every alert. We need 20+ labels to understand which alerts are actually useful and tune the system.', styles['CalloutText']),
             Spacer(1, 6),
-            Paragraph('<b>B. Split searches by intent</b>', styles['CalloutText']),
-            Paragraph('Create separate URLs for "velo route", "velo course", "cadre velo", and "velo carbone". This reduces noise and makes tuning easier.', styles['CalloutText']),
-            Spacer(1, 6),
-            Paragraph('<b>C. Use feedback buttons</b>', styles['CalloutText']),
-            Paragraph('Every alert should get a "good/bad" label. We need 20+ labels to tune prompts and filters.', styles['CalloutText']),
+            Paragraph('<b>B. Monitor AI accuracy</b>', styles['CalloutText']),
+            Paragraph('Check a few alerts manually against real resale prices on Selency/eBay. If estimates are consistently off, adjust prompts.', styles['CalloutText']),
         ],
         border_color=ACCENT
     ))
@@ -692,14 +800,11 @@ def build():
     story.append(callout_box(
         "SHORT-TERM (next 2 weeks)",
         [
-            Paragraph('<b>D. Add negative brand filter</b>', styles['CalloutText']),
-            Paragraph('Auto-skip Decathlon/B\'Twin/Rockrider/Nakamura based on current margin data.', styles['CalloutText']),
+            Paragraph('<b>C. Tune search queries</b>', styles['CalloutText']),
+            Paragraph('Based on alert feedback, add or remove keywords. Remove queries that generate mostly noise.', styles['CalloutText']),
             Spacer(1, 6),
-            Paragraph('<b>E. Fix alert delivery</b>', styles['CalloutText']),
-            Paragraph('Queued alerts during quiet hours are only sent on restart. Add a scheduled flush after quiet hours.', styles['CalloutText']),
-            Spacer(1, 6),
-            Paragraph('<b>F. Improve pre-filter quality</b>', styles['CalloutText']),
-            Paragraph('Detect "frames only" vs full bikes, and require key attributes (size, group) before AI evaluation.', styles['CalloutText']),
+            Paragraph('<b>D. Track actual flips</b>', styles['CalloutText']),
+            Paragraph('Record actual buy/sell prices to calibrate AI estimates and validate the margin calculation.', styles['CalloutText']),
         ],
         border_color=INFO_BLUE
     ))
@@ -709,14 +814,11 @@ def build():
     story.append(callout_box(
         "MEDIUM-TERM (next month)",
         [
-            Paragraph('<b>G. Implement distance scoring</b>', styles['CalloutText']),
-            Paragraph('Use location coordinates from the API to compute distance from your base and down-rank far listings.', styles['CalloutText']),
+            Paragraph('<b>E. Expand categories</b>', styles['CalloutText']),
+            Paragraph('Add new product categories (electronics, watches, etc.) once current categories are proven profitable.', styles['CalloutText']),
             Spacer(1, 6),
-            Paragraph('<b>H. Calibrate predictions</b>', styles['CalloutText']),
-            Paragraph('Track actual buy/sell results to calibrate AI estimates and adjust margin thresholds.', styles['CalloutText']),
-            Spacer(1, 6),
-            Paragraph('<b>I. Expand scope carefully</b>', styles['CalloutText']),
-            Paragraph('Only expand to VTT/parts once road-bike searches are consistently profitable.', styles['CalloutText']),
+            Paragraph('<b>F. Proxy / cookie rotation</b>', styles['CalloutText']),
+            Paragraph('If DataDome blocking increases, add residential proxy support and automatic cookie rotation.', styles['CalloutText']),
         ],
         border_color=SUCCESS
     ))
@@ -724,18 +826,18 @@ def build():
     story.append(PageBreak())
 
     # ═══════════════════════════════════════
-    # 7. RISKS
+    # 8. RISKS
     # ═══════════════════════════════════════
-    story.append(section_title("Risks & Limitations", "7"))
+    story.append(section_title("Risks & Limitations", "8"))
     story.append(section_line())
 
     risk_data = [
-        ['Search noise / low margin', 'High', 'Average margin is negative; tighten search + filters.'],
-        ['Location filter missing', 'Medium', 'No radius in search URL; MAX_DISTANCE_KM not enforced.'],
-        ['Quiet-hours alerts delayed', 'Medium', 'Queued alerts only send on restart; add scheduled flush.'],
-        ['Config mismatch', 'Low', 'README says min margin 80€, config uses 50€ — align docs.'],
-        ['DataDome blocks scraping', 'Medium', 'JSON API + cookie refresh works now, but can fail.'],
-        ['leboncoin changes API', 'Medium', 'Fallback HTML exists; still fragile.'],
+        ['DataDome blocks scraping', 'Medium', 'JSON API + cookie auto-refresh works today. Preflight check + early abort avoid wasted time.'],
+        ['AI resale estimates inaccurate', 'Medium', 'Track actual flips to calibrate. Per-unit pricing can be misread (improved via prompt).'],
+        ['leboncoin changes API', 'Medium', 'HTML fallback exists. API structure rarely changes drastically.'],
+        ['Cookie expiration', 'Low', 'Auto-refreshed from Chrome. Rare — only when Chrome cookies themselves expire.'],
+        ['Anthropic API cost spikes', 'Low', 'Smart escalation: Haiku first, Sonnet only for promising listings. 2 photos max.'],
+        ['False positives (bad alerts)', 'Medium', 'User feedback loop needed. Tune prompts and skip-keywords based on data.'],
     ]
     story.append(make_table(
         ["Risk", "Severity", "Mitigation"],
@@ -746,9 +848,9 @@ def build():
     story.append(Spacer(1, 20))
 
     # ═══════════════════════════════════════
-    # 8. COST PROJECTIONS
+    # 9. OPERATING SNAPSHOT
     # ═══════════════════════════════════════
-    story.append(section_title("Operating Snapshot", "8"))
+    story.append(section_title("Operating Snapshot", "9"))
     story.append(section_line())
 
     eval_total = metrics["evaluated_total"]
@@ -763,7 +865,8 @@ def build():
         ["Vision share", pct(vision_share), f"{tier2} of {tier1 + tier2} evals"],
         ["Alert rate", pct(metrics["alert_rate"]), f"{metrics['alerted']} alerts"],
         ["Positive margin rate", pct(metrics["positive_rate"]), f"{stats.get('margin_positive', 0)} positive"],
-        ["Max alerts/day", "unlimited", ""],
+        ["Active categories", str(len(config.ACTIVE_CATEGORIES)), ", ".join(config.ACTIVE_CATEGORIES)],
+        ["Telegram bots", str(len(config.ACTIVE_CATEGORIES)), "1 per category"],
     ]
     story.append(make_table(
         ["Metric", "Value", "Notes"],
@@ -775,7 +878,8 @@ def build():
     story.append(callout_box(
         None,
         [Paragraph(
-            'Once search quality improves, the main constraint will be <b>your time reviewing alerts</b>, not infra cost.',
+            'The main constraint is <b>your time reviewing alerts</b>, not infra cost. '
+            'Anthropic API costs are minimized via smart Haiku-first escalation.',
             styles['CalloutText']
         )],
         border_color=SUCCESS
@@ -784,13 +888,20 @@ def build():
     story.append(PageBreak())
 
     # ═══════════════════════════════════════
-    # 9. HOW TO OPERATE
+    # 10. HOW TO OPERATE
     # ═══════════════════════════════════════
-    story.append(section_title("How to Operate", "9"))
+    story.append(section_title("How to Operate", "10"))
     story.append(section_line())
 
+    story.append(Paragraph("Running the System", styles['SubSection']))
+    story.append(bullet('Run everything: <font face="Courier" size="9">python main.py</font>'))
+    story.append(bullet('Bikes only: <font face="Courier" size="9">python run_bikes.py</font>'))
+    story.append(bullet('Furniture only: <font face="Courier" size="9">python run_furniture.py</font>'))
+    story.append(bullet('Or with flag: <font face="Courier" size="9">python main.py --category bikes|furniture|all</font>'))
+    story.append(Spacer(1, 8))
+
     story.append(Paragraph("Daily", styles['SubSection']))
-    story.append(bullet('Check Telegram alerts &mdash; tap <b>"Intéressé"</b> or <b>"Passer"</b> on each'))
+    story.append(bullet('Check Telegram alerts &mdash; tap <b>"Interested"</b> or <b>"Pass"</b> on each'))
     story.append(bullet('Use <b>/stats</b> for a quick performance overview'))
     story.append(Spacer(1, 8))
 
@@ -804,13 +915,15 @@ def build():
     ))
     story.append(Spacer(1, 8))
 
-    story.append(Paragraph("To Add Search URLs", styles['SubSection']))
-    story.append(bullet('Edit <b>.env</b>, add comma-separated URLs to <b>SEARCH_URLS</b>'))
-    story.append(bullet('Restart: <font face="Courier" size="9">python main.py</font>'))
+    story.append(Paragraph("Adding a New Category", styles['SubSection']))
+    story.append(numbered(1, 'Add a new entry in <b>config.py</b> <font face="Courier" size="9">CATEGORIES</font> dict'))
+    story.append(numbered(2, 'Add prompts in <b>prompts.py</b> <font face="Courier" size="9">PROMPTS</font> registry'))
+    story.append(numbered(3, 'Set Telegram bot credentials in <b>.env</b>'))
+    story.append(numbered(4, 'Add category to <font face="Courier" size="9">ACTIVE_CATEGORIES</font>'))
     story.append(Spacer(1, 8))
 
     story.append(Paragraph("To Adjust Sensitivity", styles['SubSection']))
-    story.append(bullet('Edit <b>config.py</b>: <font face="Courier" size="9">MIN_FLIP_MARGIN_EUR</font> (currently 50)'))
+    story.append(bullet('Edit <b>config.py</b>: <font face="Courier" size="9">min_flip_margin</font> per category'))
     story.append(bullet('Lower = more alerts, more noise. Higher = fewer but higher quality.'))
 
     story.append(Spacer(1, 40))

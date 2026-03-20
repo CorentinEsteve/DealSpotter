@@ -16,6 +16,10 @@ TELEGRAM_BOTS = {
         "token": os.getenv("TELEGRAM_BOT_TOKEN_FURNITURE"),
         "chat_id": os.getenv("TELEGRAM_CHAT_ID_FURNITURE"),
     },
+    "motos": {
+        "token": os.getenv("TELEGRAM_BOT_TOKEN_MOTOS"),
+        "chat_id": os.getenv("TELEGRAM_CHAT_ID_MOTOS"),
+    },
 }
 
 # Backward compat
@@ -44,7 +48,7 @@ MAX_SEARCH_PAGES = 3              # Max pages per search URL (35 listings/page)
 # MULTI-CATEGORY CONFIGURATION
 # ═══════════════════════════════════════════════════════════════════
 
-ACTIVE_CATEGORIES = ["bikes", "furniture"]
+ACTIVE_CATEGORIES = ["bikes", "furniture", "motos"]
 
 CATEGORIES = {
     # ── BIKES ──────────────────────────────────────────────────────
@@ -147,10 +151,56 @@ CATEGORIES = {
         "min_price": 5,
         "max_price": 250,
         "max_distance_km": 40,
-        "min_flip_margin": 30,
+        "min_flip_margin": 40,
         "platform_fee_pct": 0.08,
         "transport_cost": 15,
         "time_cost": 15,
+        "vision_confidence_threshold": 0.5,
+    },
+
+    # ── MOTOS (A2) ─────────────────────────────────────────────────
+    "motos": {
+        "label": "🏍️ Moto A2",
+        "lbc_category": "3",  # Motos
+        "search_base": {
+            "locations": "Sartrouville_78500__48.94217_2.16285_3254_25000",
+            "price_min": 500,
+            "price_max": 7000,
+            "owner_type": "private",
+            "sort": "time",
+            "order": "desc",
+        },
+        "search_queries": [
+            # Generic — catch most listings, AI filters A2 compatibility
+            {"text": "moto A2", "tier": "A"},
+            {"text": "moto roadster", "tier": "A"},
+            {"text": "moto trail", "tier": "B"},
+            {"text": "moto custom", "tier": "B"},
+            {"text": "moto sportive", "tier": "B"},
+            {"text": "moto naked", "tier": "B"},
+        ],
+        "queries_per_cycle": {"A": None, "B": 2},
+        "skip_keywords": [
+            # Wrong vehicles
+            "scooter", "quad", "50cc", "125cc", "mobylette", "cyclomoteur",
+            "trottinette", "vélo",
+            # Parts / broken
+            "pièces détachées", "pour pièce", "hs", "épave",
+            "volé", "accidenté", "non roulant",
+        ],
+        "junk_indicators": [
+            "pour pièce", "ne démarre pas", "ne roule pas",
+            "moteur hs", "cadre tordu", "accidentée",
+            "carte grise perdue", "sans carte grise",
+        ],
+        "skip_seller_types": ["pro"],
+        "min_price": 500,
+        "max_price": 7000,
+        "max_distance_km": 40,
+        "min_flip_margin": 100,
+        "platform_fee_pct": 0.0,
+        "transport_cost": 50,
+        "time_cost": 50,
         "vision_confidence_threshold": 0.5,
     },
 }

@@ -1790,3 +1790,903 @@
   "model": "inconnu",
   "designer": "inconnu",
   "era": "1945-1960 (rec...
+2026-03-16 11:38:58 INFO  [evaluator] 3074368045 — Tier 2 vision — confidence 0.55
+2026-03-16 11:38:58 INFO  [pipeline] [furniture] 3074368045 (pending) — margin 33.5€ (ROI 83.8%) — ALERT
+2026-03-16 11:38:58 INFO  [telegram:furniture] 3074368045 — Alert sent
+2026-03-16 11:39:18 INFO  [evaluator] 3130608150 — Tier 2 vision — confidence 0.65
+2026-03-16 11:39:19 INFO  [pipeline] [furniture] 3130608150 (pending) — margin 49.6€ (ROI 124.0%) — ALERT
+2026-03-16 11:39:19 INFO  [telegram:furniture] 3130608150 — Alert sent
+2026-03-16 11:39:41 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Coiffeuse vintage relookée, style Art Déco / années 50, avec miroir ovale pivotant et desserte latérale",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",...
+2026-03-16 11:40:05 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Porte-manteau / hall d'entrée en fer forgé avec miroir central et tablette, style Art Nouveau / rustique français",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": ...
+2026-03-16 11:40:26 INFO  [evaluator] 3160999002 — Tier 2 vision — confidence 0.75
+2026-03-16 11:40:27 INFO  [pipeline] [furniture] 3160999002 (pending) — margin 50.4€ (ROI 168.0%) — ALERT
+2026-03-16 11:40:27 INFO  [telegram:furniture] 3160999002 — Alert sent
+2026-03-16 11:40:47 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Meuble vestiaire / porte-manteaux Art Nouveau en chêne avec miroir et porte-parapluies",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era": "1900-1...
+2026-03-16 11:41:06 INFO  [evaluator] 3109038221 — Tier 2 vision — confidence 0.62
+2026-03-16 11:41:07 INFO  [pipeline] [furniture] 3109038221 (pending) — margin 46.0€ (ROI 23.0%) — ALERT
+2026-03-16 11:41:07 INFO  [telegram:furniture] 3109038221 — Alert sent
+2026-03-16 11:41:30 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Meuble vasque salle de bain vintage style Louis XVI / néo-classique avec plan vasque intégré, miroir ovale, colonnes latérales et appliques murales",
+  "brand": "inconnu",
+  ...
+2026-03-16 11:41:51 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Coiffeuse style Louis-Philippe / Napoléon III en bois massif (merisier/cerisier teinté) avec miroir ovale pivotant et tabouret piano assorti",
+  "brand": "inconnu",
+  "model"...
+2026-03-16 11:42:11 INFO  [evaluator] 3156124796 — Tier 2 vision — confidence 0.45
+2026-03-16 11:42:12 INFO  [pipeline] [furniture] 3156124796 (pending) — margin -15.8€ (ROI -87.8%) — no alert
+2026-03-16 11:42:32 INFO  [evaluator] 3155181971 — Tier 2 vision — confidence 0.55
+2026-03-16 11:42:33 INFO  [pipeline] [furniture] 3155181971 (pending) — margin 4.8€ (ROI 19.2%) — no alert
+2026-03-16 11:42:56 INFO  [evaluator] 3153376322 — Tier 2 vision — confidence 0.72
+2026-03-16 11:42:56 INFO  [pipeline] [furniture] 3153376322 (pending) — margin 40.0€ (ROI 88.9%) — ALERT
+2026-03-16 11:42:57 INFO  [telegram:furniture] 3153376322 — Alert sent
+2026-03-16 11:43:17 INFO  [evaluator] 3153247393 — Tier 2 vision — confidence 0.75
+2026-03-16 11:43:17 INFO  [pipeline] [furniture] 3153247393 (pending) — margin -22.3€ (ROI -171.5%) — no alert
+2026-03-16 11:43:40 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Coiffeuse FLAIR pour Prisunic, édition années 1970, laquée beige/blanc avec miroir à cadre orange et compartiments de rangement intégrés",
+  "brand": "Prisunic / FLAIR",
+  "m...
+2026-03-16 11:44:01 INFO  [evaluator] 3151092047 — Tier 2 vision — confidence 0.65
+2026-03-16 11:44:02 INFO  [pipeline] [furniture] 3151092047 (pending) — margin 6.6€ (ROI 11.0%) — no alert
+2026-03-16 11:44:24 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Porte-manteau vestiaire d'entrée en bambou avec miroir et bac à parapluies, style japonisant / Anglo-japonais",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inc...
+2026-03-16 11:44:48 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Trumeau / miroir de cheminée style Louis XVI en bois sculpté",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era": "Fin XIXe - début XXe siècle (188...
+2026-03-16 11:44:49 INFO  [telegram] Button pressed: pass:3153376322
+2026-03-16 11:45:03 INFO  [telegram] Button pressed: pass:3074368045
+2026-03-16 11:45:08 INFO  [evaluator] 3148085987 — Tier 2 vision — confidence 0.72
+2026-03-16 11:45:08 INFO  [pipeline] [furniture] 3148085987 (pending) — margin 40.0€ (ROI 88.9%) — ALERT
+2026-03-16 11:45:09 INFO  [telegram:furniture] 3148085987 — Alert sent
+2026-03-16 11:45:09 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 0 | Already seen: 0 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 17 | From DB pending: 17 | Eval failed: 13 | Alerted: 8 | margins: avg 19€, best 126€, worst -30€
+  ──────────────────────────────────────────────────────────
+2026-03-16 11:45:09 INFO  [pipeline] [furniture] DB totals: 714 total | 73 evaluated | 181 skipped | 43 alerted | 5 interested
+2026-03-16 11:45:09 INFO  Scheduler running — polling every 300s
+2026-03-16 11:50:09 INFO  [preflight] Checking LBC API access...
+2026-03-16 11:50:09 INFO  [preflight] ✅ LBC API — OK
+2026-03-16 11:50:09 INFO  [preflight] Checking Anthropic API...
+2026-03-16 11:50:10 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-16 11:50:10 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-16 11:50:10 INFO  [pipeline] [furniture] Cycle queries (7): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois, fauteuil vintage
+2026-03-16 11:50:10 WARNING [scraper] API blocked (403)
+2026-03-16 11:50:10 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:50:10 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:50:11 WARNING [scraper] API blocked (403)
+2026-03-16 11:50:11 INFO  [scraper] 'chaise design vintage' API unavailable, trying HTML for page 1
+2026-03-16 11:50:11 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=chaise+design+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:50:11 INFO  [scraper] Auto-refreshed 10 cookies from Chrome (1 DataDome)
+2026-03-16 11:50:11 INFO  [scraper] Retrying with fresh Chrome cookies...
+2026-03-16 11:50:12 WARNING [scraper] DataDome blocked https://www.leboncoin.fr/recherche?category=19&text=chaise+design+vintage&price=5-250&owner_type=private&sort=time&order=desc&locations=Sartrouville_78500__48.94217_2.16285_3254_10000 (status=403)
+2026-03-16 11:50:12 WARNING [scraper] 'chaise design vintage' page 1 blocked on both API and HTML
+2026-03-16 11:50:12 INFO  [scraper] 'chaise design vintage' returned 0 total listings
+2026-03-16 11:50:12 WARNING [pipeline] [furniture] First query blocked — skipping remaining queries
+2026-03-16 11:50:12 INFO  [pipeline] [furniture] 'chaise design vintage': 0 listings
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] Skipping 'lampe vintage' (API blocked)
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] Skipping 'miroir vintage' (API blocked)
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] Skipping 'table basse vintage' (API blocked)
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] Skipping 'lampadaire vintage' (API blocked)
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] Skipping 'tabouret vintage bois' (API blocked)
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] Skipping 'fauteuil vintage' (API blocked)
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] 0 unique listings from 7 queries
+2026-03-16 11:50:15 INFO  [pipeline] [furniture] 412 pending listings in DB, evaluating up to 30
+2026-03-16 11:50:39 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Console table d'appoint orientale / mauresque à double plateau, bois sculpté chip carving et plateau miroir",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "incon...
+2026-03-16 11:50:59 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Desserte/chariot de bar à deux plateaux, structure métal chromé/argenté, plateau supérieur amovible en verre avec galerie laiton doré perforé, plateau inférieur en verre fumé...
+2026-03-16 11:51:23 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Porte-manteau mural vintage en métal ferronnerie avec miroir et patères à embouts en porcelaine blanche",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",...
+2026-03-16 11:51:45 INFO  [evaluator] 3143186820 — Tier 2 vision — confidence 0.62
+2026-03-16 11:51:45 INFO  [pipeline] [furniture] 3143186820 (pending) — margin 140.2€ (ROI 61.0%) — ALERT
+2026-03-16 11:51:46 INFO  [telegram:furniture] 3143186820 — Alert sent
+2026-03-16 11:52:06 INFO  [evaluator] 3141023877 — Tier 2 vision — confidence 0.72
+2026-03-16 11:52:06 INFO  [pipeline] [furniture] 3141023877 (pending) — margin 50.8€ (ROI 203.2%) — ALERT
+2026-03-16 11:52:07 INFO  [telegram:furniture] 3141023877 — Alert sent
+2026-03-16 11:52:27 INFO  [evaluator] 3138776628 — Tier 2 vision — confidence 0.72
+2026-03-16 11:52:28 INFO  [pipeline] [furniture] 3138776628 (pending) — margin 75.4€ (ROI 39.9%) — ALERT
+2026-03-16 11:52:28 INFO  [telegram:furniture] 3138776628 — Alert sent
+2026-03-16 11:52:52 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Vitrine colonne vintage à une porte vitrée, style Louis XVI modernisé / mobilier de style français années 60-70",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "i...
+2026-03-16 11:53:01 INFO  [telegram] Button pressed: pass:3141023877
+2026-03-16 11:53:09 INFO  [evaluator] 3135091873 — Tier 2 vision — confidence 0.62
+2026-03-16 11:53:09 INFO  [pipeline] [furniture] 3135091873 (pending) — margin 72.0€ (ROI 32.7%) — ALERT
+2026-03-16 11:53:10 INFO  [telegram:furniture] 3135091873 — Alert sent
+2026-03-16 11:53:26 INFO  [evaluator] 3134904844 — Tier 2 vision — confidence 0.65
+2026-03-16 11:53:26 INFO  [pipeline] [furniture] 3134904844 (pending) — margin 6.4€ (ROI 128.0%) — no alert
+2026-03-16 11:53:45 INFO  [evaluator] 3134577546 — Tier 2 vision — confidence 0.62
+2026-03-16 11:53:45 INFO  [pipeline] [furniture] 3134577546 (pending) — margin 12.3€ (ROI 16.4%) — no alert
+2026-03-16 11:54:06 INFO  [evaluator] 3133704988 — Tier 2 vision — confidence 0.65
+2026-03-16 11:54:07 INFO  [pipeline] [furniture] 3133704988 (pending) — margin 66.4€ (ROI 110.7%) — ALERT
+2026-03-16 11:54:07 INFO  [telegram:furniture] 3133704988 — Alert sent
+2026-03-16 11:54:21 INFO  [telegram] Button pressed: interested:3143186820
+2026-03-16 11:54:27 INFO  [evaluator] 3128580394 — Tier 2 vision — confidence 0.75
+2026-03-16 11:54:27 INFO  [pipeline] [furniture] 3128580394 (pending) — margin 146.0€ (ROI 146.0%) — ALERT
+2026-03-16 11:54:28 INFO  [telegram:furniture] 3128580394 — Alert sent
+2026-03-16 11:54:29 INFO  [telegram] Button pressed: pass:3138776628
+2026-03-16 11:54:37 INFO  [telegram] Button pressed: pass:3133704988
+2026-03-16 11:54:50 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Coiffeuse triptyque vintage bois blond (orme ou frêne) avec triple miroir en éventail, style reconstruction française",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designe...
+2026-03-16 11:55:11 INFO  [evaluator] 3124554326 — Tier 2 vision — confidence 0.55
+2026-03-16 11:55:12 INFO  [pipeline] [furniture] 3124554326 (pending) — margin -9.5€ (ROI -15.8%) — no alert
+2026-03-16 11:55:30 INFO  [evaluator] 3120491944 — Tier 2 vision — confidence 0.72
+2026-03-16 11:55:30 INFO  [pipeline] [furniture] 3120491944 (pending) — margin 15.5€ (ROI 44.3%) — no alert
+2026-03-16 11:55:49 INFO  [evaluator] 3118640175 — Tier 2 vision — confidence 0.55
+2026-03-16 11:55:49 INFO  [pipeline] [furniture] 3118640175 (pending) — margin 6.0€ (ROI 60.0%) — no alert
+2026-03-16 11:56:09 INFO  [evaluator] 3112708662 — Tier 2 vision — confidence 0.65
+2026-03-16 11:56:10 INFO  [pipeline] [furniture] 3112708662 (pending) — margin 25.8€ (ROI 51.6%) — no alert
+2026-03-16 11:56:32 INFO  [evaluator] 3107850214 — Tier 2 vision — confidence 0.65
+2026-03-16 11:56:33 INFO  [pipeline] [furniture] 3107850214 (pending) — margin 98.0€ (ROI 40.8%) — ALERT
+2026-03-16 11:56:33 INFO  [telegram:furniture] 3107850214 — Alert sent
+2026-03-16 11:56:51 INFO  [evaluator] 3102196346 — Tier 2 vision — confidence 0.55
+2026-03-16 11:56:52 INFO  [pipeline] [furniture] 3102196346 (pending) — margin 22.8€ (ROI 76.0%) — no alert
+2026-03-16 11:57:11 INFO  [telegram] Button pressed: interested:3128580394
+2026-03-16 11:57:11 INFO  [evaluator] 3100221061 — Tier 2 vision — confidence 0.78
+2026-03-16 11:57:12 INFO  [pipeline] [furniture] 3100221061 (pending) — margin -92.0€ (ROI -46.0%) — no alert
+2026-03-16 11:57:24 INFO  [telegram] Button pressed: pass:3107850214
+2026-03-16 11:57:33 INFO  [evaluator] 3098662592 — Tier 2 vision — confidence 0.55
+2026-03-16 11:57:34 INFO  [pipeline] [furniture] 3098662592 (pending) — margin 25.8€ (ROI 51.6%) — no alert
+2026-03-16 11:57:54 INFO  [evaluator] 3097513875 — Tier 2 vision — confidence 0.45
+2026-03-16 11:57:54 INFO  [pipeline] [furniture] 3097513875 (pending) — margin -32.2€ (ROI -16.1%) — no alert
+2026-03-16 11:58:16 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Coiffeuse triptyque style Louis XVI repeinte en blanc avec miroir triptique articulé + 2 tables de chevet assorties (non visibles sur photos)",
+  "brand": "inconnu",
+  "model...
+2026-03-16 11:58:38 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Coiffeuse de style Louis XV laquée à décor Chinoiserie / Japonisant avec miroir triptyque et caissons latéraux",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "in...
+2026-03-16 11:58:58 INFO  [evaluator] 3079692625 — Tier 2 vision — confidence 0.62
+2026-03-16 11:58:58 INFO  [pipeline] [furniture] 3079692625 (pending) — margin 64.2€ (ROI 214.0%) — ALERT
+2026-03-16 11:58:58 INFO  [telegram:furniture] 3079692625 — Alert sent
+2026-03-16 11:59:18 INFO  [evaluator] 3074752606 — Tier 2 vision — confidence 0.45
+2026-03-16 11:59:19 INFO  [pipeline] [furniture] 3074752606 (pending) — margin 80.0€ (ROI 66.7%) — ALERT
+2026-03-16 11:59:19 INFO  [telegram:furniture] 3074752606 — Alert sent
+2026-03-16 11:59:42 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Chambre à coucher Art Déco complète : lit bateau double + armoire 3 portes avec miroir central + table de chevet - bois de loupe/érable blond",
+  "brand": "inconnu",
+  "model...
+2026-03-16 12:00:02 INFO  [evaluator] 3044329431 — Tier 2 vision — confidence 0.55
+2026-03-16 12:00:02 INFO  [pipeline] [furniture] 3044329431 (pending) — margin -25.0€ (ROI -22.7%) — no alert
+2026-03-16 12:00:21 INFO  [evaluator] 3065147736 — Tier 2 vision — confidence 0.62
+2026-03-16 12:00:21 INFO  [pipeline] [furniture] 3065147736 (pending) — margin 40.8€ (ROI 116.6%) — ALERT
+2026-03-16 12:00:22 INFO  [telegram:furniture] 3065147736 — Alert sent
+2026-03-16 12:00:43 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Coiffeuse ancienne triptyque en bois peint blanc/crème avec plateau en marbre gris et miroir triptyque, style Louis XVI / Art Nouveau tardif",
+  "brand": "inconnu",
+  "model"...
+2026-03-16 12:00:43 INFO  [pipeline] ── [furniture] Run summary ──────────────────────
+  Scraped: 0 | Already seen: 0 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 21 | From DB pending: 21 | Eval failed: 9 | Alerted: 10 | margins: avg 38€, best 146€, worst -92€
+  ──────────────────────────────────────────────────────────
+2026-03-16 12:00:43 INFO  [pipeline] [furniture] DB totals: 714 total | 84 evaluated | 194 skipped | 47 alerted | 7 interested
+2026-03-16 12:00:49 INFO  [telegram] Button pressed: pass:3079692625
+2026-03-16 12:01:10 INFO  [telegram] Button pressed: pass:3074752606
+2026-03-17 21:37:38 INFO  DealSpotter starting — 🪑 Mobilier design
+2026-03-17 21:37:38 INFO  Database initialized
+2026-03-17 21:37:38 INFO  🪑 Mobilier design — 10 search queries (Tier A: 4, Tier B: 6)
+2026-03-17 21:37:38 INFO  [telegram] Starting bot thread for [furniture]
+2026-03-17 21:37:39 INFO  [telegram] Bot started for [furniture]
+2026-03-17 21:37:39 INFO  [preflight] Checking LBC API access...
+2026-03-17 21:37:40 INFO  [preflight] ✅ LBC API — OK
+2026-03-17 21:37:40 INFO  [preflight] Checking Anthropic API...
+2026-03-17 21:37:41 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-17 21:37:41 INFO  [pipeline] ── 🪑 Mobilier design ──────────────────────────────────
+2026-03-17 21:37:41 INFO  [pipeline] [furniture] Cycle queries (7): chaise design vintage, lampe vintage, miroir vintage, table basse vintage, lampadaire vintage, tabouret vintage bois, fauteuil vintage
+2026-03-17 21:37:42 INFO  [scraper] 'chaise design vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-17 21:37:45 INFO  [scraper] 'chaise design vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-17 21:37:49 INFO  [scraper] 'chaise design vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-17 21:37:49 INFO  [scraper] 'chaise design vintage' returned 105 total listings
+2026-03-17 21:37:49 INFO  [pipeline] [furniture] 'chaise design vintage': 105 listings
+2026-03-17 21:37:52 INFO  [scraper] 'lampe vintage' page 1/3: 35 listings (total available: 8 pages)
+2026-03-17 21:37:56 INFO  [scraper] 'lampe vintage' page 2/3: 35 listings (total available: 8 pages)
+2026-03-17 21:38:00 INFO  [scraper] 'lampe vintage' page 3/3: 35 listings (total available: 8 pages)
+2026-03-17 21:38:00 INFO  [scraper] 'lampe vintage' returned 105 total listings
+2026-03-17 21:38:00 INFO  [pipeline] [furniture] 'lampe vintage': 105 listings
+2026-03-17 21:38:04 INFO  [scraper] 'miroir vintage' page 1/3: 35 listings (total available: 6 pages)
+2026-03-17 21:38:09 INFO  [scraper] 'miroir vintage' page 2/3: 35 listings (total available: 6 pages)
+2026-03-17 21:38:12 INFO  [scraper] 'miroir vintage' page 3/3: 35 listings (total available: 6 pages)
+2026-03-17 21:38:12 INFO  [scraper] 'miroir vintage' returned 105 total listings
+2026-03-17 21:38:12 INFO  [pipeline] [furniture] 'miroir vintage': 105 listings
+2026-03-17 21:38:16 INFO  [scraper] 'table basse vintage' page 1/3: 35 listings (total available: 14 pages)
+2026-03-17 21:38:19 INFO  [scraper] 'table basse vintage' page 2/3: 35 listings (total available: 14 pages)
+2026-03-17 21:38:22 INFO  [scraper] 'table basse vintage' page 3/3: 35 listings (total available: 14 pages)
+2026-03-17 21:38:22 INFO  [scraper] 'table basse vintage' returned 105 total listings
+2026-03-17 21:38:22 INFO  [pipeline] [furniture] 'table basse vintage': 105 listings
+2026-03-17 21:38:27 INFO  [scraper] 'lampadaire vintage' page 1/2: 35 listings (total available: 2 pages)
+2026-03-17 21:38:30 INFO  [scraper] 'lampadaire vintage' page 2/2: 5 listings (total available: 2 pages)
+2026-03-17 21:38:30 INFO  [scraper] 'lampadaire vintage' returned 40 total listings
+2026-03-17 21:38:30 INFO  [pipeline] [furniture] 'lampadaire vintage': 40 listings
+2026-03-17 21:38:35 INFO  [scraper] 'tabouret vintage bois' page 1/3: 35 listings (total available: 3 pages)
+2026-03-17 21:38:38 INFO  [scraper] 'tabouret vintage bois' page 2/3: 35 listings (total available: 3 pages)
+2026-03-17 21:38:43 INFO  [scraper] 'tabouret vintage bois' page 3/3: 34 listings (total available: 3 pages)
+2026-03-17 21:38:43 INFO  [scraper] 'tabouret vintage bois' returned 104 total listings
+2026-03-17 21:38:43 INFO  [pipeline] [furniture] 'tabouret vintage bois': 104 listings
+2026-03-17 21:38:48 INFO  [scraper] 'fauteuil vintage' page 1/3: 35 listings (total available: 22 pages)
+2026-03-17 21:38:52 INFO  [scraper] 'fauteuil vintage' page 2/3: 35 listings (total available: 22 pages)
+2026-03-17 21:38:57 INFO  [scraper] 'fauteuil vintage' page 3/3: 35 listings (total available: 22 pages)
+2026-03-17 21:38:57 INFO  [scraper] 'fauteuil vintage' returned 105 total listings
+2026-03-17 21:38:57 INFO  [pipeline] [furniture] 'fauteuil vintage': 105 listings
+2026-03-17 21:38:59 INFO  [pipeline] [furniture] 619 unique listings from 7 queries
+2026-03-17 21:38:59 INFO  [pipeline] [furniture] 3163117262 — pre-filtered: mot_clé_bloqué (enfant)
+2026-03-17 21:39:03 INFO  [evaluator] 3162949846 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:39:03 INFO  [pipeline] [furniture] 3162949846 — margin -6.4€ (ROI -12.8%) — no alert
+2026-03-17 21:39:06 INFO  [evaluator] 3120517017 — Tier 1 text-only — confidence 0.75
+2026-03-17 21:39:06 INFO  [pipeline] [furniture] 3120517017 — margin 158.0€ (ROI 87.8%) — ALERT
+2026-03-17 21:39:07 INFO  [telegram:furniture] 3120517017 — Alert sent
+2026-03-17 21:39:13 INFO  [evaluator] 3040839221 — Tier 1 text-only — confidence 0.45
+2026-03-17 21:39:13 INFO  [evaluator] 3040839221 — Tier 1 confidence 0.45, escalating to Tier 2
+2026-03-17 21:39:34 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Table ovale plateau verre + insert bois central avec 6 chaises cannage style Louis XVI revisité",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era"...
+2026-03-17 21:39:55 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Paire de chaises italiennes à dossier haut style Superleggera, structure laquée noire, assise velours gris",
+  "brand": "inconnu",
+  "model": "inconnu - possible attribution ...
+2026-03-17 21:39:59 INFO  [evaluator] 3071452565 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:39:59 INFO  [pipeline] [furniture] 3071452565 — margin 38.5€ (ROI 110.0%) — no alert
+2026-03-17 21:40:03 INFO  [evaluator] 3068652437 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:40:03 INFO  [pipeline] [furniture] 3068652437 — margin -72.0€ (ROI -40.0%) — no alert
+2026-03-17 21:40:06 INFO  [evaluator] 3163536582 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:40:06 INFO  [pipeline] [furniture] 3163536582 — margin 17.2€ (ROI 17.2%) — no alert
+2026-03-17 21:40:09 INFO  [evaluator] 3163422506 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:40:09 INFO  [pipeline] [furniture] 3163422506 — margin 205.8€ (ROI 205.8%) — ALERT
+2026-03-17 21:40:10 INFO  [telegram:furniture] 3163422506 — Alert sent
+2026-03-17 21:40:15 INFO  [evaluator] 3163327077 — Tier 1 text-only — confidence 0.72
+2026-03-17 21:40:15 INFO  [pipeline] [furniture] 3163327077 — margin 50.6€ (ROI 59.5%) — ALERT
+2026-03-17 21:40:15 INFO  [telegram:furniture] 3163327077 — Alert sent
+2026-03-17 21:40:15 INFO  [pipeline] [furniture] 3162924654 — pre-filtered: mot_clé_bloqué (armoire)
+2026-03-17 21:40:15 INFO  [pipeline] [furniture] 3162839350 — pre-filtered: annonce_épave (cassé)
+2026-03-17 21:40:18 INFO  [evaluator] 3163560796 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:40:18 INFO  [pipeline] [furniture] 3163560796 — margin -4.8€ (ROI -16.0%) — no alert
+2026-03-17 21:40:22 INFO  [evaluator] 3163430382 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:40:22 INFO  [pipeline] [furniture] 3163430382 — margin 55.6€ (ROI 69.5%) — ALERT
+2026-03-17 21:40:22 INFO  [telegram:furniture] 3163430382 — Alert sent
+2026-03-17 21:40:22 INFO  [pipeline] [furniture] 3163275887 — pre-filtered: mot_clé_bloqué (maison du monde)
+2026-03-17 21:40:25 INFO  [evaluator] 3163185105 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:40:25 INFO  [pipeline] [furniture] 3163185105 — margin 121.6€ (ROI 202.7%) — ALERT
+2026-03-17 21:40:26 INFO  [telegram:furniture] 3163185105 — Alert sent
+2026-03-17 21:40:29 INFO  [evaluator] 3163189073 — Tier 1 text-only — confidence 0.55
+2026-03-17 21:40:29 INFO  [pipeline] [furniture] 3163189073 — margin 33.0€ (ROI 44.0%) — no alert
+2026-03-17 21:40:34 INFO  [evaluator] 3163184890 — Tier 1 text-only — confidence 0.45
+2026-03-17 21:40:34 INFO  [evaluator] 3163184890 — Tier 1 confidence 0.45, escalating to Tier 2
+2026-03-17 21:40:52 INFO  [evaluator] 3163184890 — Tier 2 vision — confidence 0.55
+2026-03-17 21:40:53 INFO  [pipeline] [furniture] 3163184890 — margin 30.4€ (ROI 60.8%) — no alert
+2026-03-17 21:40:56 INFO  [evaluator] 3163154047 — Tier 1 text-only — confidence 0.45
+2026-03-17 21:40:56 INFO  [evaluator] 3163154047 — Tier 1 confidence 0.45, escalating to Tier 2
+2026-03-17 21:41:15 INFO  [evaluator] 3163154047 — Tier 2 vision — confidence 0.65
+2026-03-17 21:41:16 INFO  [pipeline] [furniture] 3163154047 — margin 35.0€ (ROI 70.0%) — no alert
+2026-03-17 21:41:19 INFO  [evaluator] 3163074419 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:41:19 INFO  [pipeline] [furniture] 3163074419 — margin 61.6€ (ROI 51.3%) — ALERT
+2026-03-17 21:41:20 INFO  [telegram:furniture] 3163074419 — Alert sent
+2026-03-17 21:41:23 INFO  [evaluator] 3162971878 — Tier 1 text-only — confidence 0.4
+2026-03-17 21:41:23 INFO  [evaluator] 3162971878 — Tier 1 confidence 0.4, escalating to Tier 2
+2026-03-17 21:41:44 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Petite table basse vintage en bois massif à deux plateaux, style rustique/campagnard, pieds fuselés",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "...
+2026-03-17 21:41:48 INFO  [evaluator] 3162896318 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:41:48 INFO  [pipeline] [furniture] 3162896318 — margin 107.0€ (ROI 57.8%) — ALERT
+2026-03-17 21:41:49 INFO  [telegram:furniture] 3162896318 — Alert sent
+2026-03-17 21:41:49 INFO  [pipeline] [furniture] 3162851557 — pre-filtered: mot_clé_bloqué (canapé)
+2026-03-17 21:42:10 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Table basse de ferme rustique en bois massif avec tiroir central, patine ancienne verte",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era": "fin X...
+2026-03-17 21:42:14 INFO  [evaluator] 3162832405 — Tier 1 text-only — confidence 0.45
+2026-03-17 21:42:14 INFO  [evaluator] 3162832405 — Tier 1 confidence 0.45, escalating to Tier 2
+2026-03-17 21:42:33 INFO  [evaluator] 3162832405 — Tier 2 vision — confidence 0.62
+2026-03-17 21:42:34 INFO  [pipeline] [furniture] 3162832405 — margin 60.4€ (ROI 302.0%) — ALERT
+2026-03-17 21:42:34 INFO  [telegram:furniture] 3162832405 — Alert sent
+2026-03-17 21:42:39 INFO  [evaluator] 3163615532 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:42:39 INFO  [pipeline] [furniture] 3163615532 — margin 150.0€ (ROI 300.0%) — ALERT
+2026-03-17 21:42:39 INFO  [telegram:furniture] 3163615532 — Alert sent
+2026-03-17 21:42:42 INFO  [evaluator] 3163586551 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:42:42 INFO  [pipeline] [furniture] 3163586551 — margin 61.6€ (ROI 51.3%) — ALERT
+2026-03-17 21:42:43 INFO  [telegram:furniture] 3163586551 — Alert sent
+2026-03-17 21:42:47 INFO  [evaluator] 3163272115 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:42:47 INFO  [pipeline] [furniture] 3163272115 — margin -3.6€ (ROI -9.5%) — no alert
+2026-03-17 21:43:08 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Fauteuil coquille / tulipe en rotin et bambou, style Mid-Century français",
+  "brand": "inconnu",
+  "model": "Fauteuil coquille rotin",
+  "designer": "inconnu - possiblement ...
+2026-03-17 21:43:14 INFO  [evaluator] 3163399064 — Tier 1 text-only — confidence 0.55
+2026-03-17 21:43:14 INFO  [pipeline] [furniture] 3163399064 — margin 20.1€ (ROI 57.4%) — no alert
+2026-03-17 21:43:18 INFO  [evaluator] 3163171546 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:43:18 INFO  [pipeline] [furniture] 3163171546 — margin 60.6€ (ROI 80.8%) — ALERT
+2026-03-17 21:43:18 INFO  [telegram:furniture] 3163171546 — Alert sent
+2026-03-17 21:43:21 INFO  [evaluator] 3163093184 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:43:21 INFO  [pipeline] [furniture] 3163093184 — margin 47.2€ (ROI 67.4%) — ALERT
+2026-03-17 21:43:22 INFO  [telegram:furniture] 3163093184 — Alert sent
+2026-03-17 21:43:25 INFO  [evaluator] 3163059646 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:43:25 INFO  [pipeline] [furniture] 3163059646 — margin 205.8€ (ROI 205.8%) — ALERT
+2026-03-17 21:43:25 INFO  [telegram:furniture] 3163059646 — Alert sent
+2026-03-17 21:43:28 INFO  [evaluator] 3162848871 — Tier 1 text-only — confidence 0.65
+2026-03-17 21:43:28 INFO  [pipeline] [furniture] 3162848871 — margin 49.4€ (ROI 29.2%) — ALERT
+2026-03-17 21:43:29 INFO  [telegram:furniture] 3162848871 — Alert sent
+2026-03-17 21:43:29 INFO  [pipeline] [furniture] 382 pending listings in DB, evaluating up to 30
+2026-03-17 21:43:49 INFO  [evaluator] 3059427787 — Tier 2 vision — confidence 0.72
+2026-03-17 21:43:49 INFO  [pipeline] [furniture] 3059427787 (pending) — margin 86.4€ (ROI 216.0%) — ALERT
+2026-03-17 21:43:50 INFO  [telegram:furniture] 3059427787 — Alert sent
+2026-03-17 21:44:12 INFO  [evaluator] 3051208304 — Tier 2 vision — confidence 0.62
+2026-03-17 21:44:12 INFO  [pipeline] [furniture] 3051208304 (pending) — margin 7.3€ (ROI 9.1%) — no alert
+2026-03-17 21:44:32 INFO  [evaluator] 3049930207 — Tier 2 vision — confidence 0.62
+2026-03-17 21:44:32 INFO  [pipeline] [furniture] 3049930207 (pending) — margin -49.0€ (ROI -27.2%) — no alert
+2026-03-17 21:44:54 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Miroir de courtoisie pivotant sur pied, cadre en bois massif teinté acajou, style Restauration/Napoléon III",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "incon...
+2026-03-17 21:45:14 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Meuble bar vitrine à abattant frontal en bois teinté acajou avec étagères en verre, style anglais néo-colonial",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "in...
+2026-03-17 21:45:35 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Porte-manteau mural fonte/zamak style Napoléon III avec miroir biseauté gravé",
+  "brand": "inconnu",
+  "model": "inconnu",
+  "designer": "inconnu",
+  "era": "Fin XIXe - débu...
+2026-03-20 18:32:47 INFO  DealSpotter starting — 🏍️ Moto A2
+2026-03-20 18:32:47 INFO  Database initialized
+2026-03-20 18:32:47 INFO  🏍️ Moto A2 — 7 search queries (Tier A: 3, Tier B: 4)
+2026-03-20 18:32:47 INFO  [telegram] Starting bot thread for [motos]
+2026-03-20 18:32:48 INFO  [preflight] Checking LBC API access...
+2026-03-20 18:32:48 INFO  [preflight] ✅ LBC API — OK
+2026-03-20 18:32:48 INFO  [preflight] Checking Anthropic API...
+2026-03-20 18:32:50 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-20 18:32:50 INFO  [pipeline] ── 🏍️ Moto A2 ──────────────────────────────────
+2026-03-20 18:32:50 INFO  [pipeline] [motos] Cycle queries (5): moto a2, moto 35kw, moto permis a2, moto roadster a2, moto a2 bridgée
+2026-03-20 18:32:50 INFO  [scraper] 'moto a2' page 1/1: 3 listings (total available: 1 pages)
+2026-03-20 18:32:50 INFO  [scraper] 'moto a2' returned 3 total listings
+2026-03-20 18:32:50 INFO  [pipeline] [motos] 'moto a2': 3 listings
+2026-03-20 18:32:50 INFO  [telegram] Bot started for [motos]
+2026-03-20 18:32:54 WARNING [scraper] 'moto 35kw' returned 0 ads
+2026-03-20 18:32:54 INFO  [scraper] 'moto 35kw' returned 0 total listings
+2026-03-20 18:32:54 INFO  [pipeline] [motos] 'moto 35kw': 0 listings
+2026-03-20 18:32:56 INFO  [scraper] 'moto permis a2' page 1/1: 1 listings (total available: 1 pages)
+2026-03-20 18:32:56 INFO  [scraper] 'moto permis a2' returned 1 total listings
+2026-03-20 18:32:56 INFO  [pipeline] [motos] 'moto permis a2': 1 listings
+2026-03-20 18:32:59 WARNING [scraper] 'moto roadster a2' returned 0 ads
+2026-03-20 18:32:59 INFO  [scraper] 'moto roadster a2' returned 0 total listings
+2026-03-20 18:32:59 INFO  [pipeline] [motos] 'moto roadster a2': 0 listings
+2026-03-20 18:33:04 WARNING [scraper] 'moto a2 bridgée' returned 0 ads
+2026-03-20 18:33:04 INFO  [scraper] 'moto a2 bridgée' returned 0 total listings
+2026-03-20 18:33:04 INFO  [pipeline] [motos] 'moto a2 bridgée': 0 listings
+2026-03-20 18:33:06 INFO  [pipeline] [motos] 3 unique listings from 5 queries
+2026-03-20 18:33:09 INFO  [evaluator] 3160700600 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:33:14 INFO  [evaluator] 3145074657 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:33:19 INFO  [evaluator] 3139385223 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:33:19 INFO  [pipeline] ── [motos] Run summary ──────────────────────
+  Scraped: 3 | Already seen: 0 | New: 3
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 3 | Alerted: 0
+  ──────────────────────────────────────────────────────────
+2026-03-20 18:33:19 INFO  [pipeline] [motos] DB totals: 3 total | 0 evaluated | 3 skipped | 0 alerted | 0 interested
+2026-03-20 18:33:19 INFO  Scheduler running — polling every 300s
+2026-03-20 18:35:15 INFO  DealSpotter starting — 🏍️ Moto A2
+2026-03-20 18:35:15 INFO  Database initialized
+2026-03-20 18:35:15 INFO  🏍️ Moto A2 — 7 search queries (Tier A: 3, Tier B: 4)
+2026-03-20 18:35:15 INFO  [telegram] Starting bot thread for [motos]
+2026-03-20 18:35:15 INFO  [telegram] Bot started for [motos]
+2026-03-20 18:35:16 INFO  [preflight] Checking LBC API access...
+2026-03-20 18:35:16 INFO  [preflight] ✅ LBC API — OK
+2026-03-20 18:35:16 INFO  [preflight] Checking Anthropic API...
+2026-03-20 18:35:18 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-20 18:35:18 INFO  [pipeline] ── 🏍️ Moto A2 ──────────────────────────────────
+2026-03-20 18:35:18 INFO  [pipeline] [motos] Cycle queries (5): moto a2, moto 35kw, moto permis a2, moto roadster a2, moto a2 bridgée
+2026-03-20 18:35:18 INFO  [scraper] 'moto a2' page 1/1: 3 listings (total available: 1 pages)
+2026-03-20 18:35:18 INFO  [scraper] 'moto a2' returned 3 total listings
+2026-03-20 18:35:18 INFO  [pipeline] [motos] 'moto a2': 3 listings
+2026-03-20 18:35:21 WARNING [scraper] 'moto 35kw' returned 0 ads
+2026-03-20 18:35:21 INFO  [scraper] 'moto 35kw' returned 0 total listings
+2026-03-20 18:35:21 INFO  [pipeline] [motos] 'moto 35kw': 0 listings
+2026-03-20 18:35:26 INFO  [scraper] 'moto permis a2' page 1/1: 1 listings (total available: 1 pages)
+2026-03-20 18:35:26 INFO  [scraper] 'moto permis a2' returned 1 total listings
+2026-03-20 18:35:26 INFO  [pipeline] [motos] 'moto permis a2': 1 listings
+2026-03-20 18:35:30 WARNING [scraper] 'moto roadster a2' returned 0 ads
+2026-03-20 18:35:30 INFO  [scraper] 'moto roadster a2' returned 0 total listings
+2026-03-20 18:35:30 INFO  [pipeline] [motos] 'moto roadster a2': 0 listings
+2026-03-20 18:35:32 WARNING [scraper] 'moto a2 bridgée' returned 0 ads
+2026-03-20 18:35:32 INFO  [scraper] 'moto a2 bridgée' returned 0 total listings
+2026-03-20 18:35:32 INFO  [pipeline] [motos] 'moto a2 bridgée': 0 listings
+2026-03-20 18:35:37 INFO  [pipeline] [motos] 3 unique listings from 5 queries
+2026-03-20 18:35:37 INFO  [pipeline] ── [motos] Run summary ──────────────────────
+  Scraped: 3 | Already seen: 3 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 0 | Alerted: 0
+  ──────────────────────────────────────────────────────────
+2026-03-20 18:35:37 INFO  [pipeline] [motos] DB totals: 3 total | 0 evaluated | 3 skipped | 0 alerted | 0 interested
+2026-03-20 18:35:37 INFO  Scheduler running — polling every 300s
+2026-03-20 18:37:51 INFO  DealSpotter starting — 🏍️ Moto A2
+2026-03-20 18:37:51 INFO  Database initialized
+2026-03-20 18:37:51 INFO  🏍️ Moto A2 — 7 search queries (Tier A: 3, Tier B: 4)
+2026-03-20 18:37:51 INFO  [telegram] Starting bot thread for [motos]
+2026-03-20 18:37:51 INFO  [telegram] Bot started for [motos]
+2026-03-20 18:37:52 INFO  [preflight] Checking LBC API access...
+2026-03-20 18:37:52 INFO  [preflight] ✅ LBC API — OK
+2026-03-20 18:37:52 INFO  [preflight] Checking Anthropic API...
+2026-03-20 18:37:53 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-20 18:37:53 INFO  [pipeline] ── 🏍️ Moto A2 ──────────────────────────────────
+2026-03-20 18:37:53 INFO  [pipeline] [motos] Cycle queries (5): moto a2, moto 35kw, moto permis a2, moto roadster a2, moto a2 bridgée
+2026-03-20 18:37:53 INFO  [scraper] 'moto a2' page 1/1: 3 listings (total available: 1 pages)
+2026-03-20 18:37:53 INFO  [scraper] 'moto a2' returned 3 total listings
+2026-03-20 18:37:53 INFO  [pipeline] [motos] 'moto a2': 3 listings
+2026-03-20 18:37:56 WARNING [scraper] 'moto 35kw' returned 0 ads
+2026-03-20 18:37:56 INFO  [scraper] 'moto 35kw' returned 0 total listings
+2026-03-20 18:37:56 INFO  [pipeline] [motos] 'moto 35kw': 0 listings
+2026-03-20 18:38:00 INFO  [scraper] 'moto permis a2' page 1/1: 1 listings (total available: 1 pages)
+2026-03-20 18:38:00 INFO  [scraper] 'moto permis a2' returned 1 total listings
+2026-03-20 18:38:00 INFO  [pipeline] [motos] 'moto permis a2': 1 listings
+2026-03-20 18:38:03 WARNING [scraper] 'moto roadster a2' returned 0 ads
+2026-03-20 18:38:03 INFO  [scraper] 'moto roadster a2' returned 0 total listings
+2026-03-20 18:38:03 INFO  [pipeline] [motos] 'moto roadster a2': 0 listings
+2026-03-20 18:38:07 WARNING [scraper] 'moto a2 bridgée' returned 0 ads
+2026-03-20 18:38:07 INFO  [scraper] 'moto a2 bridgée' returned 0 total listings
+2026-03-20 18:38:07 INFO  [pipeline] [motos] 'moto a2 bridgée': 0 listings
+2026-03-20 18:38:11 INFO  [pipeline] [motos] 3 unique listings from 5 queries
+2026-03-20 18:38:11 INFO  [pipeline] ── [motos] Run summary ──────────────────────
+  Scraped: 3 | Already seen: 3 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 0 | Alerted: 0
+  ──────────────────────────────────────────────────────────
+2026-03-20 18:38:11 INFO  [pipeline] [motos] DB totals: 3 total | 0 evaluated | 3 skipped | 0 alerted | 0 interested
+2026-03-20 18:38:11 INFO  Scheduler running — polling every 300s
+2026-03-20 18:38:41 INFO  DealSpotter starting — 🏍️ Moto A2
+2026-03-20 18:38:41 INFO  Database initialized
+2026-03-20 18:38:41 INFO  🏍️ Moto A2 — 7 search queries (Tier A: 3, Tier B: 4)
+2026-03-20 18:38:41 INFO  [telegram] Starting bot thread for [motos]
+2026-03-20 18:38:41 INFO  [telegram] Bot started for [motos]
+2026-03-20 18:38:42 INFO  [preflight] Checking LBC API access...
+2026-03-20 18:38:42 INFO  [preflight] ✅ LBC API — OK
+2026-03-20 18:38:42 INFO  [preflight] Checking Anthropic API...
+2026-03-20 18:38:43 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-20 18:38:43 INFO  [pipeline] ── 🏍️ Moto A2 ──────────────────────────────────
+2026-03-20 18:38:43 INFO  [pipeline] [motos] Cycle queries (5): moto a2, moto 35kw, moto permis a2, moto roadster a2, moto a2 bridgée
+2026-03-20 18:38:44 INFO  [scraper] 'moto a2' page 1/1: 3 listings (total available: 1 pages)
+2026-03-20 18:38:44 INFO  [scraper] 'moto a2' returned 3 total listings
+2026-03-20 18:38:44 INFO  [pipeline] [motos] 'moto a2': 3 listings
+2026-03-20 18:38:47 WARNING [scraper] 'moto 35kw' returned 0 ads
+2026-03-20 18:38:47 INFO  [scraper] 'moto 35kw' returned 0 total listings
+2026-03-20 18:38:47 INFO  [pipeline] [motos] 'moto 35kw': 0 listings
+2026-03-20 18:38:50 INFO  [scraper] 'moto permis a2' page 1/1: 1 listings (total available: 1 pages)
+2026-03-20 18:38:50 INFO  [scraper] 'moto permis a2' returned 1 total listings
+2026-03-20 18:38:50 INFO  [pipeline] [motos] 'moto permis a2': 1 listings
+2026-03-20 18:38:53 WARNING [scraper] 'moto roadster a2' returned 0 ads
+2026-03-20 18:38:53 INFO  [scraper] 'moto roadster a2' returned 0 total listings
+2026-03-20 18:38:53 INFO  [pipeline] [motos] 'moto roadster a2': 0 listings
+2026-03-20 18:38:56 WARNING [scraper] 'moto a2 bridgée' returned 0 ads
+2026-03-20 18:38:56 INFO  [scraper] 'moto a2 bridgée' returned 0 total listings
+2026-03-20 18:38:56 INFO  [pipeline] [motos] 'moto a2 bridgée': 0 listings
+2026-03-20 18:39:00 INFO  [pipeline] [motos] 3 unique listings from 5 queries
+2026-03-20 18:39:00 INFO  [pipeline] ── [motos] Run summary ──────────────────────
+  Scraped: 3 | Already seen: 3 | New: 0
+  Pre-filtered: 0 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 0 | Alerted: 0
+  ──────────────────────────────────────────────────────────
+2026-03-20 18:39:00 INFO  [pipeline] [motos] DB totals: 3 total | 0 evaluated | 3 skipped | 0 alerted | 0 interested
+2026-03-20 18:39:00 INFO  Scheduler running — polling every 300s
+2026-03-20 18:44:00 INFO  [preflight] Checking LBC API access...
+2026-03-20 18:44:00 INFO  [preflight] ✅ LBC API — OK
+2026-03-20 18:44:00 INFO  [preflight] Checking Anthropic API...
+2026-03-20 18:44:01 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-20 18:44:01 INFO  [pipeline] ── 🏍️ Moto A2 ──────────────────────────────────
+2026-03-20 18:44:01 INFO  [pipeline] [motos] Cycle queries (5): moto a2, moto 35kw, moto permis a2, moto trail a2, moto custom a2
+2026-03-20 18:44:01 INFO  [scraper] 'moto a2' page 1/1: 3 listings (total available: 1 pages)
+2026-03-20 18:44:01 INFO  [scraper] 'moto a2' returned 3 total listings
+2026-03-20 18:44:01 INFO  [pipeline] [motos] 'moto a2': 3 listings
+2026-03-20 18:44:05 WARNING [scraper] 'moto 35kw' returned 0 ads
+2026-03-20 18:44:05 INFO  [scraper] 'moto 35kw' returned 0 total listings
+2026-03-20 18:44:05 INFO  [pipeline] [motos] 'moto 35kw': 0 listings
+2026-03-20 18:44:07 INFO  DealSpotter starting — 🏍️ Moto A2
+2026-03-20 18:44:07 INFO  Database initialized
+2026-03-20 18:44:07 INFO  🏍️ Moto A2 — 6 search queries (Tier A: 2, Tier B: 4)
+2026-03-20 18:44:07 INFO  [telegram] Starting bot thread for [motos]
+2026-03-20 18:44:07 INFO  [telegram] Bot started for [motos]
+2026-03-20 18:44:08 INFO  [preflight] Checking LBC API access...
+2026-03-20 18:44:08 INFO  [preflight] ✅ LBC API — OK
+2026-03-20 18:44:08 INFO  [preflight] Checking Anthropic API...
+2026-03-20 18:44:09 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-20 18:44:09 INFO  [pipeline] ── 🏍️ Moto A2 ──────────────────────────────────
+2026-03-20 18:44:09 INFO  [pipeline] [motos] Cycle queries (4): moto, moto roadster, moto trail, moto custom
+2026-03-20 18:44:09 INFO  [scraper] 'moto' page 1/2: 35 listings (total available: 2 pages)
+2026-03-20 18:44:12 INFO  [scraper] 'moto' page 2/2: 21 listings (total available: 2 pages)
+2026-03-20 18:44:12 INFO  [scraper] 'moto' returned 56 total listings
+2026-03-20 18:44:12 INFO  [pipeline] [motos] 'moto': 56 listings
+2026-03-20 18:44:14 INFO  [scraper] 'moto roadster' page 1/1: 1 listings (total available: 1 pages)
+2026-03-20 18:44:14 INFO  [scraper] 'moto roadster' returned 1 total listings
+2026-03-20 18:44:14 INFO  [pipeline] [motos] 'moto roadster': 1 listings
+2026-03-20 18:44:16 WARNING [scraper] 'moto trail' returned 0 ads
+2026-03-20 18:44:16 INFO  [scraper] 'moto trail' returned 0 total listings
+2026-03-20 18:44:16 INFO  [pipeline] [motos] 'moto trail': 0 listings
+2026-03-20 18:44:18 WARNING [scraper] 'moto custom' returned 0 ads
+2026-03-20 18:44:18 INFO  [scraper] 'moto custom' returned 0 total listings
+2026-03-20 18:44:18 INFO  [pipeline] [motos] 'moto custom': 0 listings
+2026-03-20 18:44:22 INFO  [pipeline] [motos] 56 unique listings from 4 queries
+2026-03-20 18:44:22 INFO  [pipeline] [motos] 3165114147 — pre-filtered: mot_clé_bloqué (voiture)
+2026-03-20 18:44:25 INFO  [evaluator] 3164982943 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:44:28 INFO  [evaluator] 3164854283 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:44:28 INFO  [pipeline] [motos] 3164545427 — pre-filtered: mot_clé_bloqué (échange)
+2026-03-20 18:44:30 INFO  [evaluator] 3164469455 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:44:33 INFO  [evaluator] 3164427712 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:44:36 INFO  [evaluator] 3164268246 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:44:39 INFO  [evaluator] 3164110581 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:44:43 INFO  [evaluator] 3163964732 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:44:47 INFO  [evaluator] 3163716415 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:01 INFO  [evaluator] 3157996884 — Tier 2 vision — confidence 0.72
+2026-03-20 18:45:04 INFO  [evaluator] 3163398379 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:07 INFO  [evaluator] 3163114393 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:45:11 INFO  [evaluator] 3162805719 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:13 INFO  [evaluator] 3162801064 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:45:16 INFO  [evaluator] 3162715888 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:18 INFO  [evaluator] 3161669323 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:21 INFO  [evaluator] 3161191498 — Tier 1 text-only — confidence 0.99
+2026-03-20 18:45:23 INFO  [evaluator] 3011944786 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:26 INFO  [evaluator] 3160408307 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:28 INFO  [evaluator] 3159521969 — Tier 1 text-only — confidence 0.99
+2026-03-20 18:45:31 INFO  [evaluator] 3158637840 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:45:35 INFO  [evaluator] 3088268575 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:45:37 INFO  [evaluator] 3088313142 — Tier 1 text-only — confidence 0.0
+2026-03-20 18:45:37 INFO  [evaluator] 3088313142 — Tier 1 confidence 0.0, escalating to Tier 2
+2026-03-20 18:45:53 ERROR [evaluator] Failed to parse JSON from LLM response: ```json
+{
+  "item_name": "Volkswagen Touareg 1ère génération (7L) - SUV",
+  "brand": "Volkswagen",
+  "model": "Touareg 1ère génération (7L), probablement 2.5 TDI ou V6 TDI",
+  "a2_compatible": false,
+...
+2026-03-20 18:45:56 INFO  [evaluator] 3155416426 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:45:59 INFO  [evaluator] 3156661767 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:46:01 INFO  [evaluator] 3155028283 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:46:16 INFO  [evaluator] 3120467952 — Tier 2 vision — confidence 0.95
+2026-03-20 18:46:16 INFO  [pipeline] [motos] 2994385909 — pre-filtered: mot_clé_bloqué (échange)
+2026-03-20 18:46:19 INFO  [evaluator] 3152074352 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:46:21 INFO  [evaluator] 3152630962 — Tier 1 text-only — confidence 0.99
+2026-03-20 18:46:25 INFO  [evaluator] 3151931510 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:46:27 INFO  [evaluator] 3151849072 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:46:31 INFO  [evaluator] 3151350940 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:46:33 INFO  [evaluator] 3150556757 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:46:36 INFO  [evaluator] 3150399227 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:46:40 INFO  [evaluator] 3148987833 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:46:43 INFO  [evaluator] 3147331225 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:46:55 INFO  [evaluator] 3146849114 — Tier 2 vision — confidence 0.97
+2026-03-20 18:46:58 INFO  [evaluator] 3146735205 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:47:03 INFO  [evaluator] 3145969986 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:47:16 INFO  [evaluator] 3145819427 — Tier 2 vision — confidence 0.85
+2026-03-20 18:47:16 INFO  [pipeline] [motos] 3145721924 — pre-filtered: mot_clé_bloqué (voiture)
+2026-03-20 18:47:19 INFO  [evaluator] 3140907575 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:47:22 INFO  [evaluator] 3139116183 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:47:26 INFO  [evaluator] 3136443359 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:47:30 INFO  [evaluator] 3135688883 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:47:33 INFO  [evaluator] 3133909745 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:47:36 INFO  [evaluator] 3100331766 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:47:39 INFO  [evaluator] 3132762233 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:47:39 INFO  [pipeline] [motos] 3093815171 — pre-filtered: mot_clé_bloqué (échange)
+2026-03-20 18:47:42 INFO  [evaluator] 3130957803 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:47:46 INFO  [evaluator] 2437770427 — Tier 1 text-only — confidence 1.0
+2026-03-20 18:47:46 INFO  [pipeline] ── [motos] Run summary ──────────────────────
+  Scraped: 56 | Already seen: 3 | New: 53
+  Pre-filtered: 5 | Scrape failed: 0
+  AI evaluated: 0 | Eval failed: 48 | Alerted: 0 | top skip: mot_clé_bloqué (échange) (3), mot_clé_bloqué (voiture) (2)
+  ──────────────────────────────────────────────────────────
+2026-03-20 18:47:46 INFO  [pipeline] [motos] DB totals: 56 total | 0 evaluated | 56 skipped | 0 alerted | 0 interested
+2026-03-20 18:47:46 INFO  Scheduler running — polling every 300s
+2026-03-20 18:49:12 INFO  DealSpotter starting — 🏍️ Moto A2
+2026-03-20 18:49:12 INFO  Database initialized
+2026-03-20 18:49:12 INFO  🏍️ Moto A2 — 6 search queries (Tier A: 2, Tier B: 4)
+2026-03-20 18:49:12 INFO  [telegram] Starting bot thread for [motos]
+2026-03-20 18:49:12 INFO  [telegram] Bot started for [motos]
+2026-03-20 18:49:13 INFO  [preflight] Checking LBC API access...
+2026-03-20 18:49:14 INFO  [preflight] ✅ LBC API — OK
+2026-03-20 18:49:14 INFO  [preflight] Checking Anthropic API...
+2026-03-20 18:49:14 INFO  [preflight] ✅ Anthropic API — OK
+2026-03-20 18:49:14 INFO  [pipeline] ── 🏍️ Moto A2 ──────────────────────────────────
+2026-03-20 18:49:14 INFO  [pipeline] [motos] Cycle queries (4): moto A2, moto roadster, moto trail, moto custom
+2026-03-20 18:49:15 INFO  [scraper] 'moto A2' page 1/3: 35 listings (total available: 20 pages)
+2026-03-20 18:49:18 INFO  [scraper] 'moto A2' page 2/3: 35 listings (total available: 20 pages)
+2026-03-20 18:49:22 INFO  [scraper] 'moto A2' page 3/3: 35 listings (total available: 20 pages)
+2026-03-20 18:49:22 INFO  [scraper] 'moto A2' returned 105 total listings
+2026-03-20 18:49:22 INFO  [pipeline] [motos] 'moto A2': 105 listings
+2026-03-20 18:49:24 INFO  [scraper] 'moto roadster' page 1/3: 35 listings (total available: 3 pages)
+2026-03-20 18:49:28 INFO  [scraper] 'moto roadster' page 2/3: 35 listings (total available: 3 pages)
+2026-03-20 18:49:31 INFO  [scraper] 'moto roadster' page 3/3: 8 listings (total available: 3 pages)
+2026-03-20 18:49:31 INFO  [scraper] 'moto roadster' returned 78 total listings
+2026-03-20 18:49:31 INFO  [pipeline] [motos] 'moto roadster': 78 listings
+2026-03-20 18:49:34 INFO  [scraper] 'moto trail' page 1/2: 35 listings (total available: 2 pages)
+2026-03-20 18:49:37 INFO  [scraper] 'moto trail' page 2/2: 31 listings (total available: 2 pages)
+2026-03-20 18:49:37 INFO  [scraper] 'moto trail' returned 66 total listings
+2026-03-20 18:49:37 INFO  [pipeline] [motos] 'moto trail': 66 listings
+2026-03-20 18:49:40 INFO  [scraper] 'moto custom' page 1/2: 35 listings (total available: 2 pages)
+2026-03-20 18:49:44 INFO  [scraper] 'moto custom' page 2/2: 20 listings (total available: 2 pages)
+2026-03-20 18:49:44 INFO  [scraper] 'moto custom' returned 55 total listings
+2026-03-20 18:49:44 INFO  [pipeline] [motos] 'moto custom': 55 listings
+2026-03-20 18:49:48 INFO  [pipeline] [motos] 283 unique listings from 4 queries
+2026-03-20 18:49:51 INFO  [evaluator] 3163068863 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:49:51 INFO  [pipeline] [motos] 3163068863 — margin -440.0€ (ROI -6.9%) — no alert
+2026-03-20 18:49:54 INFO  [evaluator] 3158961063 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:49:54 INFO  [pipeline] [motos] 3158961063 — margin -100.0€ (ROI -1.6%) — no alert
+2026-03-20 18:49:59 INFO  [evaluator] 3165156221 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:49:59 INFO  [pipeline] [motos] 3165156221 — margin -590.0€ (ROI -14.8%) — no alert
+2026-03-20 18:50:02 INFO  [evaluator] 3165147840 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:50:02 INFO  [pipeline] [motos] 3165147840 — margin -100.0€ (ROI -4.0%) — no alert
+2026-03-20 18:50:06 INFO  [evaluator] 3130491036 — Tier 1 text-only — confidence 0.78
+2026-03-20 18:50:06 INFO  [pipeline] [motos] 3130491036 — margin 100.0€ (ROI 2.5%) — ALERT
+2026-03-20 18:50:06 INFO  [telegram:motos] 3130491036 — Alert sent
+2026-03-20 18:50:09 INFO  [evaluator] 3164754104 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:50:09 INFO  [pipeline] [motos] 3164754104 — margin -65.0€ (ROI -3.4%) — no alert
+2026-03-20 18:50:16 INFO  [evaluator] 3165128306 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:50:16 INFO  [pipeline] [motos] 3165128306 — margin -400.0€ (ROI -8.1%) — no alert
+2026-03-20 18:50:19 INFO  [evaluator] 3160729926 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:50:19 INFO  [pipeline] [motos] 3160729926 — margin -199.0€ (ROI -5.0%) — no alert
+2026-03-20 18:50:23 INFO  [evaluator] 3165101576 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:50:23 INFO  [pipeline] [motos] 3165101576 — margin -500.0€ (ROI -8.6%) — no alert
+2026-03-20 18:50:27 INFO  [evaluator] 3165080672 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:50:27 INFO  [pipeline] [motos] 3165080672 — margin -300.0€ (ROI -5.7%) — no alert
+2026-03-20 18:50:30 INFO  [evaluator] 3165067644 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:50:30 INFO  [pipeline] [motos] 3165067644 — margin -350.0€ (ROI -12.5%) — no alert
+2026-03-20 18:50:35 INFO  [evaluator] 3163152981 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:50:39 INFO  [evaluator] 3165036450 — Tier 1 text-only — confidence 0.78
+2026-03-20 18:50:39 INFO  [pipeline] [motos] 3165036450 — margin -250.0€ (ROI -8.9%) — no alert
+2026-03-20 18:50:43 INFO  [evaluator] 3165012546 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:50:43 INFO  [pipeline] [motos] 3165012546 — margin -300.0€ (ROI -4.6%) — no alert
+2026-03-20 18:50:47 INFO  [evaluator] 3164993663 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:50:51 INFO  [evaluator] 3127298823 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:50:51 INFO  [pipeline] [motos] 3127298823 — margin 600.0€ (ROI 11.8%) — ALERT
+2026-03-20 18:50:51 INFO  [telegram:motos] 3127298823 — Alert sent
+2026-03-20 18:50:51 INFO  [pipeline] [motos] 3163905252 — pre-filtered: annonce_épave (ne roule pas)
+2026-03-20 18:50:56 INFO  [evaluator] 3164964775 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:51:00 INFO  [evaluator] 3164961977 — Tier 1 text-only — confidence 0.65
+2026-03-20 18:51:00 INFO  [pipeline] [motos] 3164961977 — margin -300.0€ (ROI -13.0%) — no alert
+2026-03-20 18:51:04 INFO  [evaluator] 3162071981 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:51:04 INFO  [pipeline] [motos] 3162071981 — margin -500.0€ (ROI -10.4%) — no alert
+2026-03-20 18:51:07 INFO  [evaluator] 3164932934 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:51:07 INFO  [pipeline] [motos] 3164932934 — margin -150.0€ (ROI -3.1%) — no alert
+2026-03-20 18:51:10 INFO  [evaluator] 3164918050 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:51:10 INFO  [pipeline] [motos] 3164918050 — margin -150.0€ (ROI -5.4%) — no alert
+2026-03-20 18:51:14 INFO  [evaluator] 3164914728 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:51:14 INFO  [pipeline] [motos] 3164914728 — margin -100.0€ (ROI -4.0%) — no alert
+2026-03-20 18:51:18 INFO  [evaluator] 2270322221 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:51:18 INFO  [pipeline] [motos] 2270322221 — margin 0.0€ (ROI 0.0%) — no alert
+2026-03-20 18:51:22 INFO  [evaluator] 3164909183 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:51:25 INFO  [evaluator] 3097335128 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:51:25 INFO  [pipeline] [motos] 3097335128 — margin -100.0€ (ROI -2.2%) — no alert
+2026-03-20 18:51:29 INFO  [evaluator] 3164873213 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:51:29 INFO  [pipeline] [motos] 3164873213 — margin -350.0€ (ROI -5.1%) — no alert
+2026-03-20 18:51:34 INFO  [evaluator] 3164856753 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:51:34 INFO  [pipeline] [motos] 3164856753 — margin 100.0€ (ROI 3.3%) — ALERT
+2026-03-20 18:51:34 INFO  [telegram:motos] 3164856753 — Alert sent
+2026-03-20 18:51:37 INFO  [evaluator] 3164812559 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:51:37 INFO  [pipeline] [motos] 3164812559 — margin 800.0€ (ROI 12.7%) — ALERT
+2026-03-20 18:51:37 INFO  [telegram:motos] 3164812559 — Alert sent
+2026-03-20 18:51:41 INFO  [evaluator] 3164780619 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:51:41 INFO  [pipeline] [motos] 3164780619 — margin -50.0€ (ROI -1.5%) — no alert
+2026-03-20 18:51:45 INFO  [evaluator] 3164765482 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:51:45 INFO  [pipeline] [motos] 3164765482 — margin -200.0€ (ROI -5.7%) — no alert
+2026-03-20 18:51:49 INFO  [evaluator] 3164762903 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:51:49 INFO  [pipeline] [motos] 3164762903 — margin -250.0€ (ROI -5.2%) — no alert
+2026-03-20 18:51:52 INFO  [evaluator] 3164728920 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:51:52 INFO  [pipeline] [motos] 3164728920 — margin -100.0€ (ROI -5.6%) — no alert
+2026-03-20 18:51:56 INFO  [evaluator] 3164717280 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:51:56 INFO  [pipeline] [motos] 3164717280 — margin -600.0€ (ROI -10.9%) — no alert
+2026-03-20 18:52:00 INFO  [evaluator] 3164704326 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:52:00 INFO  [pipeline] [motos] 3164704326 — margin -290.0€ (ROI -4.3%) — no alert
+2026-03-20 18:52:04 INFO  [evaluator] 3129553070 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:52:04 INFO  [pipeline] [motos] 3129553070 — margin -400.0€ (ROI -6.9%) — no alert
+2026-03-20 18:52:04 INFO  [pipeline] [motos] 3164432715 — pre-filtered: annonce_épave (accidentée)
+2026-03-20 18:52:07 INFO  [evaluator] 3164680720 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:52:07 INFO  [pipeline] [motos] 3164680720 — margin 0.0€ (ROI 0.0%) — no alert
+2026-03-20 18:52:07 INFO  [pipeline] [motos] 3164664504 — pre-filtered: annonce_épave (accidentée)
+2026-03-20 18:52:12 INFO  [evaluator] 3164663626 — Tier 1 text-only — confidence 0.45
+2026-03-20 18:52:12 INFO  [evaluator] 3164663626 — Tier 1 says not worth it (resale 0€ vs buy 4999.0€), skipping Tier 2
+2026-03-20 18:52:16 INFO  [evaluator] 3164643649 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:52:19 INFO  [evaluator] 3164639762 — Tier 1 text-only — confidence 0.78
+2026-03-20 18:52:19 INFO  [pipeline] [motos] 3164639762 — margin -400.0€ (ROI -5.9%) — no alert
+2026-03-20 18:52:24 INFO  [evaluator] 3164615243 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:52:24 INFO  [pipeline] [motos] 3164615243 — margin -400.0€ (ROI -12.3%) — no alert
+2026-03-20 18:52:28 INFO  [evaluator] 3164606628 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:52:28 INFO  [pipeline] [motos] 3164606628 — margin -200.0€ (ROI -13.3%) — no alert
+2026-03-20 18:52:28 INFO  [pipeline] [motos] 3164597830 — pre-filtered: annonce_épave (accidentée)
+2026-03-20 18:52:32 INFO  [evaluator] 3164571887 — Tier 1 text-only — confidence 0.65
+2026-03-20 18:52:35 INFO  [evaluator] 3164567196 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:52:35 INFO  [pipeline] [motos] 3164567196 — margin -500.0€ (ROI -7.2%) — no alert
+2026-03-20 18:52:39 INFO  [evaluator] 3161231595 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:52:39 INFO  [pipeline] [motos] 3161231595 — margin -500.0€ (ROI -10.2%) — no alert
+2026-03-20 18:52:39 INFO  [pipeline] [motos] 3157564435 — pre-filtered: annonce_épave (accidentée)
+2026-03-20 18:52:44 INFO  [evaluator] 3164053564 — Tier 1 text-only — confidence 0.65
+2026-03-20 18:52:44 INFO  [pipeline] [motos] 3164053564 — margin -300.0€ (ROI -5.6%) — no alert
+2026-03-20 18:52:44 INFO  [pipeline] [motos] 3164480934 — pre-filtered: annonce_épave (accidentée)
+2026-03-20 18:52:47 INFO  [evaluator] 3164453328 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:52:47 INFO  [pipeline] [motos] 3164453328 — margin -50.0€ (ROI -1.9%) — no alert
+2026-03-20 18:52:51 INFO  [evaluator] 3164418539 — Tier 1 text-only — confidence 0.65
+2026-03-20 18:52:51 INFO  [pipeline] [motos] 3164418539 — margin -100.0€ (ROI -2.4%) — no alert
+2026-03-20 18:52:55 INFO  [evaluator] 3164355412 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:52:55 INFO  [pipeline] [motos] 3164355412 — margin -250.0€ (ROI -4.6%) — no alert
+2026-03-20 18:52:58 INFO  [evaluator] 3164325917 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:52:58 INFO  [pipeline] [motos] 3164325917 — margin -150.0€ (ROI -8.1%) — no alert
+2026-03-20 18:53:02 INFO  [evaluator] 3164295085 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:53:02 INFO  [pipeline] [motos] 3164295085 — margin -650.0€ (ROI -15.5%) — no alert
+2026-03-20 18:53:05 INFO  [evaluator] 3086481102 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:53:08 INFO  [evaluator] 3164272241 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:53:08 INFO  [pipeline] [motos] 3164272241 — margin -50.0€ (ROI -1.7%) — no alert
+2026-03-20 18:53:12 INFO  [evaluator] 3164267053 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:53:12 INFO  [pipeline] [motos] 3164267053 — margin -600.0€ (ROI -10.0%) — no alert
+2026-03-20 18:53:17 INFO  [evaluator] 3164254650 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:53:17 INFO  [pipeline] [motos] 3164254650 — margin 50.0€ (ROI 1.2%) — no alert
+2026-03-20 18:53:20 INFO  [evaluator] 3164243630 — Tier 1 text-only — confidence 0.65
+2026-03-20 18:53:20 INFO  [pipeline] [motos] 3164243630 — margin -250.0€ (ROI -4.4%) — no alert
+2026-03-20 18:53:23 INFO  [evaluator] 3164201280 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:53:23 INFO  [pipeline] [motos] 3164201280 — margin -350.0€ (ROI -5.4%) — no alert
+2026-03-20 18:53:26 INFO  [evaluator] 3150566062 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:53:26 INFO  [pipeline] [motos] 3150566062 — margin -500.0€ (ROI -17.9%) — no alert
+2026-03-20 18:53:30 INFO  [evaluator] 3164219352 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:53:30 INFO  [pipeline] [motos] 3164219352 — margin -100.0€ (ROI -1.8%) — no alert
+2026-03-20 18:53:36 INFO  [evaluator] 3129006492 — Tier 1 text-only — confidence 0.55
+2026-03-20 18:53:40 INFO  [evaluator] 3164208330 — Tier 1 text-only — confidence 0.78
+2026-03-20 18:53:40 INFO  [pipeline] [motos] 3164208330 — margin 550.0€ (ROI 19.6%) — ALERT
+2026-03-20 18:53:40 INFO  [telegram:motos] 3164208330 — Alert sent
+2026-03-20 18:53:44 INFO  [evaluator] 3164165227 — Tier 1 text-only — confidence 0.78
+2026-03-20 18:53:44 INFO  [pipeline] [motos] 3164165227 — margin -250.0€ (ROI -8.9%) — no alert
+2026-03-20 18:53:48 INFO  [evaluator] 3164156837 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:53:48 INFO  [pipeline] [motos] 3164156837 — margin 300.0€ (ROI 31.6%) — ALERT
+2026-03-20 18:53:48 INFO  [telegram:motos] 3164156837 — Alert sent
+2026-03-20 18:53:51 INFO  [evaluator] 3164140774 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:53:51 INFO  [pipeline] [motos] 3164140774 — margin -50.0€ (ROI -0.8%) — no alert
+2026-03-20 18:53:56 INFO  [evaluator] 3164130860 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:53:56 INFO  [pipeline] [motos] 3164130860 — margin -350.0€ (ROI -6.0%) — no alert
+2026-03-20 18:53:56 INFO  [pipeline] [motos] 3164120407 — pre-filtered: mot_clé_bloqué (125cc)
+2026-03-20 18:53:59 INFO  [evaluator] 3152207412 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:53:59 INFO  [pipeline] [motos] 3152207412 — margin -300.0€ (ROI -5.7%) — no alert
+2026-03-20 18:54:04 INFO  [evaluator] 3164102658 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:54:04 INFO  [pipeline] [motos] 3164102658 — margin -290.0€ (ROI -4.5%) — no alert
+2026-03-20 18:54:08 INFO  [evaluator] 3164091089 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:54:08 INFO  [pipeline] [motos] 3164091089 — margin -100.0€ (ROI -4.0%) — no alert
+2026-03-20 18:54:11 INFO  [evaluator] 3164090600 — Tier 1 text-only — confidence 0.65
+2026-03-20 18:54:11 INFO  [pipeline] [motos] 3164090600 — margin -450.0€ (ROI -9.0%) — no alert
+2026-03-20 18:54:15 INFO  [evaluator] 3164058237 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:54:15 INFO  [pipeline] [motos] 3164058237 — margin -399.0€ (ROI -6.9%) — no alert
+2026-03-20 18:54:18 INFO  [evaluator] 3164041386 — Tier 1 text-only — confidence 0.88
+2026-03-20 18:54:18 INFO  [pipeline] [motos] 3164041386 — margin -625.0€ (ROI -15.8%) — no alert
+2026-03-20 18:54:22 INFO  [evaluator] 3164011798 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:54:22 INFO  [pipeline] [motos] 3164011798 — margin 450.0€ (ROI 7.3%) — ALERT
+2026-03-20 18:54:22 INFO  [telegram:motos] 3164011798 — Alert sent
+2026-03-20 18:54:26 INFO  [evaluator] 3164010495 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:54:26 INFO  [pipeline] [motos] 3164010495 — margin -600.0€ (ROI -15.0%) — no alert
+2026-03-20 18:54:29 INFO  [evaluator] 3152053149 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:54:29 INFO  [pipeline] [motos] 3152053149 — margin 400.0€ (ROI 10.0%) — ALERT
+2026-03-20 18:54:29 INFO  [telegram:motos] 3152053149 — Alert sent
+2026-03-20 18:54:33 INFO  [evaluator] 2954162103 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:54:33 INFO  [pipeline] [motos] 2954162103 — margin 510.0€ (ROI 14.2%) — ALERT
+2026-03-20 18:54:33 INFO  [telegram:motos] 2954162103 — Alert sent
+2026-03-20 18:54:36 INFO  [evaluator] 3163979521 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:54:36 INFO  [pipeline] [motos] 3163979521 — margin -200.0€ (ROI -3.4%) — no alert
+2026-03-20 18:54:39 INFO  [evaluator] 3092416714 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:54:39 INFO  [pipeline] [motos] 3092416714 — margin -250.0€ (ROI -3.6%) — no alert
+2026-03-20 18:54:42 INFO  [evaluator] 3163948689 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:54:42 INFO  [pipeline] [motos] 3163948689 — margin -100.0€ (ROI -2.2%) — no alert
+2026-03-20 18:54:47 INFO  [evaluator] 3163948143 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:54:47 INFO  [pipeline] [motos] 3163948143 — margin 0.0€ (ROI 0.0%) — no alert
+2026-03-20 18:54:51 INFO  [evaluator] 3139520043 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:54:51 INFO  [pipeline] [motos] 3139520043 — margin 0.0€ (ROI 0.0%) — no alert
+2026-03-20 18:54:55 INFO  [evaluator] 3163868818 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:54:55 INFO  [pipeline] [motos] 3163868818 — margin -600.0€ (ROI -15.0%) — no alert
+2026-03-20 18:54:59 INFO  [evaluator] 3163868319 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:55:03 INFO  [evaluator] 3163841857 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:55:08 INFO  [evaluator] 3163838834 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:55:08 INFO  [pipeline] [motos] 3163838834 — margin -350.0€ (ROI -5.1%) — no alert
+2026-03-20 18:55:12 INFO  [evaluator] 3096210484 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:55:12 INFO  [pipeline] [motos] 3096210484 — margin 450.0€ (ROI 21.4%) — ALERT
+2026-03-20 18:55:13 INFO  [telegram:motos] 3096210484 — Alert sent
+2026-03-20 18:55:13 INFO  [pipeline] [motos] 3090537035 — pre-filtered: annonce_épave (accidentée)
+2026-03-20 18:55:16 INFO  [evaluator] 3163722670 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:55:16 INFO  [pipeline] [motos] 3163722670 — margin -200.0€ (ROI -2.9%) — no alert
+2026-03-20 18:55:20 INFO  [evaluator] 3163671582 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:55:20 INFO  [pipeline] [motos] 3163671582 — margin -400.0€ (ROI -6.7%) — no alert
+2026-03-20 18:55:23 INFO  [evaluator] 3163667201 — Tier 1 text-only — confidence 0.78
+2026-03-20 18:55:23 INFO  [pipeline] [motos] 3163667201 — margin -290.0€ (ROI -5.5%) — no alert
+2026-03-20 18:55:27 INFO  [evaluator] 3163650264 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:55:27 INFO  [pipeline] [motos] 3163650264 — margin -99.0€ (ROI -2.3%) — no alert
+2026-03-20 18:55:31 INFO  [evaluator] 3163591384 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:55:31 INFO  [pipeline] [motos] 3163591384 — margin -100.0€ (ROI -2.4%) — no alert
+2026-03-20 18:55:35 INFO  [evaluator] 3163583572 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:55:39 INFO  [evaluator] 3163581979 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:55:39 INFO  [pipeline] [motos] 3163581979 — margin -440.0€ (ROI -8.8%) — no alert
+2026-03-20 18:55:42 INFO  [evaluator] 3163556952 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:55:42 INFO  [pipeline] [motos] 3163556952 — margin -300.0€ (ROI -6.4%) — no alert
+2026-03-20 18:55:56 INFO  [evaluator] 3163554858 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:55:59 INFO  [evaluator] 3163553276 — Tier 1 text-only — confidence 0.82
+2026-03-20 18:55:59 INFO  [pipeline] [motos] 3163553276 — margin -90.0€ (ROI -3.5%) — no alert
+2026-03-20 18:56:02 INFO  [evaluator] 3163551915 — Tier 1 text-only — confidence 0.72
+2026-03-20 18:56:02 INFO  [pipeline] [motos] 3163551915 — margin -399.0€ (ROI -6.5%) — no alert
+2026-03-20 18:56:06 INFO  [evaluator] 3163551006 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:56:06 INFO  [pipeline] [motos] 3163551006 — margin 0.0€ (ROI 0.0%) — no alert
+2026-03-20 18:56:10 INFO  [evaluator] 3163542495 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:56:10 INFO  [pipeline] [motos] 3163542495 — margin 100.0€ (ROI 2.8%) — ALERT
+2026-03-20 18:56:10 INFO  [telegram:motos] 3163542495 — Alert sent
+2026-03-20 18:56:13 INFO  [evaluator] 3161282275 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:56:17 INFO  [evaluator] 3164919934 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:56:20 INFO  [evaluator] 3145979305 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:56:23 INFO  [evaluator] 3129973091 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:56:27 INFO  [evaluator] 3164470732 — Tier 1 text-only — confidence 0.95
+2026-03-20 18:56:30 INFO  [evaluator] 3164420438 — Tier 1 text-only — confidence 0.78
+2026-03-20 18:56:30 INFO  [pipeline] [motos] 3164420438 — margin 0.0€ (ROI 0.0%) — no alert
+2026-03-20 18:56:33 INFO  [evaluator] 3164260141 — Tier 1 text-only — confidence 0.75
+2026-03-20 18:56:33 INFO  [pipeline] [motos] 3164260141 — margin 0.0€ (ROI 0.0%) — no alert
+2026-03-20 18:56:33 INFO  [pipeline] [motos] 3163739573 — pre-filtered: mot_clé_bloqué (50cc)
+2026-03-20 18:56:37 INFO  [evaluator] 3125696732 — Tier 1 text-only — confidence 0.45
+2026-03-20 18:56:37 INFO  [evaluator] 3125696732 — Tier 1 says not worth it (resale 2700€ vs buy 2800.0€), skipping Tier 2
+2026-03-20 18:56:37 INFO  [pipeline] [motos] 3125696732 — margin -450.0€ (ROI -16.1%) — no alert
+2026-03-20 18:56:42 INFO  [evaluator] 3163133793 — Tier 1 text-only — confidence 0.92
+2026-03-20 18:56:45 INFO  [evaluator] 3163105710 — Tier 1 text-only — confidence 0.65
+2026-03-20 18:56:45 INFO  [pipeline] [motos] 3163105710 — margin -199.0€ (ROI -3.8%) — no alert
+2026-03-20 18:56:50 INFO  [evaluator] 3131335371 — Tier 1 text-only — confidence 0.85
+2026-03-20 18:56:50 INFO  [pipeline] [motos] 3131335371 — margin -99.0€ (ROI -1.9%) — no alert
+2026-03-20 18:56:50 INFO  [pipeline] [motos] 3162920042 — pre-filtered: mot_clé_bloqué (125cc)
+2026-03-20 18:56:54 INFO  [evaluator] 3162874297 — Tier 1 text-only — confidence 0.85

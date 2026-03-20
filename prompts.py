@@ -137,10 +137,92 @@ Contexte marché: Île-de-France 2026. Le revendeur nettoiera l'objet et fera de
 
 
 # ═══════════════════════════════════════════════════════════════════
+# MOTOS PROMPTS
+# ═══════════════════════════════════════════════════════════════════
+
+MOTO_TEXT_ONLY_PROMPT = """Tu es un expert du marché de la moto d'occasion en Île-de-France. On te présente une annonce leboncoin. Détermine si c'est une bonne affaire pour un acheteur permis A2.
+
+IMPORTANT — Permis A2: max 35 kW (47,5 ch). Les motos de 70 kW max (95 ch) peuvent être bridgées A2. Au-delà de 70 kW d'origine = NON compatible A2.
+
+Lis attentivement l'intégralité de l'annonce ci-dessous — titre, prix, description — pour comprendre exactement ce qui est vendu, dans quel état, et à quel prix réel.
+
+---
+Titre: {title}
+Prix affiché: {price}€
+Localisation: {location}
+
+Description du vendeur:
+{description}
+---
+
+Réponds UNIQUEMENT en JSON valide:
+
+{{
+  "item_name": "identification complète (marque + modèle + année + cylindrée)",
+  "brand": "marque identifiée ou 'inconnu'",
+  "model": "modèle identifié ou 'inconnu'",
+  "a2_compatible": true/false,
+  "a2_details": "natif 35kW | bridgeable (X kW d'origine) | non compatible",
+  "km": kilométrage si mentionné ou null,
+  "condition": "comme_neuf | bon_état | état_correct | mauvais_état",
+  "confidence": 0.0-1.0,
+  "estimated_resale_min": prix revente minimum réaliste EUR,
+  "estimated_resale_max": prix revente maximum réaliste EUR,
+  "reasoning": "2-3 phrases: ce que tu achètes exactement pour le prix affiché, compatibilité A2, pourquoi c'est (ou pas) une bonne affaire, sur quoi tu bases ton estimation"
+}}
+
+Si la moto n'est PAS compatible A2, mets estimated_resale_min et estimated_resale_max à 0.
+
+Contexte marché: Île-de-France 2026. Base tes estimations sur les prix réels leboncoin, la centrale, motoplanete. Points clés: kilométrage, entretien (carnet, vidange, pneus, chaîne), CT à jour, état carrosserie. Abréviations: TBE = très bon état, CT = contrôle technique, CG = carte grise."""
+
+
+MOTO_VISION_PROMPT = """Tu es un expert du marché de la moto d'occasion en Île-de-France. On te présente une annonce leboncoin avec ses photos. Détermine si c'est une bonne affaire pour un acheteur permis A2.
+
+IMPORTANT — Permis A2: max 35 kW (47,5 ch). Les motos de 70 kW max (95 ch) peuvent être bridgées A2. Au-delà de 70 kW d'origine = NON compatible A2.
+
+Lis attentivement l'intégralité de l'annonce et analyse les photos pour comprendre exactement ce qui est vendu, dans quel état, et à quel prix réel.
+
+---
+Titre: {title}
+Prix affiché: {price}€
+Localisation: {location}
+
+Description du vendeur:
+{description}
+---
+
+Les photos sont jointes. Utilise-les pour identifier marque, modèle, état réel, et tout ce que le vendeur a pu manquer (traces de chute, rouille, pneus usés, modifications).
+
+Réponds UNIQUEMENT en JSON valide:
+
+{{
+  "item_name": "identification complète",
+  "brand": "marque identifiée ou 'inconnu'",
+  "model": "modèle identifié ou 'inconnu'",
+  "a2_compatible": true/false,
+  "a2_details": "natif 35kW | bridgeable (X kW d'origine) | non compatible",
+  "km": kilométrage si mentionné ou null,
+  "condition": "comme_neuf | bon_état | état_correct | mauvais_état",
+  "condition_details": "observations concrètes depuis les photos",
+  "red_flags": [],
+  "hidden_value": [],
+  "confidence": 0.0-1.0,
+  "estimated_resale_min": prix revente minimum réaliste EUR,
+  "estimated_resale_max": prix revente maximum réaliste EUR,
+  "reasoning": "2-3 phrases: ce que tu achètes exactement pour le prix affiché, compatibilité A2, pourquoi c'est (ou pas) une bonne affaire, sur quoi tu bases ton estimation"
+}}
+
+Si la moto n'est PAS compatible A2, mets estimated_resale_min et estimated_resale_max à 0.
+
+Contexte marché: Île-de-France 2026. Base tes estimations sur les prix réels leboncoin, la centrale, motoplanete. Points clés: kilométrage, entretien, CT, état carrosserie."""
+
+
+# ═══════════════════════════════════════════════════════════════════
 # PROMPT REGISTRY — maps category → (text_prompt, vision_prompt)
 # ═══════════════════════════════════════════════════════════════════
 
 PROMPTS = {
     "bikes": (TEXT_ONLY_PROMPT, VISION_PROMPT),
     "furniture": (FURNITURE_TEXT_ONLY_PROMPT, FURNITURE_VISION_PROMPT),
+    "motos": (MOTO_TEXT_ONLY_PROMPT, MOTO_VISION_PROMPT),
 }
